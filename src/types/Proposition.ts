@@ -11,11 +11,13 @@ export enum PropositionID {
 export class Proposition {
     id: PropositionID;
     content: string;
+    description: string;
     answers: Map<CandidateID, Answer>;
 
-    constructor(id: PropositionID, content: string, answers: Map<CandidateID, Answer>) {
+    constructor(id: PropositionID, content: string, description: string, answers: Map<CandidateID, Answer>) {
         this.id = id;
         this.content = content;
+        this.description = content;
         this.answers = answers;
     }
 }
