@@ -1,9 +1,9 @@
-enum CandidateAnswer {
+export enum CandidateAnswer {
     NO,
     YES,
 }
 
-enum UserAnswer {
+export enum UserAnswer {
     MUST_NOT,
     NO,
     SKIP,
@@ -11,8 +11,12 @@ enum UserAnswer {
     MUST,
 }
 
-interface Answer {
-    proposition: PropositionID,
-    value: CandidateAnswer,
-    reason: string,
+export class Answer {
+    value: CandidateAnswer;
+    reason: string;
+
+    constructor(value: CandidateAnswer, reason: string = "") {
+        this.value = value;
+        this.reason = reason;
+    }
 }
