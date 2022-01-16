@@ -3,14 +3,10 @@
 
 name: Node.js CI
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push, pull_request]
 
 jobs:
-  setup & test:
+  run-tests:
     runs-on: ubuntu-latest
 
     strategy:
