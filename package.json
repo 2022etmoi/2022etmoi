@@ -7,11 +7,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/enzyme": "^3.10.11",
+    "enzyme": "^3.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sass": "^1.48.0"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.0",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@vitejs/plugin-react": "^1.0.7",
