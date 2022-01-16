@@ -25,3 +25,4 @@ describe('proposition-button', () => {
         expect(onClickSpy).toHaveBeenCalledTimes(1);
     })
 })
+
