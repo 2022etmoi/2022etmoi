@@ -1,6 +1,4 @@
-import {Answer, CandidateAnswer } from "../types/Answer";
-import { CandidateID } from "../types/Candidate";
-import {Proposition, PropositionID} from "../types/Proposition";
+import {Answer, CandidateAnswer, CandidateID , Proposition, PropositionID} from "../types";
 
 export const propositions: Set<Proposition> = new Set([
     new Proposition(

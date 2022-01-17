@@ -1,4 +1,4 @@
-import {Candidate, CandidateID} from "../types/Candidate";
+import {Candidate, CandidateID} from "../types";
 
 export const candidates: Set<Candidate> = new Set([
     new Candidate(
