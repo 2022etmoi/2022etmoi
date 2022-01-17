@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": false,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true,
+			"source.fixAll.stylelint": true
+		},
+		"eslint.validate": [
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact"
+		],
+		"stylelint.enable": true,
+		"stylelint.validate": [
+			"css",
+			"scss",
+		],
+	},
+	"extensions": {
+		"recommendations": [
+			"stylelint.vscode-stylelint",
+			"dbaeumer.vscode-eslint",
+			"pmneo.tsimporter",
+			"2gua.rainbow-brackets",
+			"formulahendry.auto-rename-tag",
+			"mikestead.dotenv",
+			"nhoizey.gremlins",
+			"vespa-dev-works.jestrunit"
+		]
+	}
+}
