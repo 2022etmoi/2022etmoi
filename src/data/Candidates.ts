@@ -21,4 +21,4 @@ export const candidates: Set<Candidate> = new Set([
         "Mouvement 4",
         "Candidat 4",
     ),
-])
+]);

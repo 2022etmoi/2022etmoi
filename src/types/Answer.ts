@@ -15,7 +15,7 @@ export class Answer {
     value: CandidateAnswer;
     reason: string;
 
-    constructor(value: CandidateAnswer, reason: string = "") {
+    constructor(value: CandidateAnswer, reason = "") {
         this.value = value;
         this.reason = reason;
     }
