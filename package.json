@@ -26,7 +26,10 @@
         ],
         "setupFilesAfterEnv": [
             "./src/tests/setupTests.ts"
-        ]
+        ],
+        "moduleNameMapper": {
+            "\\.(css|less|scss)$": "identity-obj-proxy"
+          }
     },
     "dependencies": {
         "react": "^17.0.2",
@@ -50,6 +53,7 @@
         "enzyme": "^3.11.0",
         "eslint": "^8.7.0",
         "eslint-plugin-react": "^7.28.0",
+        "identity-obj-proxy": "^3.0.0",
         "jest": "^27.4.7",
         "jest-enzyme": "^7.1.2",
         "jsdom": "^19.0.0",
