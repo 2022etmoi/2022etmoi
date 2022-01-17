@@ -6,13 +6,6 @@ name: CI Front
 on: [push]
 
 jobs:
-  conventional-commits:
-    name: Conventional Commits
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: webiny/action-conventional-commits@v1.0.3
-
   tests:
     runs-on: ubuntu-latest
 
