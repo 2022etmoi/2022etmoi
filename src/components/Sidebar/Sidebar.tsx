@@ -1,6 +1,5 @@
 import "./Sidebar.scss";
-
-import { useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { SidebarLink } from "../../types";
 
 interface SidebarProps {
@@ -14,8 +13,13 @@ export function Sidebar({links}: SidebarProps) {
             {link.name}
         </li>
     )), []);
+
+    const [opened, setOpened] = useState(true);
+    const toggleOpened = useCallback(()=> setOpened(!opened), [opened]);
+
     return(
-        <nav className="sidebar">
+        <nav className={"sidebar" + (opened ? " sidebar--opened" : "") }>
+            <div className="sidebar__toggle" onClick={toggleOpened}>TOGGLE</div>
             <ul>
                 {menuItems}
             </ul>
