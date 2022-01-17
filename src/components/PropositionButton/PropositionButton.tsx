@@ -1,3 +1,5 @@
+import "./PropositionButton.scss";
+
 interface PropositionButtonProps {
     /** The onClick callback */
     onClick: () => void;
