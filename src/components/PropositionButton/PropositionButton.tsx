@@ -8,5 +8,5 @@ export function PropositionButton ({
 }: PropositionButtonProps) {
     return (
         <div className="proposition-button" onClick={onClick}>Button</div>
-    )
+    );
 }
