@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react';
+import { act } from "@testing-library/react";
 
 /** Reexport only needed utils */
 export { act };
