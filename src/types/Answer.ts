@@ -1,6 +1,7 @@
 export enum CandidateAnswer {
     NO,
     YES,
+    SKIP
 }
 
 export enum UserAnswer {

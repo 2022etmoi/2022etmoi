@@ -1,14 +1,23 @@
+import { UserAnswer } from "../../types";
 import "./PropositionButton.scss";
 
 interface PropositionButtonProps {
     /** The onClick callback */
-    onClick: () => void;
+    onClick: (score: number) => void;
+    /** The score of the button */
+    userAnswer: UserAnswer
 }
 
+/**
+ * A component to display a vote button.
+ * @param onClick. The onClick callback.
+ * @param userAnswer. The score of the button.
+ */
 export function PropositionButton ({
-    onClick
+    onClick,
+    userAnswer
 }: PropositionButtonProps) {
     return (
-        <div className="proposition-button" onClick={onClick}>Button</div>
+        <button className="proposition-button" onClick={()=>onClick(userAnswer)}>{UserAnswer[userAnswer]}</button>
     );
 }

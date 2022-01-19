@@ -6,6 +6,11 @@ interface SidebarProps {
     /** Links shown in the Sidebar */
     links: SidebarLink[]
 }
+
+/**
+ * A component to display the Sidebar.
+ * @param links. The list of links to render.
+ */
 export function Sidebar({links}: SidebarProps) {
     const menuItems = useMemo(() => links.map((link, i) => (
         <li className="sidebar__link" key={i}>
@@ -15,9 +20,9 @@ export function Sidebar({links}: SidebarProps) {
     )), []);
 
     const [opened, setOpened] = useState(true);
-    const toggleOpened = useCallback(()=> setOpened(!opened), [opened]);
+    const toggleOpened = useCallback(()=> setOpened(! opened), [opened]);
 
-    return(
+    return (
         <nav className={"sidebar" + (opened ? " sidebar--opened" : "") }>
             <div className="sidebar__toggle" onClick={toggleOpened}>TOGGLE</div>
             <ul>
