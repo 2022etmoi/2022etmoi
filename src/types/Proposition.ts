@@ -10,16 +10,16 @@ export enum PropositionID {
 
 export class Proposition {
     id: PropositionID;
-    version: number;
     content: string;
     description: string;
     answers: Map<CandidateID, Answer>;
+    revision: number;
 
-    constructor(id: PropositionID, version: number, content: string, description: string, answers: Map<CandidateID, Answer>) {
+    constructor(id: PropositionID, content: string, description: string, answers: Map<CandidateID, Answer>, revision = 1.0) {
         this.id = id;
-        this.version = version;
         this.content = content;
-        this.description = content;
+        this.description = description;
         this.answers = answers;
+        this.revision = revision;
     }
 }
