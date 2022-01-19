@@ -3,7 +3,7 @@ import "./PropositionButton.scss";
 
 interface PropositionButtonProps {
     /** The onClick callback */
-    onClick: (score: number) => void;
+    onClick: (score: UserAnswer) => void;
     /** The score of the button */
     userAnswer: UserAnswer
 }

@@ -17,7 +17,7 @@ describe("storage-service", () => {
     it("should save a user answer", () => {
         service.saveAnswer(PropositionMock, UserAnswer.MUST_NOT);
 
-        expect(JSON.parse(localStorage.getItem("user-answers") as string)).toStrictEqual([[PropositionMock.id, 0, 1.0]]);
+        expect(JSON.parse(localStorage.getItem("user-answers") as string)).toStrictEqual([[PropositionMock.id, "MUST_NOT", 1.0]]);
     });
 
     it("should retrieve user answers", () => {
