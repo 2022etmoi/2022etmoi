@@ -1,6 +1,5 @@
 import {Proposition, PropositionID } from "../types/Proposition";
 import { UserAnswer } from "../types/Answer";
-import { propositions } from "../data/Propositions";
 /**
  * A service to manage local storage data exchanges.
  */
@@ -50,19 +49,16 @@ export class StorageService {
      * @param propositionId The proposition identifier.
      * @param userAnswer The user answer.
      */
-    public saveAnswer(propositionId: PropositionID, userAnswer: UserAnswer) {
+    public saveAnswer(proposition: Proposition, userAnswer: UserAnswer) {
         const storageData = this.get<[PropositionID,UserAnswer, number][] | undefined>(this.STORAGE_FIELDS.USER_ANSWERS, true);
-        const proposition: Proposition = [...propositions.values()].filter((p: Proposition) => p.id == propositionId )[0];
-        if (proposition == undefined) { return; }
-        const payload: [PropositionID, UserAnswer, number] = [propositionId, userAnswer, proposition.revision];
+
+        const payload: [PropositionID, UserAnswer, number] = [proposition.id, userAnswer, proposition.revision];
 
         // Remove the precedent proposition user answer.
-        const filteredData = storageData?.filter(answer => answer[0] !== propositionId);
+        const filteredData = storageData?.filter(answer => answer[0] !== proposition.id);
 
         // Merge current data with new one or save the new one directly.
-        let data = filteredData ? [...filteredData, payload] : [payload];
-
-        console.log(data);
+        const data = filteredData ? [...filteredData, payload] : [payload];
 
         this.set( this.STORAGE_FIELDS.USER_ANSWERS,data,true);
     }

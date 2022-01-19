@@ -17,9 +17,8 @@ interface PropositionCardProps {
 export function PropositionCard({proposition}:PropositionCardProps) {
     const storageService = StorageService.getInstance();
 
-    const handlePropositionVote = useCallback((propositionId: Proposition["id"], answer: UserAnswer) => {
-        console.log(propositionId, UserAnswer[answer]);
-        storageService.saveAnswer(propositionId, answer);
+    const handlePropositionVote = useCallback((answer: UserAnswer) => {
+        storageService.saveAnswer(proposition, answer);
     }, [storageService]);
 
     return (<div className="proposition-card">
@@ -28,11 +27,11 @@ export function PropositionCard({proposition}:PropositionCardProps) {
                 proposition.content
             }
         </article>
-        <PropositionButton key={UserAnswer.MUST_NOT} userAnswer={UserAnswer.MUST_NOT} onClick={answer => handlePropositionVote(proposition.id, answer)}/>
-        <PropositionButton key={UserAnswer.NO} userAnswer={UserAnswer.NO} onClick={answer => handlePropositionVote(proposition.id, answer)}/>
-        <PropositionButton key={UserAnswer.SKIP} userAnswer={UserAnswer.SKIP} onClick={answer => handlePropositionVote(proposition.id, answer)}/>
-        <PropositionButton key={UserAnswer.YES} userAnswer={UserAnswer.YES} onClick={answer => handlePropositionVote(proposition.id, answer)}/>
-        <PropositionButton key={UserAnswer.MUST} userAnswer={UserAnswer.MUST} onClick={answer => handlePropositionVote(proposition.id, answer)}/>
+        <PropositionButton key={UserAnswer.MUST_NOT} userAnswer={UserAnswer.MUST_NOT} onClick={answer => handlePropositionVote(answer)}/>
+        <PropositionButton key={UserAnswer.NO} userAnswer={UserAnswer.NO} onClick={answer => handlePropositionVote(answer)}/>
+        <PropositionButton key={UserAnswer.SKIP} userAnswer={UserAnswer.SKIP} onClick={answer => handlePropositionVote(answer)}/>
+        <PropositionButton key={UserAnswer.YES} userAnswer={UserAnswer.YES} onClick={answer => handlePropositionVote(answer)}/>
+        <PropositionButton key={UserAnswer.MUST} userAnswer={UserAnswer.MUST} onClick={answer => handlePropositionVote(answer)}/>
     </div>
     );
 }
