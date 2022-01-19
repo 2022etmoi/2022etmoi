@@ -18,4 +18,11 @@ describe("storage-service", () => {
 
         expect(JSON.parse(localStorage.getItem("user-answers") as string)).toStrictEqual([[0,0]]);
     });
+
+    it("should retrieve user answers", () => {
+        service.saveAnswer(PropositionID.P1, UserAnswer.MUST_NOT);
+        const data = service.getAnswers();
+
+        expect(data).toHaveLength(1);
+    });
 });

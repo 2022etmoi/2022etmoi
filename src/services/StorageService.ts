@@ -61,5 +61,21 @@ export class StorageService {
         this.set( this.STORAGE_FIELDS.USER_ANSWERS,data,true);
     }
 
-    constructor() {}
+    /**
+     * A method to get user answers from the local storage.
+     */
+    public getAnswers() {
+        return this.get<[PropositionID,UserAnswer][]>(this.STORAGE_FIELDS.USER_ANSWERS, true);
+    }
+
+    /**
+     * A method to clear the local storage.
+     */
+    public clear() {
+        localStorage.clear();
+    }
+
+    constructor() {
+        // Silence is golden...
+    }
 }
