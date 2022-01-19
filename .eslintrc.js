@@ -40,5 +40,13 @@ module.exports = {
             "always"
         ],
         "eol-last": 1,
+        "space-unary-ops": [
+            2, {
+                "words": true,
+                "nonwords": true,
+            }
+        ],
+        "keyword-spacing": "off",
+        "@typescript-eslint/keyword-spacing": ["error"]
     }
 };
