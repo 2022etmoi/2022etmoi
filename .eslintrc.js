@@ -40,12 +40,14 @@ module.exports = {
             "always"
         ],
         "eol-last": 1,
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
         "space-unary-ops": [
             2, {
                 "words": true,
                 "nonwords": true,
             }
         ],
+        "no-trailing-spaces": "error",
         "keyword-spacing": "off",
         "@typescript-eslint/keyword-spacing": ["error"]
     }
