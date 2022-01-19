@@ -3,4 +3,15 @@ body {
 }
 
 .app {
+    pre {
+        border: 1px dashed rgb(78 78 78);
+        font-size: 1rem;
+        margin: 0 auto;
+        max-width: 50rem;
+        padding: 0.4rem;
+
+        button {
+            margin-top: 1rem;
+        }
+    }
 }
