@@ -1,5 +1,6 @@
 import { PropositionID } from "../types/Proposition";
 import { UserAnswer } from "../types/Answer";
+import { propositions } from "../data/Propositions";
 /**
  * A service to manage local storage data exchanges.
  */
@@ -51,7 +52,7 @@ export class StorageService {
      */
     public saveAnswer(propositionId: PropositionID, userAnswer: UserAnswer) {
         const storageData = this.get<[PropositionID,UserAnswer][] | undefined>(this.STORAGE_FIELDS.USER_ANSWERS, true);
-        const payload = [propositionId, userAnswer];
+        const payload: [PropositionID, UserAnswer] = [propositionId, userAnswer];
 
         // Remove the precedent proposition user answer.
         const filteredData = storageData?.filter(answer => answer[0] !== propositionId);
@@ -61,7 +62,8 @@ export class StorageService {
 
         // Sort answers
         data = data.sort(function (a, b) {
-            return a[0] - b[0];
+            let keys = Object.keys(PropositionID);
+            return keys.indexOf(a[0]) - keys.indexOf(b[0]);
         });
 
         this.set( this.STORAGE_FIELDS.USER_ANSWERS,data,true);
