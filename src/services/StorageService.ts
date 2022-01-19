@@ -11,8 +11,8 @@ export class StorageService {
     };
 
     /**
-     * A static method to retrieve th singleton instance of this service.
-     * If the instance doesn't exists, the singleton will initialize.
+     * A static method to retrieve the singleton instance of this service.
+     * If the instance doesn't exist, the singleton will initialize.
      * @returns The StorageService instance.
      */
     static getInstance() : StorageService{
@@ -57,7 +57,13 @@ export class StorageService {
         const filteredData = storageData?.filter(answer => answer[0] !== propositionId);
 
         // Merge current data with new one or save the new one directly.
-        const data = filteredData ? [...filteredData, payload] : [payload];
+        let data = filteredData ? [...filteredData, payload] : [payload];
+
+        // Sort answers
+        data = data.sort(function (a, b) {
+            return a[0] - b[0];
+        });
+        
         this.set( this.STORAGE_FIELDS.USER_ANSWERS,data,true);
     }
 
