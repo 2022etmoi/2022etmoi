@@ -21,6 +21,9 @@ function computeOneScore(myscores: number[], candidate: number[]) {
         }
     }
 
+    // To avoid dividing by zero when we divide by norm, we replace norm by 1
+    // This should not impact the final result as in this case sum should
+    // be null also. We choose the score 50 if all answers are null.
     if (norm == 0) norm = 1;
 
     return {
