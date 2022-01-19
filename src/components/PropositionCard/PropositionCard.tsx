@@ -16,7 +16,7 @@ interface PropositionCardProps {
  */
 export function PropositionCard({proposition}:PropositionCardProps) {
     const storageService = StorageService.getInstance();
-    
+
     const handlePropositionVote = useCallback((propositionId: Proposition["id"], answer: UserAnswer) => {
         console.log(propositionId, UserAnswer[answer]);
         storageService.saveAnswer(propositionId, answer);

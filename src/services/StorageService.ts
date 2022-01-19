@@ -23,7 +23,7 @@ export class StorageService {
     }
 
     /**
-     * A getter to retrieve data in the given field. 
+     * A getter to retrieve data in the given field.
      * @param field The local storage cell to set.
      * @param parse Whether or not parse retrieved data.
      */
@@ -35,7 +35,7 @@ export class StorageService {
     }
 
     /**
-     * A setter to store data in the given field. 
+     * A setter to store data in the given field.
      * @param field The local storage cell to set.
      * @param data The data set.
      * @param stringify Whether or not stringify retrieved data.
@@ -45,7 +45,7 @@ export class StorageService {
     }
 
     /**
-     * A method to save a user answer in the local storage. 
+     * A method to save a user answer in the local storage.
      * @param propositionId The proposition identifier.
      * @param userAnswer The user answer.
      */
@@ -63,7 +63,7 @@ export class StorageService {
         data = data.sort(function (a, b) {
             return a[0] - b[0];
         });
-        
+
         this.set( this.STORAGE_FIELDS.USER_ANSWERS,data,true);
     }
 
