@@ -6,6 +6,11 @@ interface SidebarProps {
     /** Links shown in the Sidebar */
     links: SidebarLink[]
 }
+
+/**
+ * A component to display the Sidebar.
+ * @param links. The list of links to render.
+ */
 export function Sidebar({links}: SidebarProps) {
     const menuItems = useMemo(() => links.map((link, i) => (
         <li className="sidebar__link" key={i}>

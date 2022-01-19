@@ -8,6 +8,11 @@ interface PropositionButtonProps {
     userAnswer: UserAnswer
 }
 
+/**
+ * A component to display a vote button.
+ * @param onClick. The onClick callback.
+ * @param userAnswer. The score of the button.
+ */
 export function PropositionButton ({
     onClick,
     userAnswer

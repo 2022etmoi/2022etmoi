@@ -8,6 +8,11 @@ interface PropositionCardProps {
     /** The current Proposition */
     proposition: Proposition
 }
+
+/**
+ * A component showing the given proposition.
+ * @param proposition. The current Proposition.
+ */
 export function PropositionCard({proposition}:PropositionCardProps) {
     const handlePropositionVote = useCallback((propositionId: Proposition["id"], answer: UserAnswer) => console.log(propositionId, UserAnswer[answer]), []);
 
