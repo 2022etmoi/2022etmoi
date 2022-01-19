@@ -16,7 +16,7 @@ describe("storage-service", () => {
     it("should save a user answer", () => {
         service.saveAnswer(PropositionID.P1, UserAnswer.MUST_NOT);
 
-        expect(JSON.parse(localStorage.getItem("user-answers") as string)).toStrictEqual([["P1",0]]);
+        expect(JSON.parse(localStorage.getItem("user-answers") as string)).toStrictEqual([["P1", 0, 1.0]]);
     });
 
     it("should retrieve user answers", () => {

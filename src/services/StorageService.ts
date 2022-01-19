@@ -1,4 +1,4 @@
-import { PropositionID } from "../types/Proposition";
+import {Proposition, PropositionID } from "../types/Proposition";
 import { UserAnswer } from "../types/Answer";
 import { propositions } from "../data/Propositions";
 /**
@@ -51,8 +51,10 @@ export class StorageService {
      * @param userAnswer The user answer.
      */
     public saveAnswer(propositionId: PropositionID, userAnswer: UserAnswer) {
-        const storageData = this.get<[PropositionID,UserAnswer][] | undefined>(this.STORAGE_FIELDS.USER_ANSWERS, true);
-        const payload: [PropositionID, UserAnswer] = [propositionId, userAnswer];
+        const storageData = this.get<[PropositionID,UserAnswer, number][] | undefined>(this.STORAGE_FIELDS.USER_ANSWERS, true);
+        const proposition: Proposition = [...propositions.values()].filter((p: Proposition) => p.id == propositionId )[0];
+        if (proposition == undefined) { return; }
+        const payload: [PropositionID, UserAnswer, number] = [propositionId, userAnswer, proposition.revision];
 
         // Remove the precedent proposition user answer.
         const filteredData = storageData?.filter(answer => answer[0] !== propositionId);
@@ -60,11 +62,7 @@ export class StorageService {
         // Merge current data with new one or save the new one directly.
         let data = filteredData ? [...filteredData, payload] : [payload];
 
-        // Sort answers
-        data = data.sort(function (a, b) {
-            let keys = Object.keys(PropositionID);
-            return keys.indexOf(a[0]) - keys.indexOf(b[0]);
-        });
+        console.log(data);
 
         this.set( this.STORAGE_FIELDS.USER_ANSWERS,data,true);
     }
