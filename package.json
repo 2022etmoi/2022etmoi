@@ -7,7 +7,8 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "test": "jest",
+        "test": "jest --verbose",
+        "test:watch": "jest --watchAll",
         "stylelint": "npx stylelint '**/*.scss' --fix --customSyntax postcss-scss",
         "eslint": "npx eslint --ext .js,.jsx,.ts,.tsx,.json --fix ./src/",
         "lint": "run-p stylelint eslint"
