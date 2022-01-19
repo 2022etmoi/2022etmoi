@@ -3,15 +3,15 @@ import "./App.scss";
 
 import { PropositionCard } from "./components";
 import { propositions } from "./data/Propositions";
-import { computeScores } from "./services/scores";
-import { StorageService } from "./services/StorageService";
+import { ScoringService, StorageService } from "./services/";
 import { PropositionID, UserAnswer } from "./types";
 
-
 function App() {
-
-    console.log(computeScores([1, 1, 2], [[1, - 1, 1]]));
     const storageService = StorageService.getInstance();
+    const scoringService = ScoringService.getInstance();
+
+    console.log("score:", scoringService.computeScores([1, 1, 2], [[1, - 1, 1]]));
+
     const [savedAnswers, setSavedAnswers] = useState<[PropositionID,UserAnswer][]>([]);
     const refresh = useCallback(()=> setSavedAnswers(storageService.getAnswers() || []), []);
     useEffect(()=> refresh(), []);
