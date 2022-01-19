@@ -3,6 +3,7 @@ import {Answer, CandidateAnswer, CandidateID , Proposition, PropositionID} from 
 export const propositions: Set<Proposition> = new Set([
     new Proposition(
         PropositionID.P1,
+        1,
         "Proposition 1",
         "Description 1",
         new Map([
@@ -14,6 +15,7 @@ export const propositions: Set<Proposition> = new Set([
     ),
     new Proposition(
         PropositionID.P2,
+        1,
         "Proposition 2",
         "Description 2",
         new Map([
@@ -25,6 +27,7 @@ export const propositions: Set<Proposition> = new Set([
     ),
     new Proposition(
         PropositionID.P3,
+        1,
         "Proposition 3",
         "Description 3",
         new Map([
@@ -36,6 +39,7 @@ export const propositions: Set<Proposition> = new Set([
     ),
     new Proposition(
         PropositionID.P4,
+        1,
         "Proposition 4",
         "Description 4",
         new Map([
