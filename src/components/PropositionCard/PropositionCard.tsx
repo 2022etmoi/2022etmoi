@@ -3,6 +3,7 @@ import "./PropositionCard.scss";
 import { useCallback } from "react";
 import { Proposition, UserAnswer } from "../../types";
 import { PropositionButton } from "../PropositionButton";
+import { StorageService } from "../../services/StorageService";
 
 interface PropositionCardProps {
     /** The current Proposition */
@@ -14,7 +15,12 @@ interface PropositionCardProps {
  * @param proposition. The current Proposition.
  */
 export function PropositionCard({proposition}:PropositionCardProps) {
-    const handlePropositionVote = useCallback((propositionId: Proposition["id"], answer: UserAnswer) => console.log(propositionId, UserAnswer[answer]), []);
+    const storageService = StorageService.getInstance();
+    
+    const handlePropositionVote = useCallback((propositionId: Proposition["id"], answer: UserAnswer) => {
+        console.log(propositionId, UserAnswer[answer]);
+        storageService.saveAnswer(propositionId, answer);
+    }, [storageService]);
 
     return (<div className="proposition-card">
         <article>
