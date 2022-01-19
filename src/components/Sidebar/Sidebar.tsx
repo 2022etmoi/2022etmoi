@@ -20,9 +20,9 @@ export function Sidebar({links}: SidebarProps) {
     )), []);
 
     const [opened, setOpened] = useState(true);
-    const toggleOpened = useCallback(()=> setOpened(!opened), [opened]);
+    const toggleOpened = useCallback(()=> setOpened(! opened), [opened]);
 
-    return(
+    return (
         <nav className={"sidebar" + (opened ? " sidebar--opened" : "") }>
             <div className="sidebar__toggle" onClick={toggleOpened}>TOGGLE</div>
             <ul>

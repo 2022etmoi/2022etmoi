@@ -7,7 +7,7 @@ import { computeScores } from "./services/scores";
 
 function App() {
 
-    console.log(computeScores([1, 1, 2], [[1, -1, 1]]));
+    console.log(computeScores([1, 1, 2], [[1, - 1, 1]]));
 
     return (
         <div className="app">
