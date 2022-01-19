@@ -3,8 +3,7 @@ import { CandidateID } from "../../types/Candidate";
 import { AnswerMock } from "./AnswerMock";
 
 export const PropositionMock: Proposition = new Proposition(
-    PropositionID.P1,
+    PropositionID.SMIC,
     "Proposition content",
     "Proposition description",
-    new Map([[CandidateID.C1, AnswerMock]]),
 );

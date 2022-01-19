@@ -1,24 +1,14 @@
 import {Candidate, CandidateID} from "../types";
+import { Hidalgo } from "./Hidalgo";
+import { LePen } from "./Le_Pen";
+import { Melenchon } from "./Melenchon";
+import { Zemmour } from "./Zemmour";
+import { Pecresse } from "./Pecresse";
 
-export const candidates: Set<Candidate> = new Set([
-    new Candidate(
-        CandidateID.C1,
-        "Mouvement 1",
-        "Candidat 1",
-    ),
-    new Candidate(
-        CandidateID.C2,
-        "Mouvement 2",
-        "Candidat 2",
-    ),
-    new Candidate(
-        CandidateID.C3,
-        "Mouvement 3",
-        "Candidat 3",
-    ),
-    new Candidate(
-        CandidateID.C4,
-        "Mouvement 4",
-        "Candidat 4",
-    ),
+export const candidates: Map<CandidateID, Candidate> = new Map<CandidateID, Candidate>([
+    [CandidateID.MELENCHON, Melenchon],
+    [CandidateID.HIDALGO, Hidalgo],
+    [CandidateID.PECRESSE, Pecresse],
+    [CandidateID.LE_PEN, LePen],
+    [CandidateID.ZEMMOUR, Zemmour],
 ]);

@@ -1,15 +1,15 @@
 export enum CandidateAnswer {
-    NO,
-    YES,
-    SKIP
+    NO = "NO",
+    YES = "YES",
+    SKIP = "SKIP",
 }
 
 export enum UserAnswer {
-    MUST_NOT,
-    NO,
-    SKIP,
-    YES,
-    MUST,
+    MUST_NOT = "MUST_NOT",
+    NO = "NO",
+    SKIP = "SKIP",
+    YES = "YES",
+    MUST = "MUST",
 }
 
 export class Answer {
