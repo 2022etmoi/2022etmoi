@@ -49,6 +49,7 @@ module.exports = {
         ],
         "no-trailing-spaces": "error",
         "keyword-spacing": "off",
-        "@typescript-eslint/keyword-spacing": ["error"]
+        "@typescript-eslint/keyword-spacing": ["error"],
+        "object-curly-spacing": ["error", "always"],
     }
 };
