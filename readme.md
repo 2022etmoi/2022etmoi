@@ -1,11 +1,16 @@
+![CI Front](https://github.com/2022-app/2022/actions/workflows/node.js.yml/badge.svg)
 # 2022
 
 2022 est un test de positionnement pour l'élection présidentielle de 2022.
 
 ## Développement
 
+Installation des dépendances.
 ```
 npm ci
+```
+Ouvrez l'application.
+```
 npm run dev
 ```
 
