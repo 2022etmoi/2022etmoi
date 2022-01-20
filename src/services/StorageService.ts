@@ -1,4 +1,4 @@
-import {Proposition, PropositionID } from "../types/Proposition";
+import { Proposition, PropositionID } from "../types/Proposition";
 import { UserAnswer } from "../types/Answer";
 
 /**

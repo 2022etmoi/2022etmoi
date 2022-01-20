@@ -14,7 +14,7 @@ interface PropositionCardProps {
  * A component showing the given proposition.
  * @param proposition. The current Proposition.
  */
-export function PropositionCard({proposition}:PropositionCardProps) {
+export function PropositionCard({ proposition }:PropositionCardProps) {
     const storageService = StorageService.getInstance();
 
     const handlePropositionVote = useCallback((answer: UserAnswer) => {

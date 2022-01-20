@@ -1,4 +1,4 @@
-import {Answer, Candidate, CandidateAnswer, CandidateID, PropositionID } from "../types";
+import { Answer, Candidate, CandidateAnswer, CandidateID, PropositionID } from "../types";
 
 export const Zemmour = new Candidate(
     CandidateID.ZEMMOUR,
