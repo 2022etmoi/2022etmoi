@@ -1,4 +1,4 @@
-import { Answer, PropositionID } from ".";
+import {Answer, PropositionID} from ".";
 
 export enum CandidateID {
     MELENCHON = "MELENCHON",
@@ -10,11 +10,11 @@ export enum CandidateID {
 
 export class Candidate {
     id: CandidateID;
-    movement: string;
     name: string;
+    movement: string;
     opinion: Map<PropositionID, Answer>;
 
-    constructor(id: CandidateID, movement: string, name: string, opinion: Map<PropositionID, Answer>) {
+    constructor(id: CandidateID, name: string, movement: string, opinion: Map<PropositionID, Answer>) {
         this.id = id;
         this.movement = movement;
         this.name = name;

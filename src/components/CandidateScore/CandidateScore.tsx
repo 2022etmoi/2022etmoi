@@ -5,7 +5,7 @@ import {StorageService} from "../../services";
 import {candidates} from "../../data/Candidates";
 
 interface CandidateScoreProps {
-    candidateID: CandidateID,
+    candidateID: string,
 }
 
 /**
@@ -15,7 +15,7 @@ interface CandidateScoreProps {
 export function CandidateScore({ candidateID }: CandidateScoreProps) {
     const storageService = StorageService.getInstance();
 
-    const candidate = candidates.get(candidateID);
+    const candidate = candidates.get(candidateID as CandidateID);
     if (candidate == undefined) { return null; }
 
     return (
