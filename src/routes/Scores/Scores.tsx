@@ -1,12 +1,12 @@
 import "./Scores.scss";
-import {CandidateID} from "../../types";
-import {CandidateScore} from "../../components";
+import { CandidateID } from "../../types";
+import { CandidateScore } from "../../components";
 
 // interface ScoresProps {
 //
 // }
 
-export function Scores () {
+export function Scores() {
     return (
         <div className="route-scores">
             {

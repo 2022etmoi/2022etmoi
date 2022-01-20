@@ -1,15 +1,16 @@
-import "./Preferences.scss";
+import "./Options.scss";
 import { useCallback, useEffect, useState } from "react";
 
 import { PropositionCard } from "../../components";
 import { propositions } from "../../data/Propositions";
 import { ScoringService, StorageService } from "../../services/";
 import { PropositionID, UserAnswer } from "../../types";
-interface PreferencesProps {
+
+interface OptionsProps {
 
 }
 
-export function Preferences ({}: PreferencesProps) {
+export function Options({}: OptionsProps) {
 
     const storageService = StorageService.getInstance();
     const scoringService = ScoringService.getInstance();
@@ -20,8 +21,8 @@ export function Preferences ({}: PreferencesProps) {
     const refresh = useCallback(()=> setSavedAnswers(storageService.getAnswers() || []), []);
     useEffect(()=> refresh(), []);
     return (
-        <div className="route-preferences">
-            <h1>Preferences</h1>
+        <div className="route-options">
+            <h1>Options</h1>
             {
                 Array.from(propositions).map(proposition => (
                     <PropositionCard key={proposition.id} proposition={proposition}/>

@@ -8,7 +8,7 @@ export function Navigation (){
             <Link to="/">Landing</Link>
             <Link to="/app/propositions">Propositions</Link>
             <Link to="/app/scores">Scores</Link>
-            <Link to="/app/preferences">Preferences</Link>
+            <Link to="/app/options">Options</Link>
         </nav>
     );
 }

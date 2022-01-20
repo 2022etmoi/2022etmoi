@@ -1,4 +1,4 @@
-import {Answer, PropositionID} from ".";
+import { Answer, PropositionID } from ".";
 
 export enum CandidateID {
     MELENCHON = "MELENCHON",
