@@ -1,3 +1,5 @@
+import "./Navigation.scss";
+
 import { Link } from "react-router-dom";
 
 export function Navigation (){
