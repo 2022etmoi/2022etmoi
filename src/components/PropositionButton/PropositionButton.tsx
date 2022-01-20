@@ -1,5 +1,6 @@
-import { UserAnswer } from "../../types";
 import "./PropositionButton.scss";
+
+import { UserAnswer } from "../../types";
 
 interface PropositionButtonProps {
     /** The onClick callback */

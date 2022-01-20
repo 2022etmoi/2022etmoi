@@ -1,4 +1,5 @@
 import "./Options.scss";
+
 import { useCallback, useEffect, useState } from "react";
 
 import { PropositionCard } from "../../components";

@@ -1,7 +1,8 @@
-import { PropositionButton } from "./PropositionButton";
 import { mount } from "enzyme";
+
 import { act } from "../../tests/testUtils";
 import { UserAnswer } from "../../types";
+import { PropositionButton } from "./PropositionButton";
 
 describe("proposition-button", () => {
     const onClickSpy = jest.fn();

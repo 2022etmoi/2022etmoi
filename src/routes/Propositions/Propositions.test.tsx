@@ -1,4 +1,5 @@
 import { mount } from "enzyme";
+
 import { Propositions } from "./Propositions";
 
 describe("propositions", ()=> {

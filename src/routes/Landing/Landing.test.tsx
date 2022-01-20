@@ -1,6 +1,7 @@
 import { mount } from "enzyme";
-import { Landing } from "./Landing";
 import { MemoryRouter } from "react-router-dom";
+
+import { Landing } from "./Landing";
 
 describe("landing", () => {
     it("should render without crash", () => {

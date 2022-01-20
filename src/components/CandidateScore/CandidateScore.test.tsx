@@ -1,6 +1,7 @@
-import { CandidateScore } from "./CandidateScore";
 import { mount } from "enzyme";
+
 import { CandidateMock } from "../../tests/mocks";
+import { CandidateScore } from "./CandidateScore";
 
 describe("proposition-card", () => {
     it("should render without crash", () => {

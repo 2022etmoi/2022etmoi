@@ -1,6 +1,7 @@
 import "./Scores.scss";
-import { CandidateID } from "../../types";
+
 import { CandidateScore } from "../../components";
+import { CandidateID } from "../../types";
 
 // interface ScoresProps {
 //

@@ -1,6 +1,7 @@
-import { Navigation } from "./Navigation";
 import { mount } from "enzyme";
 import { MemoryRouter } from "react-router-dom";
+
+import { Navigation } from "./Navigation";
 
 describe("navigation", () => {
 

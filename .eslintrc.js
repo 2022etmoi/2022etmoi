@@ -20,7 +20,8 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "simple-import-sort"
     ],
     "rules": {
         "indent": [
@@ -51,5 +52,7 @@ module.exports = {
         "keyword-spacing": "off",
         "@typescript-eslint/keyword-spacing": ["error"],
         "object-curly-spacing": ["error", "always"],
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
     }
 };

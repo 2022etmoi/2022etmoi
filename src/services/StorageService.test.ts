@@ -1,6 +1,6 @@
+import { PropositionMock } from "../tests/mocks/PropositionMock";
 import { UserAnswer } from "../types";
 import { StorageService } from "./StorageService";
-import { PropositionMock } from "../tests/mocks/PropositionMock";
 
 describe("storage-service", () => {
     let service: StorageService;

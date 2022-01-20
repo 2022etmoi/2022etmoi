@@ -1,3 +1,3 @@
 export * from "./AnswerMock";
-export * from "./PropositionMock";
 export * from "./CandidateMock";
+export * from "./PropositionMock";

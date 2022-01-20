@@ -1,7 +1,9 @@
+import "./index.scss";
+
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./index.scss";
+
 import { Landing, Layout, NotFound, Options, Propositions, Scores } from "./routes";
 
 ReactDOM.render(

@@ -1,4 +1,5 @@
 import "./Landing.scss";
+
 import { Navigation } from "../../components";
 
 interface LandingProps {

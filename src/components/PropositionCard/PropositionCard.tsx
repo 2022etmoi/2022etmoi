@@ -1,9 +1,10 @@
 import "./PropositionCard.scss";
 
 import { useCallback } from "react";
+
+import { StorageService } from "../../services/StorageService";
 import { Proposition, UserAnswer } from "../../types";
 import { PropositionButton } from "../PropositionButton";
-import { StorageService } from "../../services/StorageService";
 
 interface PropositionCardProps {
     /** The current Proposition */

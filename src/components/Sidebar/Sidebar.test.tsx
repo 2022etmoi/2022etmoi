@@ -1,4 +1,5 @@
 import { mount } from "enzyme";
+
 import { Sidebar } from "./Sidebar";
 
 describe("sidebar", ()=> {

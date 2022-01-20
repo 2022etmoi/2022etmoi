@@ -1,7 +1,8 @@
-import { PropositionCard } from "./PropositionCard";
 import { mount } from "enzyme";
+
 import { PropositionMock } from "../../tests/mocks";
 import { PropositionButton } from "../PropositionButton";
+import { PropositionCard } from "./PropositionCard";
 
 describe("proposition-card", () => {
     it("should render without crash", ()=> {

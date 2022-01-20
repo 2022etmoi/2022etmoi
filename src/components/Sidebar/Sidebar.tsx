@@ -1,5 +1,7 @@
 import "./Sidebar.scss";
+
 import { useCallback, useMemo, useState } from "react";
+
 import { SidebarLink } from "../../types";
 
 interface SidebarProps {

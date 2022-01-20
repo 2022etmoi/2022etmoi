@@ -1,5 +1,5 @@
-import { Proposition, PropositionID } from "../types/Proposition";
 import { UserAnswer } from "../types/Answer";
+import { Proposition, PropositionID } from "../types/Proposition";
 
 /**
  * A service to manage local storage data exchanges.

@@ -1,8 +1,8 @@
 import "./CandidateScore.scss";
 
-import { CandidateID } from "../../types";
-import { StorageService } from "../../services";
 import { candidates } from "../../data/Candidates";
+import { StorageService } from "../../services";
+import { CandidateID } from "../../types";
 
 interface CandidateScoreProps {
     candidateID: string,
