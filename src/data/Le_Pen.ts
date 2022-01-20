@@ -1,4 +1,4 @@
-import {Answer, Candidate, CandidateAnswer, CandidateID, PropositionID } from "../types";
+import { Answer, Candidate, CandidateAnswer, CandidateID, PropositionID } from "../types";
 
 export const LePen = new Candidate(
     CandidateID.LE_PEN,

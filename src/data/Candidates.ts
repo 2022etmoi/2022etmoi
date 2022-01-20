@@ -1,4 +1,4 @@
-import {Candidate, CandidateID} from "../types";
+import { Candidate, CandidateID } from "../types";
 import { Hidalgo } from "./Hidalgo";
 import { LePen } from "./Le_Pen";
 import { Melenchon } from "./Melenchon";
