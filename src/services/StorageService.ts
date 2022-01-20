@@ -1,6 +1,6 @@
 import {Proposition, PropositionID } from "../types/Proposition";
 import { UserAnswer } from "../types/Answer";
-import { candidates } from "../data/Candidates";
+
 /**
  * A service to manage local storage data exchanges.
  */
@@ -41,6 +41,7 @@ export class StorageService {
      * @param data The data set.
      * @param stringify Whether or not stringify retrieved data.
      */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     private set(field: string, data: any, stringify = false) {
         localStorage.setItem(field, stringify ? JSON.stringify(data) : data);
     }

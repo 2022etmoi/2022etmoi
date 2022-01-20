@@ -1,6 +1,3 @@
-import { Answer } from "./Answer";
-import { CandidateID } from "./Candidate";
-
 export enum PropositionID {
     EOLIENNE = "EOLIENNE",
     SUCCESSIONS = "SUCCESSIONS",

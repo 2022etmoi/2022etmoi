@@ -1,7 +1,6 @@
 import {Answer, Candidate, CandidateAnswer, CandidateID, PropositionID} from "../types";
-import { candidates } from "./Candidates";
 
-export var Melenchon = new Candidate(
+export const Melenchon = new Candidate(
     CandidateID.MELENCHON,
     "Jean-Luc Mélenchon",
     "L'Union Populaire",

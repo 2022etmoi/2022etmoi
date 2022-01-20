@@ -1,4 +1,4 @@
-import { PropositionID, UserAnswer } from "../types";
+import { UserAnswer } from "../types";
 import { StorageService } from "./StorageService";
 import { PropositionMock } from "../tests/mocks/PropositionMock";
 
