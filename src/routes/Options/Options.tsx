@@ -2,7 +2,6 @@ import "./Options.scss";
 
 import { useCallback, useEffect, useState } from "react";
 
-import { PropositionCard } from "../../components";
 import { propositions } from "../../data/Propositions";
 import { ScoringService, StorageService } from "../../services/";
 import { PropositionID, UserAnswer } from "../../types";

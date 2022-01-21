@@ -21,7 +21,8 @@ module.exports = {
     "plugins": [
         "react",
         "@typescript-eslint",
-        "simple-import-sort"
+        "simple-import-sort",
+        "unused-imports"
     ],
     "rules": {
         "indent": [
@@ -53,6 +54,17 @@ module.exports = {
         "@typescript-eslint/keyword-spacing": ["error"],
         "object-curly-spacing": ["error", "always"],
         "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error"
+        "simple-import-sort/exports": "error",
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ]
     }
 };
