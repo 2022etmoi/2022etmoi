@@ -84,7 +84,7 @@ export class ScoringService {
         if (norm == 0) norm = 1;
 
         return {
-            score: 50.0 * (1.0 + sum / norm),
+            score: Math.round(50.0 * (1.0 + sum / norm)),
             hearts: must,
             skulls: must_not,
             // representativeness: 100 * nonzero / myscores.length,
