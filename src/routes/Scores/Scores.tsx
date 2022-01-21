@@ -7,6 +7,9 @@ import { CandidateID } from "../../types";
 //
 // }
 
+/**
+ * A route to display scores.
+ */
 export function Scores() {
     return (
         <div className="route-scores">

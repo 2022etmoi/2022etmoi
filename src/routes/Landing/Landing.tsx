@@ -5,7 +5,9 @@ import { Navigation } from "../../components";
 interface LandingProps {
 
 }
-
+/**
+ * A route to display the app landing page.
+ */
 export function Landing ({}: LandingProps) {
     return (
         <div className="route-landing">

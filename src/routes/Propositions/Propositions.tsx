@@ -10,6 +10,9 @@ interface PropositionsProps {
 
 }
 
+/**
+ * A component to display propositions one by one.
+ */
 export function Propositions ({}: PropositionsProps) {
     const [remainingPropositions, setRemainingPropositions] = useState(propositions);
     const [proposition, setProposition] = useState<Proposition>();

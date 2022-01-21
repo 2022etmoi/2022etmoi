@@ -11,6 +11,9 @@ interface OptionsProps {
 
 }
 
+/**
+ * A route to display options.
+ */
 export function Options({}: OptionsProps) {
 
     const storageService = StorageService.getInstance();
