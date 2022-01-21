@@ -11,7 +11,6 @@ export function Layout () {
     return (
         <div className="route-layout">
             <Navigation />
-            Layout
             <Outlet />
         </div>
     );

@@ -1,10 +1,32 @@
-.proposition-card {
-    margin-bottom: 1rem;
-    text-align: center;
+.candidate-score {
+    background-color: #fff;
+    color: #000;
+    width: 500px;
+    padding: 8px 0;
+    box-sizing: border-box;
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    margin: 16px 0;
+    border-radius: 16px;
 
-    article {
-        font-size: 1.1rem;
+    &__score {
+        font-size: 40px;
         font-weight: 700;
-        margin-bottom: 0.2rem;
+        text-align: center;
+        width: 160px;
+    }
+
+    &__details {
+        padding-right: 16px;
+
+        &__name {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        &__movement {
+            font-size: 16px;
+        }
     }
 }

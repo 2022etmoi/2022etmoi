@@ -1,3 +1,9 @@
 .route-scores {
-    color: #466820;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 64px;
+    box-sizing: border-box;
 }
