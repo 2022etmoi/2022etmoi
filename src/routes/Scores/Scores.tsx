@@ -21,15 +21,16 @@ export function Scores() {
                         const score = ScoringService.getInstance().computeScore(id as CandidateID);
                         return {
                             candidate: id,
-                            valid: score != null,
-                            score: score != null ? score.score : 0,
+                            score: score?.score ?? - 1,
                         };
                     })
+                    // Remove bad entries
+                    .filter(value => value.score != - 1)
                     // Sort candidates by score
                     .sort((a, b) => b.score - a.score)
                     // Candidate components
                     .map((obj) => (
-                        <CandidateScore candidateID={obj.candidate} score={obj.score} key={obj.candidate}/>
+                        <CandidateScore candidateID={obj.candidate} key={obj.candidate}/>
                     )
                     )
             }
