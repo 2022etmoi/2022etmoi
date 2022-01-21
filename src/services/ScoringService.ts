@@ -1,4 +1,5 @@
-import { Answer, CandidateAnswer, PropositionID, UserAnswer } from "../types";
+import { candidates } from "../data/Candidates";
+import { CandidateAnswer, CandidateID, UserAnswer } from "../types";
 import { StorageService } from "./StorageService";
 
 const CandidateValues = new Map([
@@ -36,17 +37,13 @@ export class ScoringService {
 
     /**
      * Compute the score of a candidate using answers stored in the local storage.
-     * @param candidate Opinions of the candidate
+     * @param candidate Candidate id
      */
-    public computeScore(candidate: Map<PropositionID, Answer>) {
-        // public computeOneScore(myscores: number[], candidate: number[]) {
-
+    public computeScore(candidate: CandidateID) {
         const storageService = StorageService.getInstance();
         const answers = storageService.getAnswers();
-
-        console.log(candidate.keys());
-        console.log(answers);
-
+        const candidateAnswers = candidates.get(candidate)?.opinion;
+        if (candidateAnswers == undefined) return null;
         if (answers == undefined) return null;
 
         const abs = Math.abs;
@@ -55,7 +52,7 @@ export class ScoringService {
         let sum = 0;
         // let nonzero = 0;
 
-        candidate.forEach((value, key) => {
+        candidateAnswers.forEach((value, key) => {
             const userAnswer = answers.filter(a => a[0] == key)[0];
             console.log(userAnswer);
             if (userAnswer != undefined) {
