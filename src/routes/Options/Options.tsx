@@ -18,8 +18,6 @@ export function Options({}: OptionsProps) {
     const storageService = StorageService.getInstance();
     const scoringService = ScoringService.getInstance();
 
-    console.log("score:", scoringService.computeScores([1, 1, 2], [[1, - 1, 1]]));
-
     const [savedAnswers, setSavedAnswers] = useState<[PropositionID,UserAnswer][]>([]);
     const refresh = useCallback(()=> setSavedAnswers(storageService.getAnswers() || []), []);
     useEffect(()=> refresh(), []);

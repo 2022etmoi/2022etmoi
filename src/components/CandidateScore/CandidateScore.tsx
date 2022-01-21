@@ -1,7 +1,7 @@
 import "./CandidateScore.scss";
 
 import { candidates } from "../../data/Candidates";
-import { StorageService } from "../../services";
+import { ScoringService } from "../../services";
 import { CandidateID } from "../../types";
 
 interface CandidateScoreProps {
@@ -13,14 +13,20 @@ interface CandidateScoreProps {
  * @param id. The current Candidate.
  */
 export function CandidateScore({ candidateID }: CandidateScoreProps) {
-    const storageService = StorageService.getInstance();
-
     const candidate = candidates.get(candidateID as CandidateID);
-    if (candidate == undefined) { return null; }
+    if (candidate == undefined) {
+        return null;
+    }
+
+    const score = ScoringService.getInstance().computeScore(candidate.opinion);
 
     return (
         <div className="candidate-score">
-            <div className="candidate-score__name">{ candidate.name }</div>
+            <div className="candidate-score__name">{candidate.name}</div>
+            <div className="candidate-score__score">{
+                score != null ? Math.round(score.score) : "?"
+            }%
+            </div>
         </div>
     );
 }
