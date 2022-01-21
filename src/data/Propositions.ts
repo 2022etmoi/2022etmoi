@@ -1,6 +1,6 @@
 import { Proposition, PropositionID } from "../types";
 
-export const propositions: Set<Proposition> = new Set([
+export const propositions: Proposition[] = [
     new Proposition(
         PropositionID.EOLIENNE,
         "Interdire tout nouveau projet de construction d'éoliennes sur terre et en mer",
@@ -36,4 +36,4 @@ export const propositions: Set<Proposition> = new Set([
         "Abroger le pass sanitaire et vaccinal",
         "Description pass",
     ),
-]);
+];

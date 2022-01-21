@@ -9,17 +9,20 @@ import { PropositionButton } from "../PropositionButton";
 interface PropositionCardProps {
     /** The current Proposition */
     proposition: Proposition
+    /** The callback to call when clicked */
+    onClick: () => void
 }
 
 /**
  * A component showing the given proposition.
  * @param proposition. The current Proposition.
  */
-export function PropositionCard({ proposition }:PropositionCardProps) {
+export function PropositionCard({ proposition, onClick }:PropositionCardProps) {
     const storageService = StorageService.getInstance();
 
     const handlePropositionVote = useCallback((answer: UserAnswer) => {
         storageService.saveAnswer(proposition, answer);
+        onClick();
     }, [storageService]);
 
     return (<div className="proposition-card">

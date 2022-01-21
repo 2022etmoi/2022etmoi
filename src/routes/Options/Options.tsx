@@ -24,11 +24,6 @@ export function Options({}: OptionsProps) {
     return (
         <div className="route-options">
             <h1>Options</h1>
-            {
-                Array.from(propositions).map(proposition => (
-                    <PropositionCard key={proposition.id} proposition={proposition}/>
-                ))
-            }
             <pre>
                 PROPOSITIONS :({Array.from(propositions).length})
                 <ul>
