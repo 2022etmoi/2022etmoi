@@ -1,36 +1,51 @@
 import "./Propositions.scss";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { PropositionCard } from "../../components";
-import { propositions } from "../../data/Propositions";
-import { Proposition } from "../../types/Proposition";
+import { StorageService } from "../../services";
+import { PropositionID } from "../../types";
 
-interface PropositionsProps {
-
-}
+// interface PropositionsProps {
+//
+// }
 
 /**
  * A component to display propositions one by one.
  */
-export function Propositions ({}: PropositionsProps) {
-    const [remainingPropositions, setRemainingPropositions] = useState(propositions);
-    const [proposition, setProposition] = useState<Proposition>();
+export function Propositions() {
+    const [order, setOrder] = useState<PropositionID[]>(StorageService.getInstance().getPropositionsOrder());
+    const [propositionNb, setPropositionNb] = useState<number>(0);
+    const [proposition, setProposition] = useState<PropositionID>();
 
-    const getRandomProposition = useCallback(()=> {
-        const id = Math.floor(Math.random() * remainingPropositions.length);
-        setProposition(remainingPropositions[id]);
-        setRemainingPropositions(remainingPropositions.filter((_, index) => index !== id));
-    }, [remainingPropositions]);
+    const getNextProposition = () => {
+        if (propositionNb == order.length - 1) {
+            // TODO: Navigate to score page
+            setPropositionNb(0);
+            setProposition(order[0]);
+        } else {
+            setPropositionNb(propositionNb + 1);
+            setProposition(order[propositionNb + 1]);
+        }
+    };
 
-    useEffect(()=> getRandomProposition(), []);
+    const reset = () => {
+        StorageService.getInstance().clear();
+        const newOrder = StorageService.getInstance().getPropositionsOrder();
+        setOrder(newOrder);
+        setPropositionNb(0);
+        setProposition(newOrder[propositionNb]);
+    };
+
+    useEffect(() => getNextProposition(), []);
 
     return (
         <div className="route-propositions">
-            <h1>Propositions</h1>
+            <h1>Proposition – {propositionNb + 1} / {order.length}</h1>
+            <button onClick={reset}>Reset</button>
             {
                 proposition && (
-                    <PropositionCard key={proposition.id} proposition={proposition} onClick={getRandomProposition}/>
+                    <PropositionCard key={proposition} propositionID={proposition} onClick={getNextProposition}/>
                 )}
         </div>
     );

@@ -1,3 +1,4 @@
+import { propositions } from "../data/Propositions";
 import { UserAnswer } from "../types/Answer";
 import { Proposition, PropositionID } from "../types/Proposition";
 
@@ -8,7 +9,8 @@ export class StorageService {
 
     private static instance?: StorageService;
     private STORAGE_FIELDS = {
-        USER_ANSWERS: "user-answers"
+        USER_ANSWERS: "user-answers",
+        PROP_ORDER: "propositions-order",
     };
 
     /**
@@ -62,14 +64,33 @@ export class StorageService {
         // Merge current data with new one or save the new one directly.
         const data = filteredData ? [...filteredData, payload] : [payload];
 
-        this.set( this.STORAGE_FIELDS.USER_ANSWERS,data,true);
+        this.set(this.STORAGE_FIELDS.USER_ANSWERS, data, true);
     }
 
     /**
      * A method to get user answers from the local storage.
      */
     public getAnswers() {
-        return this.get<[PropositionID,UserAnswer][]>(this.STORAGE_FIELDS.USER_ANSWERS, true);
+        return this.get<[PropositionID, UserAnswer][]>(this.STORAGE_FIELDS.USER_ANSWERS, true);
+    }
+
+    /**
+     * A method to get a random propositions order.
+     */
+    public getPropositionsOrder() {
+        let order = this.get<PropositionID[]>(this.STORAGE_FIELDS.PROP_ORDER, true);
+        console.log(order);
+        if (order == undefined) {
+            order = propositions
+                .map(p => p.id)
+                .sort(_ => Math.random() - 0.5);
+        } else {
+            for (const id in PropositionID) {
+                if (order.indexOf(<PropositionID>id) == - 1) order.push(<PropositionID>id);
+            }
+        }
+        this.set(this.STORAGE_FIELDS.PROP_ORDER, order, true);
+        return order;
     }
 
     /**

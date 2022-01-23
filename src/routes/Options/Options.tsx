@@ -3,24 +3,23 @@ import "./Options.scss";
 import { useCallback, useEffect, useState } from "react";
 
 import { propositions } from "../../data/Propositions";
-import { ScoringService, StorageService } from "../../services/";
+import { StorageService } from "../../services/";
 import { PropositionID, UserAnswer } from "../../types";
 
-interface OptionsProps {
-
-}
+// interface OptionsProps {
+//
+// }
 
 /**
  * A route to display options.
  */
-export function Options({}: OptionsProps) {
+export function Options() {
 
     const storageService = StorageService.getInstance();
-    const scoringService = ScoringService.getInstance();
 
-    const [savedAnswers, setSavedAnswers] = useState<[PropositionID,UserAnswer][]>([]);
-    const refresh = useCallback(()=> setSavedAnswers(storageService.getAnswers() || []), []);
-    useEffect(()=> refresh(), []);
+    const [savedAnswers, setSavedAnswers] = useState<[PropositionID, UserAnswer][]>([]);
+    const refresh = useCallback(() => setSavedAnswers(storageService.getAnswers() || []), []);
+    useEffect(() => refresh(), []);
     return (
         <div className="route-options">
             <h1>Options</h1>

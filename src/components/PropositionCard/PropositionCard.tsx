@@ -2,23 +2,26 @@ import "./PropositionCard.scss";
 
 import { useCallback } from "react";
 
+import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services/StorageService";
-import { Proposition, UserAnswer } from "../../types";
+import { PropositionID, UserAnswer } from "../../types";
 import { PropositionButton } from "../PropositionButton";
 
 interface PropositionCardProps {
-    /** The current Proposition */
-    proposition: Proposition
+    /** The current PropositionID */
+    propositionID: PropositionID;
     /** The callback to call when clicked */
-    onClick: () => void
+    onClick: () => void;
 }
 
 /**
  * A component showing the given proposition.
  * @param proposition. The current Proposition.
  */
-export function PropositionCard({ proposition, onClick }:PropositionCardProps) {
+export function PropositionCard({ propositionID, onClick }: PropositionCardProps) {
     const storageService = StorageService.getInstance();
+    const proposition = propositions.filter(p => p.id == propositionID)[0];
+    if (proposition == undefined) return null;
 
     const handlePropositionVote = useCallback((answer: UserAnswer) => {
         storageService.saveAnswer(proposition, answer);
