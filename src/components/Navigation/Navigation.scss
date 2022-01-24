@@ -20,13 +20,23 @@
         padding: 0.5rem;
         text-decoration: none;
 
+        .icon {
+            box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
+        }
+
         &--active {
             color: $secondary;
             opacity: 1;
 
             > .icon {
                 &::after {
-                    border-color: $secondary;
+                    border-color: rgba($secondary, 0.5);
+                }
+
+                svg {
+                    path {
+                        fill: $secondary;
+                    }
                 }
             }
         }
@@ -40,7 +50,7 @@
         &:focus {
             > .icon {
                 &::after {
-                    border-color: $secondary;
+                    border-color: rgba($secondary, 0.5);
                 }
             }
         }

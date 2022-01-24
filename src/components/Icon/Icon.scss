@@ -24,7 +24,8 @@
         width: calc($size + 2 * 2px);
     }
 
-    img {
+    svg {
+        fill: $primary;
         height: 80%;
         width: 80%;
     }
