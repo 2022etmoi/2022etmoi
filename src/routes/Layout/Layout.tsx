@@ -10,8 +10,12 @@ import { Navigation } from "../../components";
 export function Layout () {
     return (
         <div className="route-layout">
-            <Navigation />
-            <Outlet />
+            <div className="app-wrapper">
+                <Navigation />
+                <div className="route">
+                    <Outlet />
+                </div>
+            </div>
         </div>
     );
 }

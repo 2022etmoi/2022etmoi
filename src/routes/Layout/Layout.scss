@@ -1,3 +1,42 @@
+@import '../../mixins';
+
 .route-layout {
-    color: #362068;
+    background-image: url('/public/images/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (max-width: 650px) {
+        background-image: url('/public/images/background-mobile.svg');
+    }
+
+    .app-wrapper {
+        box-sizing: border-box;
+        column-gap: 2rem;
+        display: grid;
+        flex-direction: row;
+        grid-template-columns: 15rem 1fr;
+        height: 100vh;
+        margin: 0 auto;
+        max-width: 120rem;
+        overflow-y: hidden;
+        padding: 1rem;
+        position: relative;
+
+        .route {
+            @include scrollbar();
+
+            overflow-y: auto;
+        }
+
+        @media screen and (max-width: 60rem) {
+            display: flex;
+            flex-direction: column-reverse;
+            grid-template-columns: unset;
+
+            .route {
+                max-height: calc(100vh - 7rem);
+                min-height: calc(100vh - 7rem);
+            }
+        }
+    }
 }

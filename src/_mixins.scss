@@ -1,0 +1,18 @@
+@import './colors';
+
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        height: 0.4em;
+        width: 0.4em;
+    }
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        overflow: visible;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: lighten(darken($secondary, 95%), 90%);
+    }
+}
