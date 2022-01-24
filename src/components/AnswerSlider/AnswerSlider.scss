@@ -1,0 +1,72 @@
+@import '../../colors';
+
+.answer-slider {
+    margin: 0 1rem 2rem;
+
+    .rc-slider {
+        &-mark {
+            &-text {
+                &:first-child,
+                &:last-child {
+                    max-width: 3rem;
+                }
+
+                &:first-child {
+                    text-align: left !important;
+                    transform: translateX(0) !important;
+                }
+
+                &:last-child {
+                    text-align: right !important;
+                    transform: translateX(-100%) !important;
+                }
+            }
+        }
+
+        &-handle {
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 0.2rem 0.5rem rgba($primary, 0.3);
+            height: 1.5rem;
+            margin-top: -0.6rem;
+            width: 1.5rem;
+
+            &,
+            &-click-focused,
+            &-click-focused:focus {
+                box-shadow: 0 0.2rem 0.5rem rgba($primary, 0.3);
+            }
+
+            &::before,
+            &::after {
+                background-color: $primary;
+                border-radius: 4px;
+                content: '';
+                height: 0.9rem;
+                opacity: 0.2;
+                position: absolute;
+                top: calc(50% - 0.45rem);
+                width: 0.15rem;
+            }
+
+            &::before {
+                left: 0.45rem;
+            }
+
+            &::after {
+                right: 0.45rem;
+            }
+
+            &:active {
+                box-shadow: 0 0 5px $secondary-muted;
+            }
+        }
+
+        .rc-slider-dot {
+            &,
+            &-active {
+                border-color: $secondary;
+            }
+        }
+    }
+}

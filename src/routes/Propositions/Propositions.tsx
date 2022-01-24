@@ -41,7 +41,7 @@ export function Propositions() {
 
     return (
         <div className="route-propositions">
-            <h1>Proposition – {propositionNb + 1} / {order.length}</h1>
+            <h1 className="header">Proposition – {propositionNb + 1} / {order.length}</h1>
             <button onClick={reset}>Reset</button>
             {
                 proposition && (

@@ -1,11 +1,11 @@
 import "./PropositionCard.scss";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 
 import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services/StorageService";
 import { PropositionID, UserAnswer } from "../../types";
-import { PropositionButton } from "../PropositionButton";
+import { AnswerSlider } from "../AnswerSlider";
 
 interface PropositionCardProps {
     /** The current PropositionID */
@@ -19,26 +19,32 @@ interface PropositionCardProps {
  * @param proposition. The current Proposition.
  */
 export function PropositionCard({ propositionID, onClick }: PropositionCardProps) {
+    const [answer, setAnswer] = useState(UserAnswer.SKIP);
     const storageService = StorageService.getInstance();
     const proposition = propositions.filter(p => p.id == propositionID)[0];
     if (proposition == undefined) return null;
 
-    const handlePropositionVote = useCallback((answer: UserAnswer) => {
+    const handlePropositionVote = useCallback(() => {
         storageService.saveAnswer(proposition, answer);
         onClick();
     }, [storageService]);
 
-    return (<div className="proposition-card">
-        <article>
-            {
-                proposition.content
-            }
-        </article>
-        <PropositionButton key={UserAnswer.MUST_NOT} userAnswer={UserAnswer.MUST_NOT} onClick={answer => handlePropositionVote(answer)}/>
-        <PropositionButton key={UserAnswer.NO} userAnswer={UserAnswer.NO} onClick={answer => handlePropositionVote(answer)}/>
-        <PropositionButton key={UserAnswer.SKIP} userAnswer={UserAnswer.SKIP} onClick={answer => handlePropositionVote(answer)}/>
-        <PropositionButton key={UserAnswer.YES} userAnswer={UserAnswer.YES} onClick={answer => handlePropositionVote(answer)}/>
-        <PropositionButton key={UserAnswer.MUST} userAnswer={UserAnswer.MUST} onClick={answer => handlePropositionVote(answer)}/>
-    </div>
+    return (
+        <div className="proposition-card">
+            <header>
+                {
+                    proposition.content
+                }
+            </header>
+            <div className="proposition-card__card">
+                <h3 className="proposition-card__card-title">Votre avis sur cette proposition</h3>
+                <div className="proposition-card__card-answer">
+                    <img className="proposition-card__card-answer__icon" src={`/public/images/${answer.toLowerCase()}.png`}/>
+                    <span className="proposition-card__card-answer__label">Je ne sais pas encore.</span>
+                </div>
+                <AnswerSlider onChange={userAnswer => setAnswer(userAnswer)} />
+            </div>
+            <button onClick={handlePropositionVote}>Sauvegarder ma réponse</button>
+        </div>
     );
 }

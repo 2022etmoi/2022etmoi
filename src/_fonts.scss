@@ -3,7 +3,7 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 300;
-    src: url('./fonts/outfit-light.woff2') format('woff2');
+    src: url('/fonts/outfit-light.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/outfit-regular.woff2') format('woff2');
+    src: url('/fonts/outfit-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    src: url('./fonts/outfit-bold.woff2') format('woff2');
+    src: url('/fonts/outfit-bold.woff2') format('woff2');
 }
 
 @font-face {
@@ -27,7 +27,7 @@
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: 300;
-    src: url('./fonts/work-sans-light.woff2') format('woff2');
+    src: url('/fonts/work-sans-light.woff2') format('woff2');
 }
 
 @font-face {
@@ -35,7 +35,7 @@
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/work-sans-regular.woff2') format('woff2');
+    src: url('/fonts/work-sans-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -43,5 +43,5 @@
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: 700;
-    src: url('./fonts/work-sans-bold.woff2') format('woff2');
+    src: url('/fonts/work-sans-bold.woff2') format('woff2');
 }

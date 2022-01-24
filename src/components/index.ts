@@ -1,3 +1,4 @@
+export * from "./AnswerSlider";
 export * from "./CandidateScore";
 export * from "./Icon";
 export * from "./Navigation";
