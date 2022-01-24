@@ -1,0 +1,31 @@
+@import '../../colors';
+
+.icon {
+    $self: &;
+    $size: 4rem;
+
+    align-items: center;
+    background-color: $white;
+    border-radius: 1rem;
+    display: flex;
+    height: $size;
+    justify-content: center;
+    position: relative;
+    width: $size;
+
+    &::after {
+        border: 3px solid transparent;
+        border-radius: 1.2rem;
+        content: '';
+        height: calc($size + 2 * 2px);
+        left: -5px;
+        position: absolute;
+        top: -5px;
+        width: calc($size + 2 * 2px);
+    }
+
+    img {
+        height: 80%;
+        width: 80%;
+    }
+}
