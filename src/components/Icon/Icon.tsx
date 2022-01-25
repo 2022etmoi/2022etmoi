@@ -8,14 +8,6 @@ import { ReactComponent as IconOptions }  from "./icons/options.svg";
 import { ReactComponent as IconPropositions }  from "./icons/propositions.svg";
 import { ReactComponent as IconScores }  from "./icons/scores.svg";
 
-const Icons = {
-    logo: <IconLogo />,
-    candidates: <IconCandidates />,
-    options: <IconOptions />,
-    propositions: <IconPropositions />,
-    scores: <IconScores />
-};
-
 export interface IconProps {
     /** The icon name to use from /src/components/Icon/icons/*.svg */
     file: "logo" | "candidates" | "options" | "propositions" | "scores";
