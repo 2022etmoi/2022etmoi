@@ -83,7 +83,7 @@ export class StorageService {
         if (order == undefined) {
             order = propositions
                 .map(p => p.id)
-                .sort(_ => Math.random() - 0.5);
+                .sort(() => Math.random() - 0.5);
         } else {
             for (const id in PropositionID) {
                 if (order.indexOf(<PropositionID>id) == - 1) order.push(<PropositionID>id);
