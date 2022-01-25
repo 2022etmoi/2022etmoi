@@ -2,6 +2,7 @@ import { mount } from "enzyme";
 
 import { PropositionMock } from "../../tests/mocks";
 import { act } from "../../tests/testUtils";
+import { AnswerSlider } from "../AnswerSlider/AnswerSlider";
 import { PropositionButton } from "../PropositionButton";
 import { PropositionCard } from "./PropositionCard";
 
@@ -16,7 +17,7 @@ describe("proposition-card", () => {
         const wrapper = mount(<PropositionCard propositionID={PropositionMock.id} onClick={onClickSpy}/>);
 
         expect(wrapper.find(PropositionCard).exists()).toBeTruthy();
-        expect(wrapper.find(PropositionCard).find(PropositionButton)).toHaveLength(5);
+        expect(wrapper.find(PropositionCard).find(AnswerSlider).exists).toBeTruthy();
     });
 
     it("should call the callback when clicked", () => {
