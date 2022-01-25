@@ -12,6 +12,12 @@
     padding: 0.5rem;
     width: 45rem;
 
+    @for $index from 0 to 50 {
+        &:nth-child(#{$index}) {
+            @include animate-slide-up($index, true);
+        }
+    }
+
     &__score {
         font-size: 40px;
         font-weight: 700;

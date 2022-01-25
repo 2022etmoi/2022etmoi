@@ -1,5 +1,7 @@
 import "./CandidateScore.scss";
 
+import CountUp  from "react-countup";
+
 import { candidates } from "../../data/Candidates";
 import { ScoringService } from "../../services";
 import { CandidateID } from "../../types";
@@ -21,7 +23,7 @@ export function CandidateScore({ candidateID }: CandidateScoreProps) {
 
     return (
         <div className="candidate-score">
-            <div className="candidate-score__score">{Math.round(score.score)}</div>
+            <div className="candidate-score__score">{<CountUp end={Math.round(score.score)} duration={1.5} useEasing/>}</div>
             <div className="candidate-score__details">
                 <div className="candidate-score__details__name">{candidate.name}</div>
                 <div className="candidate-score__details__movement">{candidate.movement}</div>
