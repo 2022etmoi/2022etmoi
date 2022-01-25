@@ -6,34 +6,34 @@
     padding: 0 2rem;
 
     header {
-      font-size: 2.2rem;
-      font-weight: 700;
-      height: 10rem;
-      display: flex;
-      flex-flow: row;
-      align-items: center;
-      justify-content: center;
-      padding: 0 2rem;
-      text-align: center;
+        align-items: center;
+        display: flex;
+        flex-flow: row;
+        font-size: 2.2rem;
+        font-weight: 700;
+        height: 10rem;
+        justify-content: center;
+        padding: 0 2rem;
+        text-align: center;
     }
 
     &__card {
-      @include card();
+        @include card();
 
-      margin-top: 2rem;
+        margin-top: 2rem;
 
-      &-title {
-        color: $secondary-muted;
-        font-size: 0.8rem;
-        margin-top: 0;
-        text-transform: uppercase;
-      }
+        &-title {
+            color: $secondary-muted;
+            font-size: 0.8rem;
+            margin-top: 0;
+            text-transform: uppercase;
+        }
     }
 
     &__buttons {
+        align-items: start;
         display: flex;
         flex-flow: row;
-        align-items: start;
         justify-content: center;
         margin-top: 2rem;
 
@@ -43,12 +43,12 @@
     }
 
     &__actions {
-        margin: 2rem auto;
-        max-width: 32rem;
+        align-items: center;
         display: flex;
         flex-flow: row;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        margin: 2rem auto;
+        max-width: 32rem;
     }
 }
