@@ -1,5 +1,6 @@
 import "./PropositionCard.scss";
 
+import { ArrowRightOutlined } from "@ant-design/icons";
 import { useCallback, useMemo, useState } from "react";
 
 import { propositions } from "../../data/Propositions";
@@ -31,6 +32,11 @@ export function PropositionCard({ propositionID, onClick }: PropositionCardProps
         onClick();
     }, [storageService, proposition, answer, onClick]);
 
+    const handleSkipProposition = useCallback(() => {
+        setAnswer(UserAnswer.SKIP);
+        handlePropositionVote();
+    }, [handlePropositionVote]);
+
     return (
         proposition &&
         <div className="proposition-card">
@@ -47,7 +53,10 @@ export function PropositionCard({ propositionID, onClick }: PropositionCardProps
                 </div>
                 <AnswerSlider onChange={userAnswer => setAnswer(userAnswer)} />
             </div>
-            <Button onClick={handlePropositionVote}>Sauvegarder ma réponse</Button>
+            <div className="proposition-card__actions">
+                <Button onClick={handlePropositionVote}>Sauvegarder ma réponse</Button>
+                <Button onClick={handleSkipProposition} type="transparent">Proposition suivante<ArrowRightOutlined /></Button>
+            </div>
         </div>
     );
 }

@@ -15,6 +15,18 @@
     text-align: center;
     user-select: none;
 
+    .anticon {
+        font-size: 90%;
+
+        &:first-child {
+            margin-right: 0.5rem;
+        }
+
+        &:last-child {
+            margin-left: 0.5rem;
+        }
+    }
+
     &:hover,
     &:active {
         background-color: darken($button-primary, 5%);
@@ -32,6 +44,17 @@
         &:hover,
         &:active {
             background-color: mix($white, $button-primary, 92%);
+        }
+    }
+
+    &--transparent {
+        background-color: transparent;
+        box-shadow: unset;
+        color: $button-primary;
+
+        &:hover,
+        &:active {
+            background-color: transparent;
         }
     }
 }

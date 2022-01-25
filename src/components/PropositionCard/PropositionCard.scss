@@ -44,9 +44,10 @@
         .answer-slider {
             margin-top: 1rem;
         }
+    }
 
-        + .button {
-            margin-top: 2rem;
-        }
+    &__actions {
+        margin: 2rem auto 0;
+        max-width: 32rem;
     }
 }

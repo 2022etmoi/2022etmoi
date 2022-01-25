@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 interface ButtonProps {
     /** The button type */
-    type?: "primary" | "secondary",
+    type?: "primary" | "secondary" | "transparent",
     /** The callback to call when clicked */
     onClick?: () => void
     /** The button content */
@@ -13,7 +13,7 @@ interface ButtonProps {
 
 export function Button ({ type = "primary", onClick, children }: ButtonProps) {
     return (
-        <button onClick={onClick} className={"button" + (type === "secondary" ? " button--secondary" :"")}>
+        <button onClick={onClick} className={"button" + (type === "secondary" ? " button--secondary" :"")+ (type === "transparent" ? " button--transparent" :"")}>
             {children}
         </button>
     );
