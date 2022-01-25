@@ -1,13 +1,13 @@
 export enum CandidateAnswer {
     NO = "NO",
     YES = "YES",
-    SKIP = "SKIP",
+    NEUTRAL = "NEUTRAL",
 }
 
 export enum UserAnswer {
     MUST_NOT = "MUST_NOT",
     NO = "NO",
-    SKIP = "SKIP",
+    NEUTRAL = "NEUTRAL",
     YES = "YES",
     MUST = "MUST",
 }
@@ -18,7 +18,7 @@ export function presentableUserAnswer(answer: UserAnswer) {
         return "Vraiment contre";
     case UserAnswer.NO:
         return "Contre";
-    case UserAnswer.SKIP:
+    case UserAnswer.NEUTRAL:
         return "Ne se prononce pas";
     case UserAnswer.YES:
         return "Pour";
@@ -33,7 +33,7 @@ export function presentableCandidateAnswer(answer: CandidateAnswer) {
         return "Contre";
     case CandidateAnswer.YES:
         return "Pour";
-    case CandidateAnswer.SKIP:
+    case CandidateAnswer.NEUTRAL:
         return "Ne se prononce pas";
     }
 }

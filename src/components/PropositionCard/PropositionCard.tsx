@@ -31,6 +31,11 @@ export function PropositionCard({ propositionID, navigate }: PropositionCardProp
         navigate(1);
     }, [storageService, proposition, navigate]);
 
+    const handlePropositionNeutral = useCallback(() => {
+        storageService.saveAnswer(proposition, UserAnswer.NEUTRAL);
+        navigate(1);
+    }, [storageService, proposition, navigate]);
+
     return (
         proposition &&
         <div className="proposition-card">
@@ -49,6 +54,10 @@ export function PropositionCard({ propositionID, navigate }: PropositionCardProp
                 <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.NO} emoji={"👎"}/>
                 <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.YES} emoji={"👍"}/>
                 <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST} emoji={"🥰"}/>
+            </div>
+
+            <div className="proposition-card__neutral">
+                <Button onClick={handlePropositionNeutral}>Ne se prononce pas</Button>
             </div>
 
             <div className="proposition-card__actions">

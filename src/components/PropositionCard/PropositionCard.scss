@@ -42,6 +42,13 @@
         }
     }
 
+    &__neutral {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
     &__actions {
         align-items: center;
         display: flex;

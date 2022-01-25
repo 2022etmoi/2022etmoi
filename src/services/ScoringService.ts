@@ -4,14 +4,14 @@ import { StorageService } from "./StorageService";
 
 const CandidateValues = new Map([
     [CandidateAnswer.NO, - 1],
-    [CandidateAnswer.SKIP, 0],
+    [CandidateAnswer.NEUTRAL, 0],
     [CandidateAnswer.YES, 1],
 ]);
 
 const UserValues = new Map([
     [UserAnswer.MUST_NOT, - 2],
     [UserAnswer.NO, - 1],
-    [UserAnswer.SKIP, 0],
+    [UserAnswer.NEUTRAL, 0],
     [UserAnswer.YES, 1],
     [UserAnswer.MUST, 2],
 ]);

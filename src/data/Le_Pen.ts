@@ -5,7 +5,7 @@ export const LePen = new Candidate(
     "Marine Le Pen",
     "Rassemblement National",
     new Map([
-        [PropositionID.EOLIENNE, new Answer(CandidateAnswer.SKIP, "")],
+        [PropositionID.EOLIENNE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.SMIC, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.REPUBLIQUE, new Answer(CandidateAnswer.NO, "")],
