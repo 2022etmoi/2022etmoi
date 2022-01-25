@@ -6,6 +6,8 @@
     .rc-slider {
         &-mark {
             &-text {
+                user-select: none;
+
                 &:first-child,
                 &:last-child {
                     max-width: 3rem;
