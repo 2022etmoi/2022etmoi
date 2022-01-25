@@ -32,8 +32,8 @@ export function PropositionCard({ propositionID, onClick }: PropositionCardProps
     }, [storageService, proposition, onClick]);
 
     const handleSkipProposition = useCallback(() => {
-        handlePropositionVote(UserAnswer.SKIP);
-    }, [handlePropositionVote]);
+        onClick();
+    }, [onClick]);
 
     return (
         proposition &&
