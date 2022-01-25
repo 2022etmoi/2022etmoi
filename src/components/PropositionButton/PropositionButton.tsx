@@ -21,9 +21,9 @@ export function PropositionButton ({
     emoji,
 }: PropositionButtonProps) {
     return (
-        <div className="propositionButton" onClick={() => onClick(userAnswer)}>
-            <button className="propositionButton-button">{emoji}</button>
-            <div className="propositionButton-name">{presentableUserAnswer(userAnswer)}</div>
+        <div className="proposition-button" onClick={() => onClick(userAnswer)}>
+            <button className="proposition-button__button">{emoji}</button>
+            <div className="proposition-button__name">{presentableUserAnswer(userAnswer)}</div>
         </div>
     );
 }
