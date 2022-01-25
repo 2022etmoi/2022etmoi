@@ -56,7 +56,6 @@ export class ScoringService {
 
         candidateAnswers.forEach((value, key) => {
             const userAnswer = answers.filter(a => a[0] == key)[0];
-            console.log(userAnswer);
             if (userAnswer != undefined) {
                 const m = UserValues.get(userAnswer[1])!;
                 const c = CandidateValues.get(value.value)!;
