@@ -1,11 +1,19 @@
+@import '../../mixins';
+
 .route-options {
-    color: #362068;
+    .option-card {
+        @include card();
+
+        margin: 0 auto;
+        max-width: 45rem;
+        padding: 0 2rem;
+    }
 
     pre {
-        border: 1px dashed rgb(78 78 78);
         font-size: 1rem;
         margin: 0 auto;
         max-width: 50rem;
+        overflow-x: auto;
         padding: 0.4rem;
 
         button {
