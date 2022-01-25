@@ -1,12 +1,12 @@
 @import '../../mixins';
 
 .route-layout {
-    background-image: url('/public/images/background.svg');
+    background-image: url('/images/background.svg');
     background-repeat: no-repeat;
     background-size: cover;
 
     @media screen and (max-width: 650px) {
-        background-image: url('/public/images/background-mobile.svg');
+        background-image: url('/images/background-mobile.svg');
     }
 
     .app-wrapper {

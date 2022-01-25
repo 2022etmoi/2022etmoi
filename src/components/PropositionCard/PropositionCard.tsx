@@ -39,7 +39,7 @@ export function PropositionCard({ propositionID, onClick }: PropositionCardProps
             <div className="proposition-card__card">
                 <h3 className="proposition-card__card-title">Votre avis sur cette proposition</h3>
                 <div className="proposition-card__card-answer">
-                    <img className="proposition-card__card-answer__icon" src={`/public/images/${answer.toLowerCase()}.png`}/>
+                    <img aria-hidden className="proposition-card__card-answer__icon" src={`/images/${answer.toLowerCase()}.png`}/>
                     <span className="proposition-card__card-answer__label">Je ne sais pas encore.</span>
                 </div>
                 <AnswerSlider onChange={userAnswer => setAnswer(userAnswer)} />
