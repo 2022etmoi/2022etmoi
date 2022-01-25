@@ -18,14 +18,18 @@ export function Propositions() {
     const [propositionNb, setPropositionNb] = useState<number>(0);
     const [proposition, setProposition] = useState<PropositionID>(order[0]);
 
-    const getNextProposition = () => {
-        if (propositionNb == order.length - 1) {
+    const navigate = (dn: number) => {
+        const newN = propositionNb + dn;
+        if (newN > order.length - 1) {
             // TODO: Navigate to score page
             setPropositionNb(0);
             setProposition(order[0]);
+        } else if (newN < 0) {
+            setPropositionNb(order.length - 1);
+            setProposition(order[order.length - 1]);
         } else {
-            setPropositionNb(propositionNb + 1);
-            setProposition(order[propositionNb + 1]);
+            setPropositionNb(newN);
+            setProposition(order[newN]);
         }
     };
 
@@ -33,8 +37,7 @@ export function Propositions() {
         StorageService.getInstance().clear();
         const newOrder = StorageService.getInstance().getPropositionsOrder();
         setOrder(newOrder);
-        setPropositionNb(0);
-        setProposition(newOrder[propositionNb]);
+        navigate(0);
     };
 
     return (
@@ -42,7 +45,7 @@ export function Propositions() {
             <h1 className="header">Proposition – {propositionNb + 1} / {order.length}</h1>
             {
                 proposition && (
-                    <PropositionCard key={proposition} propositionID={proposition} onClick={getNextProposition}/>
+                    <PropositionCard key={proposition} propositionID={proposition} navigate={navigate}/>
                 )
             }
             <Button type="secondary" onClick={reset}>Reset answers</Button>

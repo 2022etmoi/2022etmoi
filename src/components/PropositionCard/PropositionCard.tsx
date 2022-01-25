@@ -4,7 +4,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import { useCallback, useMemo } from "react";
 
 import { propositions } from "../../data/Propositions";
-import { StorageService } from "../../services/StorageService";
+import { StorageService } from "../../services";
 import { PropositionID, UserAnswer } from "../../types";
 import { Button } from "../Button/";
 import { PropositionButton } from "../PropositionButton";
@@ -12,28 +12,24 @@ import { PropositionButton } from "../PropositionButton";
 interface PropositionCardProps {
     /** The current PropositionID */
     propositionID: PropositionID;
-    /** The callback to call when clicked */
-    onClick: () => void;
+    /** The navigate function to show proposition n + dn */
+    navigate: (dn: number) => void;
 }
 
 /**
  * A component showing the given proposition.
  * @param proposition. The current PropositionID.
- * @param onClick. The callback to call when clicked.
+ * @param navigate. The navigate function to show proposition n + dn.
  */
-export function PropositionCard({ propositionID, onClick }: PropositionCardProps) {
-    const proposition = useMemo(()=>propositions.filter(p => p.id == propositionID)[0], [propositionID]);
+export function PropositionCard({ propositionID, navigate }: PropositionCardProps) {
+    const proposition = useMemo(() => propositions.filter(p => p.id == propositionID)[0], [propositionID]);
 
     const storageService = StorageService.getInstance();
 
     const handlePropositionVote = useCallback((answer) => {
         storageService.saveAnswer(proposition, answer);
-        onClick();
-    }, [storageService, proposition, onClick]);
-
-    const handleSkipProposition = useCallback(() => {
-        onClick();
-    }, [onClick]);
+        navigate(1);
+    }, [storageService, proposition, navigate]);
 
     return (
         proposition &&
@@ -56,9 +52,8 @@ export function PropositionCard({ propositionID, onClick }: PropositionCardProps
             </div>
 
             <div className="proposition-card__actions">
-                <Button onClick={() => handlePropositionVote(UserAnswer.SKIP)} type={"transparent"}><ArrowLeftOutlined/>Proposition
-                    précédente</Button>
-                <Button onClick={handleSkipProposition}>Passer<ArrowRightOutlined/></Button>
+                <Button onClick={() => navigate(- 1)} type={"transparent"}><ArrowLeftOutlined/>Précédent</Button>
+                <Button onClick={() => navigate(1)} type={"transparent"}>Suivant<ArrowRightOutlined/></Button>
             </div>
         </div>
     );

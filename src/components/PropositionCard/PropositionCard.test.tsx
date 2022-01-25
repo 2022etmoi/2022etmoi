@@ -13,13 +13,13 @@ describe("proposition-card", () => {
     });
 
     it("should render without crash", ()=> {
-        const wrapper = mount(<PropositionCard propositionID={PropositionMock.id} onClick={onClickSpy}/>);
+        const wrapper = mount(<PropositionCard propositionID={PropositionMock.id} navigate={onClickSpy}/>);
 
         expect(wrapper.find(PropositionCard).exists()).toBeTruthy();
     });
 
     it("should call the callback when clicked", () => {
-        const wrapper = mount(<PropositionCard propositionID={PropositionMock.id} onClick={onClickSpy}/>);
+        const wrapper = mount(<PropositionCard propositionID={PropositionMock.id} navigate={onClickSpy}/>);
 
         expect(wrapper.find(PropositionCard).exists()).toBeTruthy();
 
