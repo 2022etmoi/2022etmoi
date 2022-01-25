@@ -10,6 +10,9 @@ interface AnswerSliderProps {
     /** The callback to call when slider value change */
     onChange: (answer: UserAnswer) => void
 }
+/**
+ * A component to select the user answer
+ */
 export function AnswerSlider({
     onChange
 }: AnswerSliderProps) {
