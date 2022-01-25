@@ -39,10 +39,8 @@
         }
 
         @if $animateSelf {
-            & {
-                animation: slide-up 0.3s #{$delay * 0.1}s ease-out forwards;
-                opacity: 0;
-            }
+            animation: slide-up 0.3s #{$delay * 0.1}s ease-out forwards;
+            opacity: 0;
         }
 
         @else {
