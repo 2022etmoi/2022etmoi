@@ -6,6 +6,7 @@ import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services/StorageService";
 import { PropositionID, UserAnswer } from "../../types";
 import { AnswerSlider } from "../AnswerSlider";
+import { Button } from "../Button/";
 
 interface PropositionCardProps {
     /** The current PropositionID */
@@ -44,7 +45,7 @@ export function PropositionCard({ propositionID, onClick }: PropositionCardProps
                 </div>
                 <AnswerSlider onChange={userAnswer => setAnswer(userAnswer)} />
             </div>
-            <button onClick={handlePropositionVote}>Sauvegarder ma réponse</button>
+            <Button onClick={handlePropositionVote}>Sauvegarder ma réponse</Button>
         </div>
     );
 }

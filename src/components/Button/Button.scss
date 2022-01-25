@@ -1,0 +1,36 @@
+@import '../../colors';
+
+.button {
+    background-color: $button-primary;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 0.4rem 0.6rem rgba($button-primary, 0.1);
+    color: $white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 4px;
+    padding: 1rem 2rem;
+    text-align: center;
+
+    &:hover,
+    &:active {
+        background-color: darken($button-primary, 5%);
+    }
+
+    &:focus {
+        outline: 2px solid lighten($button-primary, 10%);
+        outline-offset: 2px;
+    }
+
+    &--secondary {
+        background-color: $white;
+        color: $button-primary;
+
+        &:hover,
+        &:active {
+            background-color: mix($white, $button-primary, 92%);
+        }
+    }
+}
