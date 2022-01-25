@@ -45,10 +45,11 @@
     }
 
     &__chip {
-        background-color: #ddd;
+        background-color: rgba($primary, 0.1);
         border-radius: 16px;
         font-size: 20px;
         margin: 0 8px;
         padding: 4px 16px;
+        text-align: right;
     }
 }
