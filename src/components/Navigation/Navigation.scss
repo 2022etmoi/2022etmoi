@@ -60,12 +60,10 @@
                     > .icon {
                         outline: 2px solid rgba($secondary, 0.5);
                         outline-offset: 2px;
+                    }
 
-                        svg {
-                            path {
-                                fill: $secondary;
-                            }
-                        }
+                    > .icon svg path {
+                        fill: $secondary;
                     }
                 }
             }
