@@ -1,6 +1,6 @@
 import "./PropositionCard.scss";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services/StorageService";
@@ -22,16 +22,17 @@ interface PropositionCardProps {
  */
 export function PropositionCard({ propositionID, onClick }: PropositionCardProps) {
     const [answer, setAnswer] = useState(UserAnswer.SKIP);
+    const proposition = useMemo(()=>propositions.filter(p => p.id == propositionID)[0], [propositions, propositionID]);
+
     const storageService = StorageService.getInstance();
-    const proposition = propositions.filter(p => p.id == propositionID)[0];
-    if (proposition == undefined) return null;
 
     const handlePropositionVote = useCallback(() => {
         storageService.saveAnswer(proposition, answer);
         onClick();
-    }, [storageService]);
+    }, [storageService, proposition, answer, onClick]);
 
     return (
+        proposition &&
         <div className="proposition-card">
             <header>
                 {
