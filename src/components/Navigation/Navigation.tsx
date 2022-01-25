@@ -4,10 +4,11 @@ import { useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { Icon } from "../";
+import { IconProps } from "../Icon/Icon";
 
 export function Navigation (){
     const { pathname } = useLocation();
-    const links = [
+    const links : {to: string, icon: IconProps["file"], label: string}[] = [
         {
             to: "/", icon:"logo", label: "" },
         {
