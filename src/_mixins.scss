@@ -23,3 +23,33 @@
     box-shadow: 0 0.2rem 1rem rgba($primary, 0.16);
     padding: 1.8rem 1.5rem;
 }
+
+@mixin animate-slide-up($delay: 0, $animateSelf: false) {
+    @media screen and (prefers-reduced-motion: no-preference) {
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(1rem);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @if $animateSelf {
+            & {
+                animation: slide-up 0.3s #{$delay * 0.1}s ease-out forwards;
+                opacity: 0;
+            }
+        }
+
+        @else {
+            > * {
+                animation: slide-up 0.3s #{$delay * 0.1}s ease-out forwards;
+                opacity: 0;
+            }
+        }
+    }
+}
