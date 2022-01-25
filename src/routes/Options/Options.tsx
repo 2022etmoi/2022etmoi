@@ -7,10 +7,6 @@ import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services/";
 import { PropositionID, UserAnswer } from "../../types";
 
-// interface OptionsProps {
-//
-// }
-
 /**
  * A route to display options.
  */
@@ -19,8 +15,8 @@ export function Options() {
     const storageService = StorageService.getInstance();
 
     const [savedAnswers, setSavedAnswers] = useState<[PropositionID, UserAnswer][]>([]);
-    const refresh = useCallback(() => setSavedAnswers(storageService.getAnswers() || []), []);
-    useEffect(() => refresh(), []);
+    const refresh = useCallback(() => setSavedAnswers(storageService.getAnswers() || []), [storageService]);
+    useEffect(() => refresh(), [refresh]);
     return (
         <div className="route-options">
             <h1>Options</h1>

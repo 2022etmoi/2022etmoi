@@ -29,7 +29,7 @@ export function AnswerSlider({
         default:
             return onChange(UserAnswer.SKIP);
         }
-    }, [onChange, UserAnswer]);
+    }, [onChange]);
     return (
         <div className='answer-slider'>
             <Slider

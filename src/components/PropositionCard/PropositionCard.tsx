@@ -22,7 +22,7 @@ interface PropositionCardProps {
  */
 export function PropositionCard({ propositionID, onClick }: PropositionCardProps) {
     const [answer, setAnswer] = useState(UserAnswer.SKIP);
-    const proposition = useMemo(()=>propositions.filter(p => p.id == propositionID)[0], [propositions, propositionID]);
+    const proposition = useMemo(()=>propositions.filter(p => p.id == propositionID)[0], [propositionID]);
 
     const storageService = StorageService.getInstance();
 
