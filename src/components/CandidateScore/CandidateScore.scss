@@ -1,13 +1,16 @@
+@import '../../mixins';
+
 .candidate-score {
+    @include card();
+
     align-items: center;
-    background-color: #fff;
-    border-radius: 16px;
     box-sizing: border-box;
-    color: #000;
-    display: flex;
+    display: grid;
     flex-flow: row;
+    grid-template-columns: 10rem 1fr 6rem 6rem;
     margin: 16px 0;
-    padding: 8px 0;
+    padding: 0.5rem;
+    width: 45rem;
 
     &__score {
         font-size: 40px;

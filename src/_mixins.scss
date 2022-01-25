@@ -1,0 +1,25 @@
+@import './colors';
+
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        height: 0.4em;
+        width: 0.4em;
+    }
+
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        overflow: visible;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: lighten(darken($secondary, 95%), 90%);
+    }
+}
+
+@mixin card {
+    background-color: $white;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.2rem 1rem rgba($primary, 0.16);
+    padding: 1.8rem 1.5rem;
+}

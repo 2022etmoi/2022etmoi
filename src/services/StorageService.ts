@@ -79,11 +79,10 @@ export class StorageService {
      */
     public getPropositionsOrder() {
         let order = this.get<PropositionID[]>(this.STORAGE_FIELDS.PROP_ORDER, true);
-        console.log(order);
         if (order == undefined) {
             order = propositions
                 .map(p => p.id)
-                .sort(_ => Math.random() - 0.5);
+                .sort(() => Math.random() - 0.5);
         } else {
             for (const id in PropositionID) {
                 if (order.indexOf(<PropositionID>id) == - 1) order.push(<PropositionID>id);

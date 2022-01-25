@@ -1,6 +1,6 @@
 import { mount } from "enzyme";
 
-import { PropositionButton, PropositionCard } from "../../components";
+import { Button, PropositionCard } from "../../components";
 import { act } from "../../tests/testUtils";
 import { Propositions } from "./Propositions";
 
@@ -14,12 +14,12 @@ describe("propositions", ()=> {
         const wrapper = mount(<Propositions />);
         expect(wrapper.find(Propositions).exists()).toBeTruthy();
 
-        const firstProposition = wrapper.find(PropositionCard).find("article").text();
+        const firstProposition = wrapper.find(PropositionCard).find("header").text();
         act(()=> {
-            wrapper.find(PropositionButton).at(0).simulate("click");
+            wrapper.find(Button).at(0).simulate("click");
         });
         wrapper.update();
-        const secondProposition = wrapper.find(PropositionCard).find("article").text();
+        const secondProposition = wrapper.find(PropositionCard).find("header").text();
         expect(secondProposition).not.toStrictEqual(firstProposition);
     });
 });

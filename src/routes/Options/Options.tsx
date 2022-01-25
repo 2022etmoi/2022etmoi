@@ -2,6 +2,7 @@ import "./Options.scss";
 
 import { useCallback, useEffect, useState } from "react";
 
+import { Button } from "../../components";
 import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services/";
 import { PropositionID, UserAnswer } from "../../types";
@@ -23,18 +24,21 @@ export function Options() {
     return (
         <div className="route-options">
             <h1>Options</h1>
-            <pre>
+            <div className="option-card">
+                <pre>
                 PROPOSITIONS :({Array.from(propositions).length})
-                <ul>
-                    {Array.from(propositions).map((p,i) => <li key={i}>{p.content}</li>)}
-                </ul>
-                {
-                    savedAnswers.length === Array.from(propositions).length ? "ALL PROPOSITIONS ANSWERED" : "KEEP ANSWERING PROPOSALS"
-                }
-                <br/>
-                <button onClick={()=> storageService.clear()}>Reset app</button>
-                <button onClick={refresh}>Refresh answers</button>
-            </pre>
+                    <ul>
+                        {Array.from(propositions).map((p,i) => <li key={i}>{p.content}</li>)}
+                    </ul>
+                    {
+                        savedAnswers.length === Array.from(propositions).length ? "ALL PROPOSITIONS ANSWERED" : "KEEP ANSWERING PROPOSALS"
+                    }
+                    <br/>
+                    <Button onClick={refresh}>Refresh answers</Button>
+                    <br/>
+                    <Button type="secondary" onClick={()=> storageService.clear()}>Reset app</Button>
+                </pre>
+            </div>
         </div>
     );
 }

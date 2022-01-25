@@ -1,11 +1,12 @@
 import "./PropositionCard.scss";
 
-import { useCallback } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services/StorageService";
 import { PropositionID, UserAnswer } from "../../types";
-import { PropositionButton } from "../PropositionButton";
+import { AnswerSlider } from "../AnswerSlider";
+import { Button } from "../Button/";
 
 interface PropositionCardProps {
     /** The current PropositionID */
@@ -16,29 +17,37 @@ interface PropositionCardProps {
 
 /**
  * A component showing the given proposition.
- * @param proposition. The current Proposition.
+ * @param proposition. The current PropositionID.
+ * @param onClick. The callback to call when clicked.
  */
 export function PropositionCard({ propositionID, onClick }: PropositionCardProps) {
-    const storageService = StorageService.getInstance();
-    const proposition = propositions.filter(p => p.id == propositionID)[0];
-    if (proposition == undefined) return null;
+    const [answer, setAnswer] = useState(UserAnswer.SKIP);
+    const proposition = useMemo(()=>propositions.filter(p => p.id == propositionID)[0], [propositions, propositionID]);
 
-    const handlePropositionVote = useCallback((answer: UserAnswer) => {
+    const storageService = StorageService.getInstance();
+
+    const handlePropositionVote = useCallback(() => {
         storageService.saveAnswer(proposition, answer);
         onClick();
-    }, [storageService]);
+    }, [storageService, proposition, answer, onClick]);
 
-    return (<div className="proposition-card">
-        <article>
-            {
-                proposition.content
-            }
-        </article>
-        <PropositionButton key={UserAnswer.MUST_NOT} userAnswer={UserAnswer.MUST_NOT} onClick={answer => handlePropositionVote(answer)}/>
-        <PropositionButton key={UserAnswer.NO} userAnswer={UserAnswer.NO} onClick={answer => handlePropositionVote(answer)}/>
-        <PropositionButton key={UserAnswer.SKIP} userAnswer={UserAnswer.SKIP} onClick={answer => handlePropositionVote(answer)}/>
-        <PropositionButton key={UserAnswer.YES} userAnswer={UserAnswer.YES} onClick={answer => handlePropositionVote(answer)}/>
-        <PropositionButton key={UserAnswer.MUST} userAnswer={UserAnswer.MUST} onClick={answer => handlePropositionVote(answer)}/>
-    </div>
+    return (
+        proposition &&
+        <div className="proposition-card">
+            <header>
+                {
+                    proposition.content
+                }
+            </header>
+            <div className="proposition-card__card">
+                <h3 className="proposition-card__card-title">Votre avis sur cette proposition</h3>
+                <div className="proposition-card__card-answer">
+                    <img aria-hidden className="proposition-card__card-answer__icon" src={`/images/${answer.toLowerCase()}.png`}/>
+                    <span className="proposition-card__card-answer__label">Je ne sais pas encore.</span>
+                </div>
+                <AnswerSlider onChange={userAnswer => setAnswer(userAnswer)} />
+            </div>
+            <Button onClick={handlePropositionVote}>Sauvegarder ma réponse</Button>
+        </div>
     );
 }

@@ -1,12 +1,72 @@
-.nav {
-    background-color: #cecece;
-    padding: 0 1rem;
+@import '../../colors';
 
-    a {
+.nav {
+    $self: &;
+
+    color: $primary;
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+
+    &__link {
+        align-items: center;
+        border-color: $primary;
         color: inherit;
-        display: inline-block;
+        column-gap: 1.5rem;
+        display: inline-flex;
+        font-size: 1.3rem;
         font-weight: 700;
+        opacity: 0.5;
         padding: 0.5rem;
         text-decoration: none;
+
+        .icon {
+            box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
+        }
+
+        &--active {
+            color: $secondary;
+            opacity: 1;
+
+            > .icon {
+                &::after {
+                    border-color: rgba($secondary, 0.5);
+                }
+
+                svg {
+                    path {
+                        fill: $secondary;
+                    }
+                }
+            }
+        }
+
+        &:focus,
+        &:hover {
+            opacity: 1;
+            outline: none;
+        }
+
+        &:focus {
+            > .icon {
+                &::after {
+                    border-color: rgba($secondary, 0.5);
+                }
+            }
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 60rem) {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+
+        span {
+            display: none;
+        }
     }
 }
