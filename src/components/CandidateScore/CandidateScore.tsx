@@ -28,8 +28,8 @@ export function CandidateScore({ candidateID }: CandidateScoreProps) {
                 <div className="candidate-score__details__name">{candidate.name}</div>
                 <div className="candidate-score__details__movement">{candidate.movement}</div>
             </div>
-            <div className="candidate-score__chip">{score.hearts} ❤️</div>
-            <div className="candidate-score__chip">{score.skulls} ☠️️</div>
+            <div className="candidate-score__chip">{score.hearts} 🥰</div>
+            <div className="candidate-score__chip">{score.skulls} 😡️</div>
         </div>
     );
 }
