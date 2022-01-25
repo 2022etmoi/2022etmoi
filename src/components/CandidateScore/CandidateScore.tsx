@@ -21,7 +21,7 @@ export function CandidateScore({ candidateID }: CandidateScoreProps) {
 
     return (
         <div className="candidate-score">
-            <div className="candidate-score__score">{Math.round(score.score)}%</div>
+            <div className="candidate-score__score">{Math.round(score.score)}</div>
             <div className="candidate-score__details">
                 <div className="candidate-score__details__name">{candidate.name}</div>
                 <div className="candidate-score__details__movement">{candidate.movement}</div>

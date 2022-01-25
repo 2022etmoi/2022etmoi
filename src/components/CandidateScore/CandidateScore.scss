@@ -17,6 +17,12 @@
         font-weight: 700;
         text-align: center;
         width: 160px;
+
+        &::after {
+            content: '%';
+            font-size: 60%;
+            opacity: 0.8;
+        }
     }
 
     &__details {
