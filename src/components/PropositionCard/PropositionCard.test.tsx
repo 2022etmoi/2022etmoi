@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import { PropositionMock } from "../../tests/mocks";
 import { act } from "../../tests/testUtils";
 import { AnswerSlider } from "../AnswerSlider/AnswerSlider";
-import { PropositionButton } from "../PropositionButton";
+import { Button } from "../Button";
 import { PropositionCard } from "./PropositionCard";
 
 describe("proposition-card", () => {
@@ -26,7 +26,7 @@ describe("proposition-card", () => {
         expect(wrapper.find(PropositionCard).exists()).toBeTruthy();
 
         act(()=> {
-            wrapper.find(PropositionButton).at(0).simulate("click");
+            wrapper.find(Button).at(0).simulate("click");
         });
         wrapper.update();
         expect(onClickSpy).toHaveBeenCalledTimes(1);
