@@ -9,6 +9,8 @@
     row-gap: 1.5rem;
 
     &__link {
+        $self-link: &;
+
         align-items: center;
         border-color: $primary;
         color: inherit;
@@ -16,41 +18,55 @@
         display: inline-flex;
         font-size: 1.3rem;
         font-weight: 700;
-        opacity: 0.5;
         padding: 0.5rem;
         text-decoration: none;
 
-        .icon {
-            box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
-        }
+        &:first-child {
+            width: 9rem;
 
-        &--active {
-            color: $secondary;
-            opacity: 1;
-
-            > .icon {
-                &::after {
-                    border-color: rgba($secondary, 0.5);
-                }
-
-                svg {
-                    path {
-                        fill: $secondary;
-                    }
-                }
+            .icon {
+                background-color: unset;
+                width: inherit;
             }
         }
 
-        &:focus,
-        &:hover {
-            opacity: 1;
-            outline: none;
-        }
+        &:not(:first-child) {
+            &#{$self-link} {
+                opacity: 0.5;
 
-        &:focus {
-            > .icon {
-                &::after {
-                    border-color: rgba($secondary, 0.5);
+                .icon {
+                    box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
+                }
+
+                &:focus,
+                &:hover {
+                    opacity: 1;
+                    outline: none;
+                }
+
+                &:focus {
+                    > .icon {
+                        outline: 2px solid rgba($secondary, 0.5);
+                        outline-offset: 2px;
+                    }
+                }
+
+                &--active {
+                    $self-active: &;
+
+                    color: $secondary;
+                    opacity: 1;
+
+                    > .icon {
+                        outline: 2px solid rgba($secondary, 0.5);
+                        outline-offset: 2px;
+
+                        svg {
+                            path {
+                                fill: $secondary;
+                            }
+                        }
+                    }
                 }
             }
         }
