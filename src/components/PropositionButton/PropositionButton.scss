@@ -1,10 +1,28 @@
 @import '../../colors';
 
-.proposition-button {
-    background: #fff;
-    border: none;
-    border-radius: 4rem;
-    box-shadow: 0 0.2rem 1rem rgba($primary, 0.16);
-    font-size: 2rem;
-    padding: 0.5rem 2rem;
+.propositionButton {
+    width: 6rem;
+    padding: 0 2rem;
+
+    &-button {
+        width: 100%;
+        background: #fff;
+        border: none;
+        border-radius: 4rem;
+        box-shadow: 0 0.2rem 1rem rgba($primary, 0.16);
+        transition: box-shadow 0.3s ease-in-out;
+        font-size: 2rem;
+        padding: 0.5rem 0;
+
+        :hover > & {
+            box-shadow: 0 0.4rem 1.5rem rgba($primary, 0.24);
+        }
+    }
+
+    &-name {
+        margin-top: 1rem;
+        text-align: center;
+        line-break: auto;
+        text-transform: capitalize;
+    }
 }

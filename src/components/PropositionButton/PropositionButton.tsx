@@ -1,6 +1,6 @@
 import "./PropositionButton.scss";
 
-import { UserAnswer } from "../../types";
+import { presentableUserAnswer, UserAnswer } from "../../types";
 
 interface PropositionButtonProps {
     /** The onClick callback */
@@ -21,6 +21,9 @@ export function PropositionButton ({
     emoji,
 }: PropositionButtonProps) {
     return (
-        <button className="proposition-button" onClick={() => onClick(userAnswer)}>{emoji}</button>
+        <div className="propositionButton" onClick={() => onClick(userAnswer)}>
+            <button className="propositionButton-button">{emoji}</button>
+            <div className="propositionButton-name">{presentableUserAnswer(userAnswer)}</div>
+        </div>
     );
 }

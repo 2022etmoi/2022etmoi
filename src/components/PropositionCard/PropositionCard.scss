@@ -28,9 +28,9 @@
     }
 
     &__buttons {
-        align-items: center;
         display: flex;
         flex-flow: row;
+        align-items: start;
         justify-content: center;
         margin-top: 2rem;
 
