@@ -79,7 +79,6 @@ export class StorageService {
      */
     public getPropositionsOrder() {
         let order = this.get<PropositionID[]>(this.STORAGE_FIELDS.PROP_ORDER, true);
-        console.log(order);
         if (order == undefined) {
             order = propositions
                 .map(p => p.id)
