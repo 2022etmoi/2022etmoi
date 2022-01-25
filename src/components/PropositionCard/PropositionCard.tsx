@@ -17,7 +17,8 @@ interface PropositionCardProps {
 
 /**
  * A component showing the given proposition.
- * @param proposition. The current Proposition.
+ * @param proposition. The current PropositionID.
+ * @param onClick. The callback to call when clicked.
  */
 export function PropositionCard({ propositionID, onClick }: PropositionCardProps) {
     const [answer, setAnswer] = useState(UserAnswer.SKIP);
