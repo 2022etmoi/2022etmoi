@@ -6,7 +6,8 @@ interface PropositionButtonProps {
     /** The onClick callback */
     onClick: (score: UserAnswer) => void;
     /** The score of the button */
-    userAnswer: UserAnswer
+    userAnswer: UserAnswer,
+    emoji: string,
 }
 
 /**
@@ -16,9 +17,10 @@ interface PropositionButtonProps {
  */
 export function PropositionButton ({
     onClick,
-    userAnswer
+    userAnswer,
+    emoji,
 }: PropositionButtonProps) {
     return (
-        <button className="proposition-button" onClick={()=>onClick(userAnswer)}>{UserAnswer[userAnswer]}</button>
+        <button className="proposition-button" onClick={() => onClick(userAnswer)}>{emoji}</button>
     );
 }
