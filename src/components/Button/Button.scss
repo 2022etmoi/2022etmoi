@@ -17,12 +17,16 @@
 
     .anticon {
         font-size: 90%;
+    }
 
-        &:first-child {
+    &:first-child {
+        .anticon {
             margin-right: 0.5rem;
         }
+    }
 
-        &:last-child {
+    &:last-child {
+        .anticon {
             margin-left: 0.5rem;
         }
     }
