@@ -1,5 +1,10 @@
 @import './colors';
 
+/**
+* The shared mixins.
+* @example: .item { @include @scrollbar() }
+*/
+
 @mixin scrollbar {
     &::-webkit-scrollbar {
         height: 0.4em;
