@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/breakpoints';
 
 .icon {
     $self: &;
@@ -11,7 +12,15 @@
     height: $size;
     justify-content: center;
     position: relative;
+    transition: none;
     width: $size;
+
+    @media screen and (max-width: $breakpoint-md) {
+        $size: 3rem;
+
+        height: $size;
+        width: $size;
+    }
 
     &::after {
         border: 3px solid transparent;
