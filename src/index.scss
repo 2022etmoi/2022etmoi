@@ -1,6 +1,12 @@
 @import './styles/fonts';
 @import './styles/colors';
 
+*::selection {
+    background: $secondary;
+    color: $white;
+    text-shadow: none;
+}
+
 html {
     font-size: 62.5%;
 }
