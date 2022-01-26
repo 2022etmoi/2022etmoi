@@ -1,6 +1,6 @@
 import "./Propositions.scss";
 
-import { useState } from "react";
+import { useCallback,useState } from "react";
 
 import { Button, Counter, PropositionCard } from "../../components";
 import { StorageService } from "../../services";
@@ -18,7 +18,7 @@ export function Propositions() {
     const [propositionNb, setPropositionNb] = useState<number>(0);
     const [proposition, setProposition] = useState<PropositionID>(order[0]);
 
-    const navigate = (dn: number) => {
+    const navigate = useCallback((dn: number) => {
         const newN = propositionNb + dn;
         if (newN > order.length - 1) {
             // TODO: Navigate to score page
@@ -31,14 +31,14 @@ export function Propositions() {
             setPropositionNb(newN);
             setProposition(order[newN]);
         }
-    };
+    }, [order, propositionNb]);
 
-    const reset = () => {
+    const reset = useCallback(() => {
         StorageService.getInstance().clear();
         const newOrder = StorageService.getInstance().getPropositionsOrder();
         setOrder(newOrder);
         navigate(0);
-    };
+    }, [navigate]);
 
     return (
         <div className="route-propositions">
