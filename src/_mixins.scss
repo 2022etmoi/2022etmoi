@@ -24,8 +24,14 @@
     padding: 1.8rem 1.5rem;
 }
 
-@mixin animate-slide-up($delay: 0, $animateSelf: false) {
+@mixin reduce-motion-safe() {
     @media screen and (prefers-reduced-motion: no-preference) {
+        @content;
+    }
+}
+
+@mixin animate-slide-up($delay: 0, $animateSelf: false) {
+    @include reduce-motion-safe() {
         @keyframes slide-up {
             from {
                 opacity: 0;
