@@ -56,12 +56,6 @@ export const propositions: Proposition[] = [
         "Description égalité",
     ),
     new Proposition(
-        PropositionID.IMPOT_TRANSITION,
-        "Écologie",
-        "Il faut financer la transition écologique avec de nouvelles taxes ou impôts",
-        "Description transition",
-    ),
-    new Proposition(
         PropositionID.ISF,
         "Économie",
         "Il faut rétablir l'ISF",
@@ -121,4 +115,11 @@ export const propositions: Proposition[] = [
         "Stopper l'hébergement des données des services publics français sur les serveurs des GAFAM",
         "Description cloud souverain",
     ),
+    new Proposition(
+        PropositionID.DESOBEIR,
+        "Souveraineté",
+        "En cas de désaccord, il ne faut pas hésiter à désobéir à Bruxelles",
+        "Description desobeir",
+    ),
+//
 ];

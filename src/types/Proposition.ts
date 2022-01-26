@@ -8,7 +8,6 @@ export enum PropositionID {
     PASS = "PASS",
     ECOCIDE = "ECOCIDE",
     EGALITE_HF = "EGALITE_HF",
-    IMPOT_TRANSITION = "IMPOT_TRANSITION",
     ISF = "ISF",
     DESTITUER = "DESTITUER",
     PRIVATISER = "PRIVATISER",
@@ -19,6 +18,7 @@ export enum PropositionID {
     SOINS = "SOINS",
     TEMPS = "TEMPS",
     CLOUD = "CLOUD",
+    DESOBEIR = "DESOBEIR",
 }
 
 export class Proposition {
