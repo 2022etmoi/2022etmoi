@@ -8,6 +8,7 @@
     border: 0;
     border-radius: 2.6rem;
     box-shadow: 0 0.4rem 0.6rem rgba($button-primary, 0.1);
+    box-sizing: border-box;
     color: $white;
     cursor: pointer;
     font-family: inherit;
@@ -46,11 +47,12 @@
 
     &--secondary {
         background-color: $white;
+        border: 1px solid darken($white, 4%);
         color: $button-primary;
 
         &:hover,
         &:active {
-            background-color: mix($white, $button-primary, 92%);
+            background-color: mix($white, $button-primary, 98%);
         }
     }
 

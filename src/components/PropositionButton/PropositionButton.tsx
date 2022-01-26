@@ -1,6 +1,7 @@
 import "./PropositionButton.scss";
 
 import { presentableUserAnswer, UserAnswer } from "../../types";
+import { Button } from "../Button/Button";
 
 interface PropositionButtonProps {
     /** The onClick callback */
@@ -24,7 +25,7 @@ export function PropositionButton ({
 }: PropositionButtonProps) {
     return (
         <div className="proposition-button" onClick={() => onClick(userAnswer)} role="button" aria-label={presentableUserAnswer(userAnswer)}>
-            <button className="proposition-button__button">{emoji}</button>
+            <Button type="secondary" className="proposition-button__button">{emoji}</Button>
             <div className="proposition-button__name">{presentableUserAnswer(userAnswer)}</div>
         </div>
     );
