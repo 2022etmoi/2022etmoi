@@ -2,7 +2,7 @@ import "./Propositions.scss";
 
 import { useState } from "react";
 
-import { Button, PropositionCard } from "../../components";
+import { Button, Counter, PropositionCard } from "../../components";
 import { StorageService } from "../../services";
 import { PropositionID } from "../../types";
 
@@ -43,7 +43,7 @@ export function Propositions() {
     return (
         <div className="route-propositions">
             <header>
-                <h1>Proposition – {propositionNb + 1} / {order.length}</h1>
+                <h1>Proposition <Counter current={propositionNb + 1} max={order.length}/></h1>
             </header>
             <div className="route-propositions__wrapper">
                 {

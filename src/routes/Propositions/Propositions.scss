@@ -1,4 +1,5 @@
 @import '../../styles/breakpoints';
+@import '../../styles/colors';
 
 .route-propositions {
     > header {
@@ -8,6 +9,11 @@
 
         h1 {
             font-size: inherit;
+
+            .counter {
+                margin-bottom: 0.6rem;
+                margin-left: 0.5rem;
+            }
         }
 
         @media screen and (max-width: $breakpoint-lg) {
