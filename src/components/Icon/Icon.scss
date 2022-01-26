@@ -3,11 +3,11 @@
 
 .icon {
     $self: &;
-    $size: 4rem;
+    $size: 6.5rem;
 
     align-items: center;
     background-color: $white;
-    border-radius: 1rem;
+    border-radius: 2rem;
     display: flex;
     height: $size;
     justify-content: center;
@@ -16,8 +16,9 @@
     width: $size;
 
     @media screen and (max-width: $breakpoint-md) {
-        $size: 3rem;
+        $size: 5rem;
 
+        border-radius: 1.2rem;
         height: $size;
         width: $size;
     }
@@ -36,6 +37,6 @@
     svg {
         fill: $primary;
         height: 80%;
-        width: 80%;
+        width: inherit;
     }
 }
