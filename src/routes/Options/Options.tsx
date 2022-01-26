@@ -32,12 +32,10 @@ export function Options() {
                         {
                             savedAnswers.length === Array.from(propositions).length ? "ALL PROPOSITIONS ANSWERED" : "KEEP ANSWERING PROPOSALS"
                         }
-                        <br/>
-                        <Button onClick={refresh}>Refresh answers</Button>
-                        <br/>
-                        <Button type="secondary" onClick={()=> storageService.clear()}>Reset app</Button>
                     </pre>
                 </div>
+                <Button onClick={refresh}>Refresh answers</Button>
+                <Button type="secondary" onClick={()=> storageService.clear()}>Reset app</Button>
             </div>
         </div>
     );
