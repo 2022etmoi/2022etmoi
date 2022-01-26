@@ -42,13 +42,17 @@ export function Propositions() {
 
     return (
         <div className="route-propositions">
-            <h1 className="header">Proposition – {propositionNb + 1} / {order.length}</h1>
-            {
-                proposition && (
-                    <PropositionCard key={proposition} propositionID={proposition} navigate={navigate}/>
-                )
-            }
-            <Button type="secondary" onClick={reset}>Reset answers</Button>
+            <header>
+                <h1>Proposition – {propositionNb + 1} / {order.length}</h1>
+            </header>
+            <div className="route-propositions__wrapper">
+                {
+                    proposition && (
+                        <PropositionCard key={proposition} propositionID={proposition} navigate={navigate}/>
+                    )
+                }
+                <Button type="secondary" onClick={reset}>Reset answers</Button>
+            </div>
         </div>
     );
 }

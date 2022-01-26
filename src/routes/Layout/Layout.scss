@@ -28,6 +28,11 @@
             @include animate-slide-up();
 
             overflow-y: auto;
+
+            > div > header {
+                position: sticky;
+                top: 0;
+            }
         }
 
         @media screen and (max-width: $breakpoint-lg) {
