@@ -1,23 +1,29 @@
 @import '../../styles/mixins';
 
 .route-options {
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-items: space-between;
+    }
+
     .option-card {
         @include card();
 
         margin: 0 auto;
-        max-width: 45rem;
+        max-width: 72rem;
         padding: 0 2rem;
     }
 
     pre {
         font-size: 1rem;
         margin: 0 auto;
-        max-width: 50rem;
         overflow-x: auto;
         padding: 0.4rem;
+    }
 
-        button {
-            margin-top: 1rem;
-        }
+    .button {
+        margin-top: 1rem;
     }
 }

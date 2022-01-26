@@ -1,5 +1,10 @@
 @import './colors';
 
+/**
+* The shared mixins.
+* @example: .item { @include @scrollbar() }
+*/
+
 @mixin scrollbar {
     &::-webkit-scrollbar {
         height: 0.4em;
@@ -19,9 +24,15 @@
 
 @mixin card {
     background-color: $white;
-    border-radius: 0.8rem;
-    box-shadow: 0 0.2rem 1rem rgba($primary, 0.16);
-    padding: 1.8rem 1.5rem;
+    border-radius: 1.3rem;
+    box-shadow: 0 0.3rem 1.6rem rgba($primary, 0.16);
+    padding: 2.8rem 2.4rem;
+}
+
+@mixin text-ellipsis () {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @mixin reduce-motion-safe() {
@@ -35,12 +46,12 @@
         @keyframes slide-up {
             from {
                 opacity: 0;
-                transform: translateY(1rem);
+                transform: scale(0.95) translateY(1rem);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: scale(1) translateY(0);
             }
         }
 

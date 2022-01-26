@@ -30,20 +30,25 @@ export function Scores() {
 
     return (
         <div className="route-scores">
-            {
-                scores.length ?
-                    scores.map((score) => (
-                        <CandidateScore candidateID={score.candidate} key={score.candidate}/>
-                    ))
-                    : <>
-                        <h1>Oups!</h1>
-                        <p>Vous n'avez encore assez voté sur les propositions pour que nous calculions vos affinités. </p>
-                        <br>
-                        </br><Link to="/app/propositions">
-                            <Button>Voir les propositions</Button>
-                        </Link>
-                    </>
-            }
+            <header>
+                <h1>Scores</h1>
+            </header>
+            <div className="route-scores__wrapper">
+                {
+                    scores.length ?
+                        scores.map((score) => (
+                            <CandidateScore candidateID={score.candidate} key={score.candidate}/>
+                        ))
+                        : <>
+                            <h1>Oups!</h1>
+                            <p>Vous n'avez encore assez voté sur les propositions pour que nous calculions vos affinités. </p>
+                            <br>
+                            </br><Link to="/app/propositions">
+                                <Button>Voir les propositions</Button>
+                            </Link>
+                        </>
+                }
+            </div>
         </div>
     );
 }

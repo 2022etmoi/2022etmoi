@@ -1,19 +1,33 @@
+@use 'sass:math';
+
 @import '../../styles/colors';
+@import '../../styles/breakpoints';
 
 .proposition-button {
-    padding: 0 2rem;
-    width: 6rem;
+    $width: 9.6rem;
+
+    display: flex;
+    flex-direction: column;
+    transition: font-size, 0.3s ease-out;
+    width: $width;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        font-size: 1.4rem;
+    }
 
     &__button {
         background: #fff;
         border: 0;
-        border-radius: 4rem;
+        border-radius: 3.2rem;
         box-shadow: 0 0.2rem 1rem rgba($primary, 0.16);
         cursor: pointer;
-        font-size: 2rem;
-        padding: 0.5rem 0;
-        transition: box-shadow 0.3s ease-in-out;
-        width: 100%;
+        font-size: 3rem;
+        padding: 0.6rem 0;
+        transition: box-shadow, font-size, 0.3s ease-out;
+
+        @media screen and (max-width: $breakpoint-lg) {
+            font-size: 1.6rem;
+        }
 
         :hover > & {
             box-shadow: 0 0.4rem 1.5rem rgba($primary, 0.24);
@@ -21,9 +35,13 @@
     }
 
     &__name {
+        $offset: 3.2rem;
+
         line-break: auto;
+        margin-left: math.div(-$offset, 2);
         margin-top: 1rem;
         text-align: center;
         text-transform: capitalize;
+        width: $width + $offset;
     }
 }

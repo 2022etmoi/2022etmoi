@@ -1,20 +1,32 @@
 @import '../../styles/mixins';
+@import '../../styles/breakpoints';
 
 .proposition-card {
-    margin: 1rem auto;
-    max-width: 45rem;
-    padding: 0 2rem;
+    margin: 1.6rem auto;
+    max-width: 72rem;
+    padding: 0 3.2rem;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 
     header {
         align-items: center;
         display: flex;
         flex-flow: row;
-        font-size: 2.2rem;
+        font-size: 3.5rem;
         font-weight: 700;
-        height: 10rem;
+        height: 16rem;
         justify-content: center;
-        padding: 0 2rem;
+        padding: 0 3.2rem;
         text-align: center;
+        transition: font-size, padding, 0.3s ease-out;
+
+        @media screen and (max-width: $breakpoint-lg) {
+            font-size: 2.8rem;
+            padding: 0;
+        }
     }
 
     &__card {
@@ -24,7 +36,7 @@
 
         &-title {
             color: $secondary-muted;
-            font-size: 0.8rem;
+            font-size: 1.3rem;
             margin-top: 0;
             text-transform: uppercase;
         }
@@ -32,13 +44,26 @@
 
     &__buttons {
         align-items: start;
+        column-gap: 3.2rem;
         display: flex;
         flex-flow: row;
         justify-content: center;
-        margin-top: 2rem;
+        margin-top: 3.2rem;
 
-        button + button {
-            margin-left: 2rem;
+        @media screen and (max-width: $breakpoint-md) {
+            column-gap: 1.6rem;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            margin-bottom: 2rem;
+            row-gap: 1rem;
+
+            .proposition-button {
+                margin: 0 auto;
+            }
         }
     }
 
@@ -46,7 +71,7 @@
         display: flex;
         flex-flow: row;
         justify-content: center;
-        margin-top: 0.5rem;
+        margin-top: 2.6rem;
     }
 
     &__actions {
@@ -55,7 +80,7 @@
         flex-flow: row;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 2rem auto;
-        max-width: 32rem;
+        margin: 3.2rem auto;
+        max-width: 52rem;
     }
 }

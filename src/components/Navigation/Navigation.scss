@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/breakpoints';
 
 .nav {
     $self: &;
@@ -6,7 +7,7 @@
     color: $primary;
     display: inline-flex;
     flex-direction: column;
-    row-gap: 1.5rem;
+    row-gap: 2.4rem;
 
     &__link {
         $self-link: &;
@@ -14,11 +15,11 @@
         align-items: center;
         border-color: $primary;
         color: inherit;
-        column-gap: 1.5rem;
+        column-gap: 2.4rem;
         display: inline-flex;
-        font-size: 1.3rem;
+        font-size: 1.9rem;
         font-weight: 700;
-        padding: 0.5rem;
+        padding: 0.8rem;
         text-decoration: none;
 
         &:first-child {
@@ -74,7 +75,7 @@
         }
     }
 
-    @media screen and (max-width: 60rem) {
+    @media screen and (max-width: $breakpoint-lg) {
         flex-direction: row;
         justify-content: space-around;
         width: 100%;

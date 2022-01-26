@@ -19,21 +19,23 @@ export function Options() {
     useEffect(() => refresh(), [refresh]);
     return (
         <div className="route-options">
-            <h1>Options</h1>
-            <div className="option-card">
-                <pre>
+            <header>
+                <h1>Options</h1>
+            </header>
+            <div className="route-options__wrapper">
+                <div className="option-card">
+                    <pre>
                 PROPOSITIONS :({Array.from(propositions).length})
-                    <ul>
-                        {Array.from(propositions).map((p,i) => <li key={i}>{p.content}</li>)}
-                    </ul>
-                    {
-                        savedAnswers.length === Array.from(propositions).length ? "ALL PROPOSITIONS ANSWERED" : "KEEP ANSWERING PROPOSALS"
-                    }
-                    <br/>
-                    <Button onClick={refresh}>Refresh answers</Button>
-                    <br/>
-                    <Button type="secondary" onClick={()=> storageService.clear()}>Reset app</Button>
-                </pre>
+                        <ul>
+                            {Array.from(propositions).map((p,i) => <li key={i}>{p.content}</li>)}
+                        </ul>
+                        {
+                            savedAnswers.length === Array.from(propositions).length ? "ALL PROPOSITIONS ANSWERED" : "KEEP ANSWERING PROPOSALS"
+                        }
+                    </pre>
+                </div>
+                <Button onClick={refresh}>Refresh answers</Button>
+                <Button type="secondary" onClick={()=> storageService.clear()}>Reset app</Button>
             </div>
         </div>
     );
