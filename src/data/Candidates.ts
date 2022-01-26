@@ -3,12 +3,14 @@ import { Hidalgo } from "./Hidalgo";
 import { LePen } from "./Le_Pen";
 import { Melenchon } from "./Melenchon";
 import { Pecresse } from "./Pecresse";
+import { Roussel } from "./Roussel";
 import { Zemmour } from "./Zemmour";
 
 export const candidates: Map<CandidateID, Candidate> = new Map<CandidateID, Candidate>([
-    [CandidateID.MELENCHON, Melenchon],
     [CandidateID.HIDALGO, Hidalgo],
-    [CandidateID.PECRESSE, Pecresse],
     [CandidateID.LE_PEN, LePen],
+    [CandidateID.MELENCHON, Melenchon],
+    [CandidateID.PECRESSE, Pecresse],
+    [CandidateID.ROUSSEL, Roussel],
     [CandidateID.ZEMMOUR, Zemmour],
 ]);
