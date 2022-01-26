@@ -1,3 +1,4 @@
+@import '../../styles/breakpoints';
 @import '../../styles/mixins';
 
 .candidate-score {
@@ -5,12 +6,18 @@
 
     align-items: center;
     box-sizing: border-box;
+    column-gap: 0.5rem;
     display: grid;
     flex-flow: row;
-    grid-template-columns: 10rem 1fr 6rem 6rem;
+    grid-template-columns: 7rem 1fr 6rem 6rem;
     margin: 16px 0;
+    max-width: 45rem;
     padding: 0.5rem;
-    width: 45rem;
+    width: 100%;
+
+    @media screen and (max-width: $breakpoint-md) {
+        grid-template-columns: 7rem 1fr repeat(2, 5rem);
+    }
 
     @for $index from 0 to 50 {
         &:nth-child(#{$index}) {
@@ -19,10 +26,9 @@
     }
 
     &__score {
-        font-size: 40px;
+        font-size: 2.5rem;
         font-weight: 700;
         text-align: center;
-        width: 160px;
 
         &::after {
             content: '%';
@@ -32,14 +38,18 @@
     }
 
     &__details {
-        padding-right: 16px;
+        overflow: hidden;
 
         &__name {
+            @include text-ellipsis();
+
             font-size: 24px;
             font-weight: 700;
         }
 
         &__movement {
+            @include text-ellipsis();
+
             font-size: 16px;
         }
     }
@@ -48,8 +58,11 @@
         background-color: rgba($primary, 0.1);
         border-radius: 16px;
         font-size: 20px;
-        margin: 0 8px;
         padding: 4px 16px;
         text-align: right;
+
+        @media screen and (max-width: $breakpoint-md) {
+            padding: 4px 1rem;
+        }
     }
 }

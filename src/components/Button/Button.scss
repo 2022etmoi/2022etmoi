@@ -1,6 +1,9 @@
 @import '../../styles/colors';
+@import '../../styles/mixins';
 
 .button {
+    @include text-ellipsis();
+
     background-color: $button-primary;
     border: 0;
     border-radius: 2rem;
@@ -11,12 +14,9 @@
     font-size: 1rem;
     font-weight: 500;
     margin: 4px;
-    overflow: hidden;
     padding: 1rem 2rem;
     text-align: center;
-    text-overflow: ellipsis;
     user-select: none;
-    white-space: nowrap;
 
     .anticon {
         font-size: 90%;
