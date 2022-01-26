@@ -2,5 +2,10 @@
     .header {
         font-size: 1.8rem;
         text-align: center;
+        transition: font-size 0.3s ease-out;
+
+        @media screen and (max-width: 80rem) {
+            font-size: 1.4rem;
+        }
     }
 }
