@@ -1,5 +1,5 @@
 import { candidates } from "../data/Candidates";
-import { CandidateAnswer, CandidateID, UserAnswer } from "../types";
+import { Answer, CandidateAnswer, CandidateID, PropositionID, UserAnswer } from "../types";
 import { StorageService } from "./StorageService";
 
 const CandidateValues = new Map([
@@ -43,9 +43,14 @@ export class ScoringService {
         const storageService = StorageService.getInstance();
         const answers = storageService.getAnswers();
         const candidateAnswers = candidates.get(candidate)?.opinion;
+
         if (candidateAnswers == undefined) return null;
         if (answers == undefined) return null;
 
+        return this.computeScoreWithAnswers(candidateAnswers, answers);
+    }
+
+    public computeScoreWithAnswers(candidateAnswers: Map<PropositionID, Answer>, userAnswers: [PropositionID, UserAnswer][]) {
         const abs = Math.abs;
         const sign = Math.sign;
         let norm = 0;
@@ -55,7 +60,7 @@ export class ScoringService {
         // let nonzero = 0;
 
         candidateAnswers.forEach((value, key) => {
-            const userAnswer = answers.filter(a => a[0] == key)[0];
+            const userAnswer = userAnswers.filter(a => a[0] == key)[0];
             if (userAnswer != undefined) {
                 const m = UserValues.get(userAnswer[1])!;
                 const c = CandidateValues.get(value.value)!;
