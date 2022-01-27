@@ -6,6 +6,7 @@
 .proposition-button {
     $width: 9.6rem;
 
+    cursor: pointer !important;
     display: flex;
     flex-direction: column;
     transition: font-size, 0.3s ease-out;
