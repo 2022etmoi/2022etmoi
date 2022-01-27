@@ -62,10 +62,10 @@ export class ScoringService {
         candidateAnswers.forEach((value, key) => {
             const userAnswer = userAnswers.filter(a => a[0] == key)[0];
             if (userAnswer != undefined) {
-                const m = UserValues.get(userAnswer[1])!;
-                const c = CandidateValues.get(value.value)!;
+                const m = UserValues.get(userAnswer[1]);
+                const c = CandidateValues.get(value.value);
 
-                if (m != 0 && c != 0) {
+                if (m !== undefined && c !== undefined && m != 0 && c != 0) {
                     const a = abs(m);
                     // nonzero += 1;
                     norm += a;
