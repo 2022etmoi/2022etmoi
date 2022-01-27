@@ -20,7 +20,7 @@ export function Scores() {
                     score: score?.score ?? - 1,
                 };
             })
-            .filter(value => value.score != - 1)
+            .filter(value => value.score !== - 1)
             .sort((a, b) => {
                 const seed1 = Math.random() * 100;
                 const seed2 = Math.random() * 100;

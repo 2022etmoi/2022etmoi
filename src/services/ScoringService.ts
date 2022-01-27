@@ -44,8 +44,8 @@ export class ScoringService {
         const answers = storageService.getAnswers();
         const candidateAnswers = candidates.get(candidate)?.opinion;
 
-        if (candidateAnswers == undefined) return null;
-        if (answers == undefined) return null;
+        if (candidateAnswers === undefined) return null;
+        if (answers === undefined) return null;
 
         return this.computeScoreWithAnswers(candidateAnswers, answers);
     }
@@ -60,22 +60,22 @@ export class ScoringService {
         // let nonzero = 0;
 
         candidateAnswers.forEach((value, key) => {
-            const userAnswer = userAnswers.filter(a => a[0] == key)[0];
-            if (userAnswer != undefined) {
+            const userAnswer = userAnswers.filter(a => a[0] === key)[0];
+            if (userAnswer !== undefined) {
                 const m = UserValues.get(userAnswer[1]);
                 const c = CandidateValues.get(value.value);
 
-                if (m !== undefined && c !== undefined && m != 0 && c != 0) {
+                if (m !== undefined && c !== undefined && m !== 0 && c !== 0) {
                     const a = abs(m);
                     // nonzero += 1;
                     norm += a;
-                    sum += a * abs(c) * (sign(m) == sign(c) ? 1 : - 1);
+                    sum += a * abs(c) * (sign(m) === sign(c) ? 1 : - 1);
 
-                    if (m == UserValues.get(UserAnswer.MUST) && c == CandidateValues.get(CandidateAnswer.YES)
-                        || m == UserValues.get(UserAnswer.MUST_NOT) && c == CandidateValues.get(CandidateAnswer.NO)) {
+                    if (m === UserValues.get(UserAnswer.MUST) && c === CandidateValues.get(CandidateAnswer.YES)
+                        || m === UserValues.get(UserAnswer.MUST_NOT) && c === CandidateValues.get(CandidateAnswer.NO)) {
                         important_agreements += 1;
-                    } else if (m == UserValues.get(UserAnswer.MUST_NOT) && c == CandidateValues.get(CandidateAnswer.YES)
-                        || m == UserValues.get(UserAnswer.MUST) && c == CandidateValues.get(CandidateAnswer.NO)) {
+                    } else if (m === UserValues.get(UserAnswer.MUST_NOT) && c === CandidateValues.get(CandidateAnswer.YES)
+                        || m === UserValues.get(UserAnswer.MUST) && c === CandidateValues.get(CandidateAnswer.NO)) {
                         important_disagreements += 1;
                     }
                 }
@@ -87,7 +87,7 @@ export class ScoringService {
          * This should not impact the final result as in this case sum should
          * be null also. We choose the score 50 if all answers are null.
          */
-        if (norm == 0) norm = 1;
+        if (norm === 0) norm = 1;
 
         return {
             score: Math.round(50.0 * (1.0 + sum / norm)),

@@ -22,7 +22,7 @@ interface PropositionCardProps {
  * @param navigate. The navigate function to show proposition n + dn.
  */
 export function PropositionCard({ propositionID, navigate }: PropositionCardProps) {
-    const proposition = useMemo(() => propositions.filter(p => p.id == propositionID)[0], [propositionID]);
+    const proposition = useMemo(() => propositions.filter(p => p.id === propositionID)[0], [propositionID]);
 
     const storageService = StorageService.getInstance();
 

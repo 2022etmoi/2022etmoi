@@ -1,6 +1,6 @@
 import "./CandidateScore.scss";
 
-import CountUp  from "react-countup";
+import CountUp from "react-countup";
 
 import { candidates } from "../../data/Candidates";
 import { ScoringService } from "../../services";
@@ -16,10 +16,10 @@ interface CandidateScoreProps {
  */
 export function CandidateScore({ candidateID }: CandidateScoreProps) {
     const candidate = candidates.get(candidateID as CandidateID);
-    if (candidate == undefined) return null;
+    if (candidate === undefined) return null;
 
     const score = ScoringService.getInstance().computeScore(candidateID as CandidateID);
-    if (score == null) return null;
+    if (score === null) return null;
 
     return (
         <div className="candidate-score">
