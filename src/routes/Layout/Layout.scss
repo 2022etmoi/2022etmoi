@@ -18,7 +18,7 @@
         grid-template-columns: 24rem 1fr;
         height: 100vh;
         margin: 0 auto;
-        max-width: 192rem;
+        max-width: 150rem;
         overflow-y: hidden;
         padding: 2rem;
         position: relative;
@@ -35,14 +35,23 @@
             }
         }
 
+        @media screen and (max-width: $breakpoint-xxl) {
+            max-width: 128rem;
+        }
+
         @media screen and (max-width: $breakpoint-lg) {
             display: flex;
             flex-direction: column-reverse;
             grid-template-columns: unset;
 
             .route {
-                max-height: calc(100vh - 7rem);
-                min-height: calc(100vh - 7rem);
+                min-height: calc(100vh - 12rem);
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            .route {
+                min-height: calc(100vh - 10.6rem);
             }
         }
     }

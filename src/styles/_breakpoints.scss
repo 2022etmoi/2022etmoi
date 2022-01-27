@@ -3,6 +3,8 @@
 * @example: @media screen and (max-width: $breakpoint-md): { ... };
 */
 
+$breakpoint-xxl: 1600px;
+$breakpoint-xl: 1280px;
 $breakpoint-lg: 1024px;
 $breakpoint-md: 768px;
 $breakpoint-sm: 530px;
