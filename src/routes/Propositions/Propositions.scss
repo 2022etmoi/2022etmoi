@@ -8,13 +8,12 @@
         transition: font-size 0.3s ease-out;
 
         h1 {
+            align-items: center;
+            column-gap: 1.5rem;
+            display: grid;
             font-size: inherit;
-
-            .counter {
-                margin-bottom: 0.6rem;
-                margin-left: 0.5rem;
-                vertical-align: 0.5rem;
-            }
+            grid-template-columns: 15rem 5rem;
+            justify-content: center;
         }
 
         @media screen and (max-width: $breakpoint-lg) {

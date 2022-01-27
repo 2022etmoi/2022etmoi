@@ -43,7 +43,7 @@ export function Propositions() {
     return (
         <div className="route-propositions">
             <header>
-                <h1>Proposition <Counter current={propositionNb + 1} max={order.length}/></h1>
+                <h1><span>Proposition</span><Counter current={propositionNb + 1} max={order.length}/></h1>
             </header>
             <div className="route-propositions__wrapper">
                 {
