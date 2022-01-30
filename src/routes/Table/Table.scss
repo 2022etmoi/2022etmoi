@@ -1,0 +1,45 @@
+.route-table {
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        &__candidate {
+            transform: rotate(180deg);
+            writing-mode: vertical-lr;
+        }
+
+        table {
+            border-spacing: 0;
+        }
+
+        td {
+            padding: 4px 8px;
+        }
+
+        tbody {
+            text-align: center;
+
+            &:nth-child(even) {
+                background-color: rgb(0 0 0 / 10%);
+            }
+        }
+
+        tr:first-child {
+            text-align: left;
+
+            th {
+                padding: 8px;
+            }
+
+            :first-child {
+                text-align: center;
+            }
+        }
+
+        td:nth-child(even) {
+            background-color: rgb(0 0 0 / 10%);
+        }
+    }
+}
