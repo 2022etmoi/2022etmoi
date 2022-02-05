@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/mixins';
 @import '../../styles/breakpoints';
 
 .nav {
@@ -24,6 +25,10 @@
 
         &:first-child {
             width: 9rem;
+
+            @media screen and (max-width: $breakpoint-sm) {
+                display: none;
+            }
 
             .icon {
                 background-color: unset;
@@ -76,12 +81,33 @@
     }
 
     @media screen and (max-width: $breakpoint-lg) {
+        @include box-shadow();
+
+        background-color: $white;
+        box-sizing: border-box;
         flex-direction: row;
         justify-content: space-around;
+        padding: 0.5rem;
+        position: relative;
         width: 100%;
 
-        span {
-            display: none;
+        &::before {
+            background: linear-gradient(180deg, rgba($white, 0) 0, $white 60%);
+            content: '';
+            height: 2rem;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: -1rem;
+            z-index: 99;
+        }
+
+        &__link {
+            column-gap: 0;
+            flex-direction: column;
+            font-size: 1.2rem;
+            font-weight: 500;
+            row-gap: 0.9rem;
         }
     }
 }

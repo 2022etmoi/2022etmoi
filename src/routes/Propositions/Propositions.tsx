@@ -6,10 +6,6 @@ import { Button, Counter, PropositionCard } from "../../components";
 import { StorageService } from "../../services";
 import { PropositionID } from "../../types";
 
-// interface PropositionsProps {
-//
-// }
-
 /**
  * A component to display propositions one by one.
  */
