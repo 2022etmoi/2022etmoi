@@ -1,5 +1,7 @@
 import "./Table.scss";
 
+import { useMemo } from "react";
+
 import { candidates } from "../../data/Candidates";
 import { propositions } from "../../data/Propositions";
 import { CandidateAnswer, CandidateID, PropositionID } from "../../types";
@@ -8,6 +10,21 @@ import { CandidateAnswer, CandidateID, PropositionID } from "../../types";
  * A route to display all answers.
  */
 export function Table() {
+    const candidatesNames = useMemo(()=>
+        Object.keys(CandidateID).map(id => (
+            <th className="route-table__wrapper__candidate"
+                key={id}>{candidates.get(id as CandidateID)?.name ?? "‼️"}</th>))
+    , []);
+
+    const candidatesAnswers= useMemo(()=>
+        propositions.map(p => (
+            <tr  key={p.id}>
+                <td>{p.content}</td>
+                {Object.keys(CandidateID).map(id => (<td key={id}>{answer(p.id, id as CandidateID)}</td>))}
+            </tr>
+        ))
+    , []);
+
     return (
         <div className="route-table">
             <header>
@@ -18,19 +35,12 @@ export function Table() {
                     <thead>
                         <tr>
                             <th>Proposition</th>
-                            {Object.keys(CandidateID).map(id => (
-                                <th className="route-table__wrapper__candidate"
-                                    key={id}>{candidates.get(id as CandidateID)?.name ?? "‼️"}</th>))}
+                            {candidatesNames}
                         </tr>
                     </thead>
-                    {propositions.map(p => (
-                        <tbody key={p.id}>
-                            <tr>
-                                <td>{p.content}</td>
-                                {Object.keys(CandidateID).map(id => (<td key={id}>{answer(p.id, id as CandidateID)}</td>))}
-                            </tr>
-                        </tbody>
-                    ))}
+                    <tbody>
+                        {candidatesAnswers}
+                    </tbody>
                 </table>
             </div>
         </div>

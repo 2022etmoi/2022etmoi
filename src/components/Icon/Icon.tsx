@@ -7,10 +7,11 @@ import { ReactComponent as IconLogo }  from "./icons/logo.svg";
 import { ReactComponent as IconOptions }  from "./icons/options.svg";
 import { ReactComponent as IconPropositions }  from "./icons/propositions.svg";
 import { ReactComponent as IconScores }  from "./icons/scores.svg";
+import { ReactComponent as IconTable }  from "./icons/table.svg";
 
 export interface IconProps {
     /** The icon name to use from /src/components/Icon/icons/*.svg */
-    file: "logo" | "candidates" | "options" | "propositions" | "scores";
+    file: "logo" | "candidates" | "options" | "propositions" | "scores" | "table";
 }
 
 export function Icon ({ file }: IconProps) {
@@ -21,6 +22,7 @@ export function Icon ({ file }: IconProps) {
         case "options": return <IconOptions />;
         case "propositions": return <IconPropositions />;
         case "scores": return <IconScores />;
+        case "table": return <IconTable />;
         default: return null;
         }
     }, [file]);

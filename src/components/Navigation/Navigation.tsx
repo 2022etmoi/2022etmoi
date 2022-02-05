@@ -18,7 +18,9 @@ export function Navigation (){
         {
             to: "/app/scores", icon:"candidates", label: "Candidats" },
         {
-            to: "/app/options", icon:"options", label: "Options" }
+            to: "/app/options", icon:"options", label: "Options" },
+        {
+            to: "/app/table", icon:"table", label: "Table" }
     ];
 
     const isActive = useCallback(path => pathname === path, [pathname]);
