@@ -44,12 +44,6 @@ export const propositions: Proposition[] = [
         "Description pass",
     ),
     new Proposition(
-        PropositionID.ECOCIDE,
-        "Écologie",
-        "Reconnaître un crime d'écocide",
-        "Description ecocide",
-    ),
-    new Proposition(
         PropositionID.EGALITE_HF,
         "Égalité",
         "Faire respecter l'égalité salariale entre les hommes et les femmes",
@@ -120,6 +114,84 @@ export const propositions: Proposition[] = [
         "Souveraineté",
         "En cas de désaccord, il ne faut pas hésiter à désobéir à Bruxelles",
         "Description desobeir",
+    ),
+    new Proposition(
+        PropositionID.SOL,
+        "",
+        "En finir avec le droit du sol automatique",
+        "",
+    ),
+    new Proposition(
+        PropositionID.PENALE,
+        "",
+        "Abaisser la majorité pénale de 18 à 16 ans",
+        "",
+    ),
+    new Proposition(
+        PropositionID.CANNABIS,
+        "",
+        "Légaliser le cannabis",
+        "",
+    ),
+    new Proposition(
+        PropositionID.DETTE,
+        "",
+        "Il faut tout faire pour contenir la dette publique",
+        "",
+    ),
+    new Proposition(
+        PropositionID.TRAITES,
+        "",
+        "Il faut renégocier les traités européens pour en finir avec les dogmes budgétaires",
+        "",
+    ),
+    new Proposition(
+        PropositionID.CROISSANCE,
+        "",
+        "On peut concilier croissance et écologie",
+        "",
+    ),
+    new Proposition(
+        PropositionID.ASSANGE,
+        "",
+        "Il faut accorder l'asile politique à Julian Assange",
+        "",
+    ),
+    new Proposition(
+        PropositionID.RIC,
+        "",
+        "Il faut améliorer les outils permettant aux citoyens d'intervenir dans la création des lois (référendum d'initiative citoyenne, abaisser les seuils des dispositifs existants, …)",
+        "",
+    ),
+    new Proposition(
+        PropositionID.SPECULATION,
+        "",
+        "Il faut lutter contre la spéculation financière",
+        "",
+    ),
+    new Proposition(
+        PropositionID.OTAN,
+        "",
+        "Il faut sortir de l'OTAN",
+        "",
+    ),
+    new Proposition(
+        PropositionID.REDEVANCE,
+        "",
+        "Supprimer la redevance audiovisuelle grâce à la privatisation des principales chaînes de l'audiovisuel public",
+        "",
+    ),
+    new Proposition(
+        PropositionID.ECOLE,
+        "",
+        "L'école existe pour préparer les étudiants au marché du travail",
+        "",
+    ),
+    new Proposition(
+        PropositionID.GUERRE,
+        "",
+        "Autoriser l'entrée en France des migrants fuyant les zones de guerre",
+        "",
     ),
 //
 ];

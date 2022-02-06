@@ -6,7 +6,6 @@ export enum PropositionID {
     EPR = "EPR",
     LOGEMENT = "LOGEMENT",
     PASS = "PASS",
-    ECOCIDE = "ECOCIDE",
     EGALITE_HF = "EGALITE_HF",
     ISF = "ISF",
     DESTITUER = "DESTITUER",
@@ -19,6 +18,19 @@ export enum PropositionID {
     TEMPS = "TEMPS",
     CLOUD = "CLOUD",
     DESOBEIR = "DESOBEIR",
+    SOL = "SOL",
+    PENALE = "PENALE",
+    CANNABIS = "CANNABIS",
+    DETTE = "DETTE",
+    TRAITES = "TRAITES",
+    CROISSANCE = "CROISSANCE",
+    ASSANGE = "ASSANGE",
+    RIC = "RIC",
+    SPECULATION = "SPECULATION",
+    OTAN = "OTAN",
+    REDEVANCE = "REDEVANCE",
+    ECOLE = "ECOLE",
+    GUERRE = "GUERRE",
 }
 
 export class Proposition {
