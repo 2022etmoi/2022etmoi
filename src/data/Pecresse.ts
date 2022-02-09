@@ -12,7 +12,6 @@ export const Pecresse = new Candidate(
         [PropositionID.EPR, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.LOGEMENT, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.PASS, new Answer(CandidateAnswer.NO, "")],
-        [PropositionID.ECOCIDE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.EGALITE_HF, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.ISF, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.DESTITUER, new Answer(CandidateAnswer.NO, "")],

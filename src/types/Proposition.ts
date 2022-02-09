@@ -10,7 +10,6 @@ export enum PropositionID {
     DESTITUER = "DESTITUER",
     DETTE = "DETTE",
     ECOLE = "ECOLE",
-    ECOCIDE = "ECOCIDE",
     EGALITE_HF = "EGALITE_HF",
     EPR = "EPR",
     EOLIENNE = "EOLIENNE",
