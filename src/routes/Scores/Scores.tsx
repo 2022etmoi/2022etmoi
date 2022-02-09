@@ -39,14 +39,15 @@ export function Scores() {
                         scores.map((score) => (
                             <CandidateScore candidateID={score.candidate} key={score.candidate}/>
                         ))
-                        : <>
+                        : <div className="error">
                             <h1>Oups !</h1>
                             <p>Aucun vote enregistré.</p>
-                            <br>
-                            </br><Link to="/app/propositions">
+                            <br />
+                            <br />
+                            <Link to="/app/propositions">
                                 <Button>Voir les propositions</Button>
                             </Link>
-                        </>
+                        </div>
                 }
             </div>
         </div>
