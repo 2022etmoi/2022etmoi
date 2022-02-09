@@ -25,7 +25,7 @@
 
         .route {
             @include scrollbar();
-            @include animate-slide-up();
+            @include animate-slide-on-axis(y, layout-slide-up, false, 1rem);
 
             overflow-y: auto;
 

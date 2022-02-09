@@ -1,8 +1,10 @@
 .route-scores {
     &__wrapper {
-        align-items: center;
+        column-gap: 2rem;
         display: flex;
-        flex-flow: column;
+        flex-flow: row;
+        flex-wrap: wrap;
         justify-content: center;
+        row-gap: 2rem;
     }
 }

@@ -46,28 +46,42 @@
     }
 }
 
-@mixin animate-slide-up($delay: 0, $animateSelf: false) {
+@mixin animate-slide-on-axis($axis, $animationName, $animateSelf, $amount, $delay: 0) {
     @include reduce-motion-safe() {
-        @keyframes slide-up {
+        @keyframes #{$animationName} {
             from {
                 opacity: 0;
-                transform: scale(0.95) translateY(1rem);
+
+                @if $axis ==  y {
+                    transform: scale(0.95) translateY(#{$amount});
+                }
+
+                @if $axis ==  x {
+                    transform: scale(0.95) translateX(#{$amount});
+                }
             }
 
             to {
                 opacity: 1;
-                transform: scale(1) translateY(0);
+
+                @if $axis ==  y {
+                    transform: scale(1) translateY(0);
+                }
+
+                @if $axis ==  x {
+                    transform: scale(1) translateX(0);
+                }
             }
         }
 
         @if $animateSelf {
-            animation: slide-up 0.3s #{$delay * 0.1}s ease-out forwards;
+            animation: #{$animationName} 0.3s #{$delay * 0.1}s ease-out forwards;
             opacity: 0;
         }
 
         @else {
             > * {
-                animation: slide-up 0.3s #{$delay * 0.1}s ease-out forwards;
+                animation: #{$animationName} 0.3s #{$delay * 0.1}s ease-out forwards;
                 opacity: 0;
             }
         }

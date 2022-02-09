@@ -5,15 +5,11 @@
     @include card();
 
     align-items: center;
+    aspect-ratio: 140 / 106;
     box-sizing: border-box;
-    column-gap: 1rem;
-    display: grid;
-    flex-flow: row;
-    grid-template-columns: 16rem 1fr repeat(2, 8rem);
-    margin: 1.6rem 0;
-    max-width: 72rem;
-    padding: 0.8rem;
-    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    width: 35rem;
 
     @media screen and (max-width: $breakpoint-md) {
         grid-template-columns: 16rem 1fr repeat(2, 8rem);
@@ -21,48 +17,143 @@
 
     @for $index from 0 to 50 {
         &:nth-child(#{$index}) {
-            @include animate-slide-up($index, true);
+            @include animate-slide-on-axis(y, candidate-score-slide-up, true, 1rem, $index);
         }
     }
 
-    &__score {
-        font-size: 4rem;
-        font-weight: 700;
-        text-align: center;
+    &__image {
+        aspect-ratio: 16 / 9;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        overflow: hidden;
+        position: relative;
 
-        &::after {
-            content: '%';
-            font-size: 60%;
-            opacity: 0.8;
+        &::before {
+            background: linear-gradient(0deg, rgb(0 0 0 / 100%) 0%, rgb(0 0 0 / 0%) 60%);
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
         }
     }
 
     &__details {
-        overflow: hidden;
+        color: $white;
+        display: grid;
+        grid-template-areas:
+            'name  score'
+            'movement  score';
+        height: 5rem;
+        margin-top: -6rem;
+        padding: 0 2rem 1rem;
+        position: relative;
+        z-index: 2;
 
-        &__name {
+        &-name {
             @include text-ellipsis();
 
-            font-size: 24px;
+            font-size: 2.1rem;
             font-weight: 700;
+            grid-area: name;
         }
 
-        &__movement {
+        &-movement {
             @include text-ellipsis();
 
-            font-size: 16px;
+            font-size: 1.6rem;
+            grid-area: movement;
+        }
+
+        &-score {
+            font-size: 3rem;
+            grid-area: score;
+            text-align: right;
+
+            &::after {
+                content: '%';
+                font-size: 60%;
+                opacity: 0.8;
+            }
         }
     }
 
-    &__chip {
-        background-color: rgba($primary, 0.1);
-        border-radius: 16px;
-        font-size: 20px;
-        padding: 4px 16px;
-        text-align: right;
+    &__bars {
+        display: flex;
 
-        @media screen and (max-width: $breakpoint-md) {
-            padding: 4px 1rem;
+        &-item {
+            height: 0.4rem;
+            width: 20%;
+
+            &--must_not {
+                @include animate-slide-on-axis(x, candidate-bars-item-must_not, true, -3.5rem, 2);
+
+                background-color: #eb3f33;
+            }
+
+            &--not {
+                @include animate-slide-on-axis(x, candidate-bars-item-not, true, -3.5rem, 2);
+
+                background-color: #f0908d;
+            }
+
+            &--skip {
+                @include animate-slide-on-axis(x, candidate-bars-item-skip, true, -3.5rem, 2);
+
+                background-color: #9c9c9c;
+            }
+
+            &--yes {
+                @include animate-slide-on-axis(x, candidate-bars-item-yes, true, -3.5rem, 2);
+
+                background-color: #89c584;
+            }
+
+            &--must {
+                @include animate-slide-on-axis(x, candidate-bars-item-must, true, -1.5rem, 2);
+
+                background-color: #4e9d4a;
+            }
+        }
+    }
+
+    &__chips {
+        &-item {
+            background-color: rgba($primary, 0.1);
+            border-radius: 2rem;
+            display: inline-block;
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            padding: 0.6rem 1.5rem;
+            text-align: right;
+            vertical-align: middle;
+            width: 4rem;
+
+            span {
+                font-size: 1.4rem;
+            }
+
+            @media screen and (max-width: $breakpoint-md) {
+                padding: 4px 1rem;
+            }
+        }
+    }
+
+    &__footer {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+
+        .button {
+            padding: 0.5rem 1.1rem;
         }
     }
 }
