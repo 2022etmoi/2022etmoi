@@ -55,9 +55,11 @@ export class ScoringService {
         const sign = Math.sign;
         let norm = 0;
         let sum = 0;
+        let agreements = 0;
+        let disagreements = 0;
         let important_agreements = 0;
         let important_disagreements = 0;
-        // let nonzero = 0;
+        let neutral = 0;
 
         candidateAnswers.forEach((value, key) => {
             const userAnswer = userAnswers.filter(a => a[0] === key)[0];
@@ -77,6 +79,14 @@ export class ScoringService {
                     } else if (m === UserValues.get(UserAnswer.MUST_NOT) && c === CandidateValues.get(CandidateAnswer.YES)
                         || m === UserValues.get(UserAnswer.MUST) && c === CandidateValues.get(CandidateAnswer.NO)) {
                         important_disagreements += 1;
+                    } else if (m === UserValues.get(UserAnswer.NO) && c === CandidateValues.get(CandidateAnswer.NO)
+                        || m === UserValues.get(UserAnswer.YES) && c === CandidateValues.get(CandidateAnswer.YES)) {
+                        agreements += 1;
+                    } else if (m === UserValues.get(UserAnswer.NO) && c === CandidateValues.get(CandidateAnswer.YES)
+                        || m === UserValues.get(UserAnswer.YES) && c === CandidateValues.get(CandidateAnswer.NO)) {
+                        disagreements += 1;
+                    } else {
+                        neutral += 1;
                     }
                 }
             }
@@ -93,6 +103,9 @@ export class ScoringService {
             score: Math.round(50.0 * (1.0 + sum / norm)),
             hearts: important_agreements,
             skulls: important_disagreements,
+            agreements: agreements,
+            disagreements: disagreements,
+            neutral: neutral,
             // representativeness: 100 * nonzero / myscores.length,
         };
     }
