@@ -48,6 +48,7 @@
 
 @mixin animate-slide-on-axis($axis, $animationName, $animateSelf, $amount, $delay: 0) {
     @include reduce-motion-safe() {
+        // stylelint-disable keyframes-name-pattern
         @keyframes #{$animationName} {
             from {
                 opacity: 0;
