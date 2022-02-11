@@ -84,6 +84,9 @@ export class StorageService {
                 .map(p => p.id)
                 .sort(() => Math.random() - 0.5);
         } else {
+            order?.forEach(id => {
+                if (Object.keys(PropositionID).indexOf(id) === - 1) order = order?.filter(i => i != id);
+            });
             for (const id in PropositionID) {
                 if (order.indexOf(<PropositionID>id) === - 1) order.push(<PropositionID>id);
             }
