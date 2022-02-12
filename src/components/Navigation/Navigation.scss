@@ -5,6 +5,7 @@
 .nav {
     $self: &;
 
+    background-color: $white;
     color: $primary;
     display: inline-flex;
     flex-direction: column;
@@ -80,10 +81,14 @@
         }
     }
 
+    @media screen and (min-width: $breakpoint-lg) {
+        box-sizing: border-box;
+        padding: 0 4rem;
+    }
+
     @media screen and (max-width: $breakpoint-lg) {
         @include box-shadow();
 
-        background-color: $white;
         box-sizing: border-box;
         flex-direction: row;
         justify-content: space-around;
