@@ -1,3 +1,58 @@
+@import '../../styles/colors';
+
 .route-landing {
-    color: #362068;
+    &__wrapper {
+        margin: 3rem auto;
+        max-width: 120rem;
+
+        .hero {
+            column-gap: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+
+            &__logo {
+                margin-bottom: -1rem;
+                margin-top: 10rem;
+                width: 20rem;
+            }
+
+            &__title {
+                color: $black;
+                margin: 0;
+                text-transform: uppercase;
+
+                &-first {
+                    display: block;
+                    font-size: 8.5rem;
+                    line-height: 10rem;
+                    margin-bottom: -1.5rem;
+                }
+
+                &-second {
+                    display: block;
+                    font-size: 4.2rem;
+                }
+
+                &-me {
+                    margin: auto -0.7rem;
+                }
+            }
+
+            &__content {
+                font-size: 2.2rem;
+                font-weight: 500;
+                margin-bottom: 5rem;
+            }
+            &__left {}
+
+            &__right {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        h2 {
+            font-size: 2.3rem;
+        }
+    }
 }
