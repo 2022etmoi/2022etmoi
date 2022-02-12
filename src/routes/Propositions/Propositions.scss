@@ -2,17 +2,20 @@
 @import '../../styles/colors';
 
 .route-propositions {
-    > header {
+    &__header {
         font-size: 2.9rem;
         text-align: center;
         transition: font-size 0.3s ease-out;
 
+        &__prop {
+            text-align: left;
+        }
+
         h1 {
             align-items: center;
-            column-gap: 1.5rem;
             display: grid;
-            font-size: inherit;
-            grid-template-columns: 15rem 5rem;
+            font-size: 1.8rem;
+            grid-template-columns: 12rem 5rem;
             justify-content: center;
         }
 

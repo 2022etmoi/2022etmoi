@@ -22,10 +22,6 @@
         font-size: 3rem;
         padding: 0.6rem 0;
         transition: font-size 0.3s ease-out;
-
-        @media screen and (max-width: $breakpoint-lg) {
-            font-size: 1.6rem;
-        }
     }
 
     &__name {

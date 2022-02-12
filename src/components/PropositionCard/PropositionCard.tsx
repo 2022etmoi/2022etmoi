@@ -39,30 +39,34 @@ export function PropositionCard({ propositionID, navigate }: PropositionCardProp
     return (
         proposition &&
         <div className="proposition-card">
-            <header>
-                {
-                    proposition.content
-                }
-            </header>
-            <div className="proposition-card__card">
-                <h3 className="proposition-card__card-title">Details sur cette proposition</h3>
-                <div className="proposition-card__card-details">{proposition.description}</div>
+            <div className="proposition-card__top">
+                <header>
+                    {
+                        proposition.content
+                    }
+                </header>
+                <div className="proposition-card__card">
+                    <h3 className="proposition-card__card-title">Details sur cette proposition</h3>
+                    <div className="proposition-card__card-details">{proposition.description}</div>
+                </div>
             </div>
 
-            <div className="proposition-card__buttons">
-                <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST_NOT} emoji={"😡"}/>
-                <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.NO} emoji={"👎"}/>
-                <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.YES} emoji={"👍"}/>
-                <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST} emoji={"🥰"}/>
-            </div>
+            <div className="proposition-card__bottom">
+                <div className="proposition-card__buttons">
+                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST_NOT} emoji={"😡"}/>
+                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.NO} emoji={"👎"}/>
+                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.YES} emoji={"👍"}/>
+                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST} emoji={"🥰"}/>
+                </div>
 
-            <div className="proposition-card__neutral">
-                <Button onClick={handlePropositionNeutral}>Ne se prononce pas</Button>
-            </div>
+                <div className="proposition-card__neutral">
+                    <Button onClick={handlePropositionNeutral}>Ne se prononce pas</Button>
+                </div>
 
-            <div className="proposition-card__actions">
-                <Button onClick={() => navigate(- 1)} type={"transparent"}><ArrowLeftOutlined/>Précédent</Button>
-                <Button onClick={() => navigate(1)} type={"transparent"}>Suivant<ArrowRightOutlined/></Button>
+                <div className="proposition-card__actions">
+                    <Button onClick={() => navigate(- 1)} type={"transparent"}><ArrowLeftOutlined/>Précédent</Button>
+                    <Button onClick={() => navigate(1)} type={"transparent"}>Suivant<ArrowRightOutlined/></Button>
+                </div>
             </div>
         </div>
     );

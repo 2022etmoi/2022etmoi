@@ -2,13 +2,40 @@
 @import '../../styles/breakpoints';
 
 .proposition-card {
-    margin: 1.6rem auto;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    height: 80vh;
+    margin: 0 auto;
     max-width: 72rem;
-    padding: 0 3.2rem;
 
     @media screen and (max-width: $breakpoint-sm) {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        &__top {
+            height: 30rem;
+            padding-top: 1rem;
+        }
+
+        header {
+            flex: 0;
+        }
+
+        &__card {
+            background-color: #4c739b;
+            flex: 0.5;
+        }
+    }
+
+    &__top {
+        display: flex;
+        flex: 0.6;
+        flex-flow: column;
+        justify-content: space-evenly;
+        margin-top: 4rem;
     }
 
     header {
@@ -24,21 +51,53 @@
         transition: font-size, padding, 0.3s ease-out;
 
         @media screen and (max-width: $breakpoint-lg) {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             padding: 0;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            font-size: 2.1rem;
+            padding: 0;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+            display: block;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+            align-items: center;
+            display: flex;
+            height: 20rem;
+            justify-content: center;
         }
     }
 
     &__card {
         @include card();
 
-        margin-top: 2rem;
+        max-height: 8rem;
+        overflow: scroll;
 
         &-title {
             color: $secondary-muted;
             font-size: 1.3rem;
             margin-top: 0;
             text-transform: uppercase;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+            max-height: 12rem;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex: 0.4;
+        flex-flow: column;
+        justify-content: space-evenly;
+
+        @media screen and (min-width: $breakpoint-lg) {
+            margin-top: 4rem;
         }
     }
 
@@ -48,21 +107,23 @@
         display: flex;
         flex-flow: row;
         justify-content: center;
-        margin-top: 3.2rem;
 
         @media screen and (max-width: $breakpoint-md) {
-            column-gap: 1.6rem;
+            column-gap: 2rem;
         }
 
         @media screen and (max-width: $breakpoint-sm) {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            margin-bottom: 2rem;
-            row-gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
 
             .proposition-button {
                 margin: 0 auto;
+                width: 7rem;
+
+                &__name {
+                    margin-left: 0;
+                    width: auto;
+                }
             }
         }
     }
@@ -71,7 +132,11 @@
         display: flex;
         flex-flow: row;
         justify-content: center;
-        margin-top: 2.6rem;
+        margin: 1.5rem 0;
+
+        @media screen and (min-width: $breakpoint-lg) {
+            margin: 3rem 0;
+        }
     }
 
     &__actions {
@@ -80,7 +145,6 @@
         flex-flow: row;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 3.2rem auto;
         max-width: 52rem;
     }
 }

@@ -62,7 +62,6 @@
                     color: $secondary;
                     opacity: 1;
 
-
                     @media screen and (min-width: $breakpoint-lg) {
                         > .icon {
                             outline: 2px solid rgba($secondary, 0.5);
@@ -90,8 +89,8 @@
         &__wrapper {
             display: flex;
             flex-direction: row;
-            margin: 0 auto;
             justify-content: space-evenly;
+            margin: 0 auto;
             max-width: 80rem;
         }
 
@@ -109,10 +108,10 @@
         &__link {
             column-gap: 0;
             flex-direction: column;
+            font-size: 1.4rem;
             font-weight: 500;
             padding: 0 0 1rem;
             width: 5rem;
-            font-size: 1.4rem;
         }
     }
 
