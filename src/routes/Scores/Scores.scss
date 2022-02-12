@@ -1,11 +1,33 @@
+@import '../../styles/breakpoints';
+
 .route-scores {
     &__wrapper {
         column-gap: 2rem;
         display: flex;
         flex-flow: row;
         flex-wrap: wrap;
-        justify-content: center;
+        margin: 0 auto;
+        max-width: #{4 * 35 + (4 - 1) * 2}rem;
         row-gap: 2rem;
+
+        @mixin score-grid-width($count) {
+            max-width: #{$count * 35 + ($count - 1) * 2}rem;
+        }
+
+        @media screen and (max-width: $breakpoint-xw) {
+            @include score-grid-width(3);
+        }
+
+        @media screen and (max-width: $breakpoint-xxl) {
+            @include score-grid-width(2);
+        }
+
+        @media screen and (min-width: $breakpoint-md) {
+            &::after {
+                content: '';
+                flex: auto;
+            }
+        }
     }
 
     .error {

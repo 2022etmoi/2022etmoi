@@ -82,7 +82,10 @@
     }
 
     @media screen and (min-width: $breakpoint-lg) {
-        box-sizing: border-box;
+        padding: 0 3rem;
+    }
+
+    @media screen and (min-width: $breakpoint-xl) {
         padding: 0 4rem;
     }
 

@@ -12,7 +12,11 @@
     width: 35rem;
 
     @media screen and (max-width: $breakpoint-md) {
+        flex-basis: 35rem;
+        flex-grow: 0.2;
         grid-template-columns: 16rem 1fr repeat(2, 8rem);
+        margin: 0 auto;
+        width: unset;
     }
 
     @for $index from 0 to 50 {

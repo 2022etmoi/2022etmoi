@@ -19,6 +19,10 @@
         overflow-y: hidden;
         position: relative;
 
+        @media screen and (max-width: $breakpoint-xl) {
+            grid-template-columns: 26rem 1fr;
+        }
+
         .route {
             @include scrollbar();
             @include animate-slide-on-axis(y, layout-slide-up, false, 1rem);
