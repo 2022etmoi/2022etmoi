@@ -1,0 +1,39 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.frequently-asked-questions {
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    .rc-collapse {
+        background: unset;
+        border: unset;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        row-gap: 1rem;
+
+        &-item {
+            @include card();
+
+            padding: 0.8rem;
+
+            > .rc-collapse-header {
+                color: $primary;
+                font-size: 1.8rem;
+                position: relative;
+            }
+
+            > .rc-collapse-content {
+                color: rgba($primary, 0.7);
+            }
+        }
+    }
+
+    .rc-collapse > .rc-collapse-item > .rc-collapse-header .arrow {
+        position: absolute;
+        right: 1rem;
+        top: 2rem;
+        transform: rotate(180deg);
+    }
+}
