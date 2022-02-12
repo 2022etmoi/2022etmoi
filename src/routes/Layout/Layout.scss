@@ -2,14 +2,6 @@
 @import '../../styles/breakpoints';
 
 .route-layout {
-    background-image: url('/images/background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    @media screen and (max-width: $breakpoint-md) {
-        background-image: url('/images/background-mobile.svg');
-    }
-
     .app-wrapper {
         box-sizing: border-box;
         display: grid;
