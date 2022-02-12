@@ -4,7 +4,7 @@
     "description": "Silence is golden.",
     "license": "MIT",
     "scripts": {
-        "dev": "vite",
+        "start": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
         "test": "jest --verbose",

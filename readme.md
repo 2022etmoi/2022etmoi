@@ -14,7 +14,7 @@ npm ci
 Ouvrez l'application.
 
 ```
-npm run dev
+npm start
 ```
 
 ## Propositions et réponses
