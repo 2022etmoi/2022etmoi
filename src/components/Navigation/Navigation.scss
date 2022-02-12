@@ -3,13 +3,16 @@
 @import '../../styles/breakpoints';
 
 .nav {
-    $self: &;
-
     background-color: $white;
     color: $primary;
-    display: inline-flex;
-    flex-direction: column;
-    row-gap: 2.4rem;
+    display: flex;
+    justify-content: center;
+
+    &__wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        row-gap: 2.4rem;
+    }
 
     &__link {
         $self-link: &;
@@ -27,7 +30,7 @@
         &:first-child {
             width: 9rem;
 
-            @media screen and (max-width: $breakpoint-sm) {
+            @media screen and (max-width: $breakpoint-lg) {
                 display: none;
             }
 
@@ -41,8 +44,10 @@
             &#{$self-link} {
                 opacity: 0.5;
 
-                .icon {
-                    box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
+                @media screen and (min-width: $breakpoint-lg) {
+                    .icon {
+                        box-shadow: 0 0 0.5rem rgb(0 0 0 / 10%);
+                    }
                 }
 
                 &:focus,
@@ -51,22 +56,18 @@
                     outline: none;
                 }
 
-                &:focus {
-                    > .icon {
-                        outline: 2px solid rgba($secondary, 0.5);
-                        outline-offset: 2px;
-                    }
-                }
-
                 &--active {
                     $self-active: &;
 
                     color: $secondary;
                     opacity: 1;
 
-                    > .icon {
-                        outline: 2px solid rgba($secondary, 0.5);
-                        outline-offset: 2px;
+
+                    @media screen and (min-width: $breakpoint-lg) {
+                        > .icon {
+                            outline: 2px solid rgba($secondary, 0.5);
+                            outline-offset: 2px;
+                        }
                     }
 
                     > .icon svg path {
@@ -81,41 +82,43 @@
         }
     }
 
-    @media screen and (min-width: $breakpoint-lg) {
-        padding: 0 3rem;
-    }
-
-    @media screen and (min-width: $breakpoint-xl) {
-        padding: 0 4rem;
-    }
-
     @media screen and (max-width: $breakpoint-lg) {
-        @include box-shadow();
-
-        box-sizing: border-box;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0.5rem;
+        display: block;
         position: relative;
         width: 100%;
 
+        &__wrapper {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            justify-content: space-evenly;
+            max-width: 80rem;
+        }
+
         &::before {
-            background: linear-gradient(180deg, rgba($white, 0) 0, $white 60%);
+            background: linear-gradient(180deg, rgba($primary, 0) 0, rgba($primary, 0.05) 100%);
             content: '';
-            height: 2rem;
+            height: 0.8rem;
             left: 0;
             position: absolute;
             right: 0;
-            top: -1rem;
+            top: -0.8rem;
             z-index: 99;
         }
 
         &__link {
             column-gap: 0;
             flex-direction: column;
-            font-size: 1.2rem;
             font-weight: 500;
-            row-gap: 0.9rem;
+            padding: 0 0 1rem;
+            width: 5rem;
+            font-size: 1.4rem;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        &__link {
+            font-size: 1.25rem;
         }
     }
 }

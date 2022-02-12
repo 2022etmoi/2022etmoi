@@ -26,14 +26,17 @@ export function Navigation (){
     const isActive = useCallback(path => pathname === path, [pathname]);
     return (
         <nav className="nav">
-            {
-                links.map(link => (
-                    <Link key={link.label} className={`nav__link ${isActive(link.to) ? "nav__link--active" : ""}`} to={link.to}>
-                        <Icon file={link.icon} />
-                        <span>{link.label}</span>
-                    </Link>
-                ))
-            }
+            <div className="nav__wrapper">
+                {
+                    links.map(link => (
+                        <Link key={link.label} className={`nav__link ${isActive(link.to) ? "nav__link--active" : ""}`}
+                            to={link.to}>
+                            <Icon file={link.icon}/>
+                            <span>{link.label}</span>
+                        </Link>
+                    ))
+                }
+            </div>
         </nav>
     );
 }
