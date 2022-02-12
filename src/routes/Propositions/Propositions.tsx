@@ -1,8 +1,8 @@
 import "./Propositions.scss";
 
-import { useCallback,useState } from "react";
+import { useCallback, useState } from "react";
 
-import { Button, Counter, PropositionCard } from "../../components";
+import { Counter, PropositionCard } from "../../components";
 import { StorageService } from "../../services";
 import { PropositionID } from "../../types";
 
@@ -29,13 +29,6 @@ export function Propositions() {
         }
     }, [order, propositionNb]);
 
-    const reset = useCallback(() => {
-        StorageService.getInstance().clear();
-        const newOrder = StorageService.getInstance().getPropositionsOrder();
-        setOrder(newOrder);
-        navigate(0);
-    }, [navigate]);
-
     return (
         <div className="route-propositions">
             <header>
@@ -47,7 +40,6 @@ export function Propositions() {
                         <PropositionCard key={proposition} propositionID={proposition} navigate={navigate}/>
                     )
                 }
-                <Button type="secondary" onClick={reset}>Reset answers</Button>
             </div>
         </div>
     );
