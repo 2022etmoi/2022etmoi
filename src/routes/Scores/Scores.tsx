@@ -22,9 +22,9 @@ export function Scores() {
             })
             .filter(value => value.score !== - 1)
             .sort((a, b) => {
-                const seed1 = Math.random() * 100;
-                const seed2 = Math.random() * 100;
-                return (b.score * 100 + seed2) - (a.score * 100 + seed1);
+                const seed1 = Math.random() * 10;
+                const seed2 = Math.random() * 10;
+                return (b.score * 100 + 50 + seed2) - (a.score * 100 + 50 + seed1);
             }), []
     );
 
