@@ -2,6 +2,7 @@ import "./Landing.scss";
 
 import { ArrowDownOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 import { Button, FrequentlyAskedQuestions } from "../../components";
 
@@ -26,10 +27,18 @@ export function Landing() {
                                 Ouvrir l'application
                             </Button>
                         </Link>
-                        <Button type="secondary">
+
+                        <ScrollLink
+                            activeClass="active"
+                            to="operation"
+                            smooth={true}
+                            duration={500}
+                            offset={- 50}>
+                            <Button type="secondary">
                             Découvrir
-                            <ArrowDownOutlined />
-                        </Button>
+                                <ArrowDownOutlined />
+                            </Button>
+                        </ScrollLink>
                     </div>
                     <div className="hero__right">
                         <svg width="655" height="592" viewBox="0 0 655 592" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +61,7 @@ export function Landing() {
 
                     </div>
                 </div>
-                <section className="section-argument">
+                <section className="section-argument" id="operation">
                     <h2>Sécurité, transparence</h2>
                     <div className="section-argument__wrapper">
                         <div className="section-argument__item">
