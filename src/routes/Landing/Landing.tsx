@@ -84,8 +84,9 @@ export function Landing() {
                             </div>
                             <p>Nous avons confronté les avis des candidats sur 30 propositions importantes de la présidentielle.</p>
                         </section>
-                    </div>
-                    <Button>Explications<ArrowRightOutlined/></Button>
+                    </div><Link to="/fonctionnement">
+                        <Button>Explications<ArrowRightOutlined/></Button>
+                    </Link>
                 </section>
                 <section className="section-questions">
                     <h2>Questions récurrentes</h2>
