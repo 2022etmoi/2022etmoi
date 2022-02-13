@@ -50,6 +50,13 @@
             &__right {
                 display: flex;
                 justify-content: flex-end;
+                position: relative;
+
+                .candidate-score {
+                    left: calc(50% - 17.5rem);
+                    position: absolute;
+                    top: calc(50% - 17.5rem);
+                }
             }
         }
 

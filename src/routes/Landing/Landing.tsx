@@ -1,15 +1,25 @@
 import "./Landing.scss";
 
 import { ArrowDownOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
-import { Button, FrequentlyAskedQuestions } from "../../components";
+import { Button, CandidateScore, FrequentlyAskedQuestions } from "../../components";
+import { RandomScoreMock } from "../../tests/mocks";
+import { CandidateID } from "../../types";
 
 /**
  * A route to display the app landing page.
  */
 export function Landing() {
+    const randomCandidateCard = useMemo(()=> {
+        const list = Array.from(Object.keys(CandidateID)) as CandidateID[];
+        const index = Math.floor(Math.random() * list.length);
+        const [candidateID] = list.slice(index, index + 1);
+        return <CandidateScore candidateID={candidateID} score={RandomScoreMock()} />;
+    }, []);
+
     return (
         <div className="route-landing">
             <div className="route-landing__wrapper">
@@ -41,6 +51,9 @@ export function Landing() {
                         </ScrollLink>
                     </div>
                     <div className="hero__right">
+                        {
+                            randomCandidateCard
+                        }
                         <svg width="655" height="592" viewBox="0 0 655 592" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_i_170_351)">
                                 <path d="M8.44801 284.508C-62.7709 49.2602 333.802 -3.0921 540.99 0.13779C640.675 1.69179 647.499 245.076 653.469 284.508C660.932 333.799 648.138 389.831 451.967 528.014C255.795 666.197 97.4716 578.569 8.44801 284.508Z" fill="#EEF7FF"/>
