@@ -1,13 +1,69 @@
+@use 'sass:math';
+
 @import '../../styles/mixins';
 
 .envelope {
+    padding-top: 16rem;
+    position: relative;
+
+    @mixin envelope-vote($direction) {
+        @keyframes envelope-vote-#{$direction} {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            40% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                #{$direction}: 50%;
+                opacity: 1;
+                transform: translateY(16rem) scale(0.8);
+            }
+        }
+    }
+
+    .proposition-button {
+
+        $answers: 12;
+
+        @include envelope-vote('right');
+        @include envelope-vote('left');
+
+        opacity: 0;
+        position: absolute;
+        top: 0;
+
+        @for $count from 0 to $answers + 1 {
+            &:nth-child(#{$count}) {
+                animation: envelope-vote-left 0.8s ease-in forwards;
+                animation-delay: #{0.2 * $count - 1}s;
+
+                &:nth-child(odd) {
+                    animation-name: envelope-vote-left;
+                    left: #{math.div($count * 100, $answers) - math.div(100, $answers) +'%'};
+                }
+
+                &:nth-child(even) {
+                    animation-name: envelope-vote-right;
+                    right: #{math.div($count * 100, $answers) - math.div(100, $answers) +'%'};
+                }
+            }
+        }
+    }
+
     &-card {
         @include card();
 
         aspect-ratio: 2/1;
+        margin: 0 auto;
         overflow: hidden;
         position: relative;
-        width: 15rem;
+        width: 13rem;
+        z-index: 2;
 
         &::before,
         &::after {

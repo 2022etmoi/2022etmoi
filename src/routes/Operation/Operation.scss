@@ -22,9 +22,20 @@
     }
 
     &-section {
+        align-items: center;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin: 10rem 0;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        &--footer {
+            flex-direction: column;
+            text-align: center;
+        }
 
         .proposition-button {
             &__name {
@@ -33,6 +44,8 @@
         }
 
         &__cards {
+            margin-bottom: 5rem;
+
             .candidate-score {
                 animation: unset;
                 margin: 0 auto;

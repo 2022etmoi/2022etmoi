@@ -55,11 +55,13 @@ export function Operation () {
                         <p>Les 😍 correspondent au nombre d'accords sur les questions jugées essentielles.</p>
                     </div>
                 </section>
-                <h3>Ce quiz ne remplace pas la lecture des programmes des candidats !</h3>
-                <p>Il permet d'avoir une idée des accords et désaccords importants avec les différents programmes.</p>
-                <Link to="/app">
-                    <Button>Lancer l'application <ArrowRightOutlined/></Button>
-                </Link>
+                <section className="route-operation-section route-operation-section--footer">
+                    <h3>Ce quiz ne remplace pas la lecture des programmes des candidats !</h3>
+                    <p>Il permet d'avoir une idée des accords et désaccords importants avec les différents programmes.</p>
+                    <Link to="/app">
+                        <Button>Lancer l'application <ArrowRightOutlined/></Button>
+                    </Link>
+                </section>
             </div>
         </div>
     );
