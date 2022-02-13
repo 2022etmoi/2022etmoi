@@ -12,7 +12,7 @@ export function Navigation (){
         {
             to: "/", icon:"logo", label: "" },
         {
-            to: "/app/propositions", icon:"propositions", label: "Propositions" },
+            to: "/app", icon:"propositions", label: "Propositions" },
         {
             to: "/app/scores", icon:"scores", label: "Scores" },
         {

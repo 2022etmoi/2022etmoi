@@ -1,8 +1,10 @@
 import "./Landing.scss";
 
 import { ArrowDownOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 import { Button, FrequentlyAskedQuestions } from "../../components";
+
 /**
  * A route to display the app landing page.
  */
@@ -18,8 +20,14 @@ export function Landing() {
                             <span className="hero__title-second">et<span className="hero__title-me"> moi </span>.fr</span>
                         </h1>
                         <p className="hero__content">Testez votre proximité avec les principaux candidats à la présidentielle sur une trentaine de propositions.</p>
-                        <Button>
-                            Découvrir l'app
+
+                        <Link to="/app" target={"_blank"}>
+                            <Button>
+                                Ouvrir l'application
+                            </Button>
+                        </Link>
+                        <Button type="secondary">
+                            Découvrir
                             <ArrowDownOutlined />
                         </Button>
                     </div>

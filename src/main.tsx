@@ -12,10 +12,10 @@ ReactDOM.render(
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/app/" element={<Layout />}>
-                    <Route path="options" element={<Options />} />
-                    <Route path="propositions" element={<Propositions />} />
+                    <Route index element={<Propositions />} />
                     <Route path="scores" element={<Scores/>}/>
                     <Route path="table" element={<Table/>}/>
+                    <Route path="options" element={<Options />} />
                 </Route>
                 <Route path="/*" element={<NotFound/>} />
             </Routes>
