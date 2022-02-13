@@ -9,15 +9,23 @@
     margin: 0 auto;
     max-width: 72rem;
 
+    &__top {
+        display: flex;
+        flex: 0.6;
+        flex-flow: column;
+        justify-content: space-evenly;
+        margin-top: 4rem;
+    }
+
     @media screen and (max-width: $breakpoint-sm) {
         padding-left: 1rem;
         padding-right: 1rem;
     }
 
-    @media screen and (max-width: $breakpoint-md) {
+    @media screen and (max-width: $breakpoint-lg) {
         &__top {
             height: 30rem;
-            padding-top: 1rem;
+            margin-top: 0;
         }
 
         header {
@@ -28,14 +36,6 @@
             background-color: #4c739b;
             flex: 0.5;
         }
-    }
-
-    &__top {
-        display: flex;
-        flex: 0.6;
-        flex-flow: column;
-        justify-content: space-evenly;
-        margin-top: 4rem;
     }
 
     header {
