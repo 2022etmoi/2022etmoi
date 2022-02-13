@@ -9,12 +9,25 @@
     margin: 0 auto;
     max-width: 72rem;
 
-    &__top {
+    &__top,
+    &__bottom {
         display: flex;
-        flex: 0.6;
         flex-flow: column;
         justify-content: space-evenly;
+        width: 100%;
+    }
+
+    &__top {
+        flex: 0.6;
         margin-top: 4rem;
+    }
+
+    &__bottom {
+        flex: 0.4;
+
+        @media screen and (min-width: $breakpoint-lg) {
+            margin-top: 4rem;
+        }
     }
 
     @media screen and (max-width: $breakpoint-sm) {
@@ -90,17 +103,6 @@
         }
     }
 
-    &__bottom {
-        display: flex;
-        flex: 0.4;
-        flex-flow: column;
-        justify-content: space-evenly;
-
-        @media screen and (min-width: $breakpoint-lg) {
-            margin-top: 4rem;
-        }
-    }
-
     &__buttons {
         align-items: start;
         column-gap: 3.2rem;
@@ -145,6 +147,7 @@
         flex-flow: row;
         flex-wrap: wrap;
         justify-content: center;
+        margin: 0 auto;
         max-width: 52rem;
     }
 }
