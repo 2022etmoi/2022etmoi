@@ -53,10 +53,10 @@ export function PropositionCard({ propositionID, navigate }: PropositionCardProp
 
             <div className="proposition-card__bottom">
                 <div className="proposition-card__buttons">
-                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST_NOT} emoji={"😡"}/>
-                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.NO} emoji={"👎"}/>
-                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.YES} emoji={"👍"}/>
-                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST} emoji={"🥰"}/>
+                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST_NOT}/>
+                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.NO}/>
+                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.YES}/>
+                    <PropositionButton onClick={handlePropositionVote} userAnswer={UserAnswer.MUST}/>
                 </div>
 
                 <div className="proposition-card__neutral">
