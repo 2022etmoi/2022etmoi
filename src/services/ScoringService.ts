@@ -86,9 +86,9 @@ export class ScoringService {
                     } else if (m === UserValues.get(UserAnswer.NO) && c === CandidateValues.get(CandidateAnswer.YES)
                         || m === UserValues.get(UserAnswer.YES) && c === CandidateValues.get(CandidateAnswer.NO)) {
                         disagreements += 1;
-                    } else {
-                        neutral += 1;
                     }
+                } else if (m === UserValues.get(UserAnswer.NEUTRAL) || c === CandidateValues.get(CandidateAnswer.NEUTRAL)) {
+                    neutral += 1;
                 }
             }
         });

@@ -27,7 +27,7 @@ export function Scores() {
             .sort((a, b) => {
                 const seed1 = Math.random() * 10;
                 const seed2 = Math.random() * 10;
-                return (b.score * 100 + 50 + seed2) - (a.score * 100 + 50 + seed1);
+                return (b.score.score * 100 + 50 + seed2) - (a.score.score * 100 + 50 + seed1);
             }), []
     );
 

@@ -1,9 +1,9 @@
 import { Candidate, CandidateID, PropositionID } from "../../types";
-import { getMockAnswer } from "./AnswerMock";
+import { RandomAnswerMock } from "./AnswerMock";
 
 const mockAnswers = new Map();
 for (const id in PropositionID) {
-    mockAnswers.set(id, getMockAnswer());
+    mockAnswers.set(id, RandomAnswerMock());
 }
 
 export const CandidateMock: Candidate = new Candidate(
