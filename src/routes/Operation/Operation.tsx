@@ -9,6 +9,9 @@ import { CandidateScore } from "../../components/CandidateScore/CandidateScore";
 import { RandomScoreMock } from "../../tests/mocks";
 import { CandidateID } from "../../types";
 
+/**
+ * A route to display how the app works.
+ */
 export function Operation () {
     const randomCandidateCards = useMemo(()=> {
         const list = Array.from(Object.keys(CandidateID)) as CandidateID[];

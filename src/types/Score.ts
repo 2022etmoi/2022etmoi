@@ -1,3 +1,6 @@
+/**
+ * Represents a Score.
+ */
 export class Score {
     public score = 50;
     public hearts = 0;

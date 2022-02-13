@@ -1,3 +1,6 @@
+/**
+ * The full list of shown Propositions.
+ */
 export enum PropositionID {
     AAH = "AAH",
     ASSANGE = "ASSANGE",
@@ -33,6 +36,9 @@ export enum PropositionID {
     TRAITES = "TRAITES",
 }
 
+/**
+ * Represents a Proposition.
+ */
 export class Proposition {
     id: PropositionID;
     category: string;

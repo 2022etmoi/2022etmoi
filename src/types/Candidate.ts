@@ -1,5 +1,7 @@
 import { Answer, PropositionID } from ".";
-
+/**
+ * The full list of shown Candidates.
+ */
 export enum CandidateID {
     HIDALGO = "HIDALGO",
     LE_PEN = "LE_PEN",
@@ -9,6 +11,9 @@ export enum CandidateID {
     ZEMMOUR = "ZEMMOUR",
 }
 
+/**
+ * Represents a Candidate.
+ */
 export class Candidate {
     id: CandidateID;
     name: string;

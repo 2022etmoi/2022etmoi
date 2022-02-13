@@ -1,9 +1,15 @@
+/**
+ * The full list of Candidates possible answers.
+ */
 export enum CandidateAnswer {
     NO = "NO",
     YES = "YES",
     NEUTRAL = "NEUTRAL",
 }
 
+/**
+ * The full list of User possible answers.
+ */
 export enum UserAnswer {
     MUST_NOT = "MUST_NOT",
     NO = "NO",
