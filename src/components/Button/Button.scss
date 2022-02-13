@@ -45,6 +45,15 @@
         outline-offset: 2px;
     }
 
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.25;
+    }
+
+    &--small {
+        padding: 0.6rem 2rem;
+    }
+
     &--secondary {
         background-color: $white;
         border: 1px solid darken($white, 4%);
@@ -64,6 +73,22 @@
         &:hover,
         &:active {
             background-color: transparent;
+        }
+    }
+
+    &--danger {
+        background-color: $button-danger;
+        border: 1px solid darken($button-danger, 4%);
+        color: $white;
+
+        &:hover,
+        &:active {
+            background-color: darken($button-danger, 5%);
+        }
+
+        &:focus {
+            outline: 2px solid lighten($button-danger, 10%);
+            outline-offset: 2px;
         }
     }
 }
