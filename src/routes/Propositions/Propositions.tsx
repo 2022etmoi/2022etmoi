@@ -10,9 +10,9 @@ import { PropositionID } from "../../types";
  * A component to display propositions one by one.
  */
 export function Propositions() {
-    const [order, setOrder] = useState<PropositionID[]>(StorageService.getInstance().getPropositionsOrder());
-    const [propositionNb, setPropositionNb] = useState<number>(0);
-    const [proposition, setProposition] = useState<PropositionID>(order[0]);
+    const [order] = useState<PropositionID[]>(StorageService.getInstance().getPropositionsOrder());
+    const [propositionNb, setPropositionNb] = useState<number>(firstNonAnswered(order));
+    const [proposition, setProposition] = useState<PropositionID>(order[propositionNb]);
 
     const navigate = useCallback((dn: number) => {
         const newN = propositionNb + dn;
@@ -45,4 +45,15 @@ export function Propositions() {
             </div>
         </div>
     );
+
+    function answered(id: PropositionID) {
+        const answers = StorageService.getInstance().getAnswers();
+        return answers?.filter(a => a[0] == id)?.length !== 0;
+    }
+
+    function firstNonAnswered(order: PropositionID[]) {
+        const notAnswered = order.filter(id => ! answered(id));
+        if (notAnswered.length === 0) return 0;
+        return order.indexOf(notAnswered[0]);
+    }
 }
