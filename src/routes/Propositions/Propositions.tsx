@@ -1,6 +1,7 @@
 import "./Propositions.scss";
 
 import { useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Counter, PropositionCard } from "../../components";
 import { StorageService } from "../../services";
@@ -10,6 +11,7 @@ import { PropositionID } from "../../types";
  * A component to display propositions one by one.
  */
 export function Propositions() {
+    const navigateFunction = useNavigate();
     const [order] = useState<PropositionID[]>(StorageService.getInstance().getPropositionsOrder());
     const [propositionNb, setPropositionNb] = useState<number>(firstNonAnswered(order));
     const [proposition, setProposition] = useState<PropositionID>(order[propositionNb]);
@@ -17,9 +19,7 @@ export function Propositions() {
     const navigate = useCallback((dn: number) => {
         const newN = propositionNb + dn;
         if (newN > order.length - 1) {
-            // TODO: Navigate to score page
-            setPropositionNb(0);
-            setProposition(order[0]);
+            navigateFunction("scores");
         } else if (newN < 0) {
             setPropositionNb(order.length - 1);
             setProposition(order[order.length - 1]);
@@ -27,7 +27,7 @@ export function Propositions() {
             setPropositionNb(newN);
             setProposition(order[newN]);
         }
-    }, [order, propositionNb]);
+    }, [order, propositionNb, navigateFunction]);
 
     return (
         <div className="route-propositions">
