@@ -9,18 +9,12 @@ import { IconProps } from "../Icon/Icon";
 export function Navigation (){
     const { pathname } = useLocation();
     const links : {to: string, icon: IconProps["file"], label: string}[] = [
-        {
-            to: "/", icon:"logo", label: "" },
-        {
-            to: "/app", icon:"propositions", label: "Propositions" },
-        {
-            to: "/app/scores", icon:"scores", label: "Scores" },
-        {
-            to: "/app/scores", icon:"candidates", label: "Candidats" },
-        {
-            to: "/app/options", icon:"options", label: "Options" },
-        {
-            to: "/app/table", icon:"table", label: "Table" }
+        { to: "/", icon: "logo", label: "" },
+        { to: "/app", icon: "propositions", label: "Propositions" },
+        { to: "/app/scores", icon: "scores", label: "Scores" },
+        { to: "/app/scores", icon: "candidates", label: "Candidats" },
+        { to: "/app/options", icon: "options", label: "Options" },
+        { to: "/app/table", icon: "table", label: "Table" }
     ];
 
     const isActive = useCallback(path => pathname === path, [pathname]);
