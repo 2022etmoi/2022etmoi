@@ -1,41 +1,42 @@
 import "./Options.scss";
 
-import { useCallback, useEffect, useState } from "react";
+import { DeleteOutlined } from "@ant-design/icons";
+import { useCallback, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Button } from "../../components";
-import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services/";
-import { PropositionID, UserAnswer } from "../../types";
 
 /**
  * A route to display options.
  */
 export function Options() {
-
     const storageService = StorageService.getInstance();
 
-    const [savedAnswers, setSavedAnswers] = useState<[PropositionID, UserAnswer][]>([]);
-    const refresh = useCallback(() => setSavedAnswers(storageService.getAnswers() || []), [storageService]);
-    useEffect(() => refresh(), [refresh]);
+    const [optionClear, setOptionClear] = useState(false);
+    const handleOptionClear = useCallback(()=> {
+        storageService.clear();
+        setOptionClear(true);
+    }, [storageService]);
+
     return (
         <div className="route-options">
             <header>
                 <h1>Options</h1>
             </header>
             <div className="route-options__wrapper">
-                <div className="option-card">
-                    <pre>
-                PROPOSITIONS :({Array.from(propositions).length})
-                        <ul>
-                            {Array.from(propositions).map((p,i) => <li key={i}>{p.content}</li>)}
-                        </ul>
-                        {
-                            savedAnswers.length === Array.from(propositions).length ? "ALL PROPOSITIONS ANSWERED" : "KEEP ANSWERING PROPOSALS"
+                <ul className="options-list">
+                    <li className="options-list__item">
+                        <h2>Effacer les données</h2>
+                        <p>Effacer mes votes pour recommencer de zéro.</p>
+                        <Button disabled={optionClear} type="danger" size="small" onClick={handleOptionClear}>Effacer <DeleteOutlined/></Button>
+                        {optionClear &&
+                            <Link to="/app">
+                                <Button size="small">Commencer à voter</Button>
+                            </Link>
                         }
-                    </pre>
-                </div>
-                <Button onClick={refresh}>Refresh answers</Button>
-                <Button type="secondary" onClick={()=> storageService.clear()}>Reset app</Button>
+                    </li>
+                </ul>
             </div>
         </div>
     );

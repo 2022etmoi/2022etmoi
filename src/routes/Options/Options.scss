@@ -2,10 +2,7 @@
 
 .route-options {
     &__wrapper {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-items: space-between;
+        max-width: 80rem;
     }
 
     .option-card {
@@ -16,14 +13,29 @@
         padding: 0 2rem;
     }
 
-    pre {
-        font-size: 1rem;
-        margin: 0 auto;
-        overflow-x: auto;
-        padding: 0.4rem;
-    }
+    .options-list {
+        padding: unset;
+        width: 100%;
 
-    .button {
-        margin-top: 1rem;
+        &__item {
+            @include card();
+            @include animate-slide-on-axis(y, layout-slide-up, true, 1rem);
+
+            list-style: none;
+            padding: 2rem 3rem;
+
+            h2 {
+                font-size: 2rem;
+                margin: 0;
+            }
+
+            p {
+                margin-top: 0.5rem;
+
+                + .button {
+                    margin-left: 0;
+                }
+            }
+        }
     }
 }
