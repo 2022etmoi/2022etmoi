@@ -34,20 +34,28 @@
 
         &__cards {
             .candidate-score {
+                animation: unset;
+                margin: 0 auto;
+                opacity: 1;
                 position: relative;
 
+                .button {
+                    display: none;
+                }
+
                 &:first-child {
-                    z-index: 2;
+                    z-index: 3;
                 }
 
                 &:nth-child(2) {
-                    margin-top: -90%;
-                    transform: rotate(15deg) translateX(-2rem);
+                    margin-top: -18rem;
+                    transform: rotate(-10deg) translateX(-5rem);
+                    z-index: 2;
                 }
 
                 &:nth-child(3) {
-                    margin-top: -90%;
-                    transform: rotate(-5deg) translateX(1rem);
+                    margin-top: -25rem;
+                    transform: rotate(5deg) translateX(7rem);
                 }
             }
         }

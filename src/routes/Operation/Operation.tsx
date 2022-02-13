@@ -1,13 +1,26 @@
 import "./Operation.scss";
 
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 import { Button, Envelope } from "../../components";
 import { CandidateScore } from "../../components/CandidateScore/CandidateScore";
-import { CandidateID, Score } from "../../types";
+import { RandomScoreMock } from "../../tests/mocks";
+import { CandidateID } from "../../types";
 
 export function Operation () {
+    const randomCandidateCards = useMemo(()=> {
+        const list = Array.from(Object.keys(CandidateID)) as CandidateID[];
+        const cards = [];
+        for (let count = 0; count < 3; count ++) {
+            const index = Math.floor(Math.random() * list.length);
+            const [candidateID] = list.slice(index, index + 1);
+            cards.push(<CandidateScore key={count} candidateID={candidateID} score={RandomScoreMock()} />);
+        }
+        return cards;
+    }, []);
+
     return (
         <div className="route-operation">
             <div className="route-operation__wrapper">
@@ -28,9 +41,9 @@ export function Operation () {
                 </section>
                 <section className="route-operation-section">
                     <div className="route-operation-section__cards">
-                        <CandidateScore candidateID={CandidateID.PECRESSE} score={new Score({ score: 50, hearts: 12, skulls: 2, agreements: 8, disagreements: 2, neutral: 1 })} />
-                        <CandidateScore candidateID={CandidateID.MELENCHON} score={new Score({ score: 50, hearts: 12, skulls: 2, agreements: 8, disagreements: 2, neutral: 1 })} />
-                        <CandidateScore candidateID={CandidateID.ZEMMOUR} score={new Score({ score: 50, hearts: 12, skulls: 2, agreements: 8, disagreements: 2, neutral: 1 })} />
+                        {
+                            randomCandidateCards
+                        }
                     </div>
                     <div>
                         <h2>Les scores</h2>
