@@ -1,5 +1,5 @@
 import { candidates } from "../data/Candidates";
-import { Answer, CandidateAnswer, CandidateID, PropositionID, UserAnswer } from "../types";
+import { Answer, CandidateAnswer, CandidateID, PropositionID, Score, UserAnswer } from "../types";
 import { StorageService } from "./StorageService";
 
 const CandidateValues = new Map([
@@ -44,8 +44,9 @@ export class ScoringService {
         const answers = storageService.getAnswers();
         const candidateAnswers = candidates.get(candidate)?.opinion;
 
-        if (candidateAnswers === undefined) return null;
-        if (answers === undefined) return null;
+        if (candidateAnswers === undefined || answers === undefined) {
+            return new Score();
+        }
 
         return this.computeScoreWithAnswers(candidateAnswers, answers);
     }
@@ -99,14 +100,15 @@ export class ScoringService {
          */
         if (norm === 0) norm = 1;
 
-        return {
-            score: Math.round(50.0 * (1.0 + sum / norm)),
-            hearts: important_agreements,
-            skulls: important_disagreements,
-            agreements: agreements,
-            disagreements: disagreements,
-            neutral: neutral,
-            // representativeness: 100 * nonzero / myscores.length,
-        };
+        return new Score(
+            {
+                score: Math.round(50.0 * (1.0 + sum / norm)),
+                hearts: important_agreements,
+                skulls: important_disagreements,
+                agreements: agreements,
+                disagreements: disagreements,
+                neutral: neutral,
+            }
+        );
     }
 }

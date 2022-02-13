@@ -4,21 +4,21 @@ import { useMemo } from "react";
 import CountUp from "react-countup";
 
 import { candidates } from "../../data/Candidates";
-import { ScoringService } from "../../services";
-import { CandidateID } from "../../types";
+import { CandidateID, Score } from "../../types";
 import { Button } from "../Button";
 
 interface CandidateScoreProps {
     candidateID: string,
+    score: Score,
 }
 
 /**
  * A component showing the given candidate.
  * @param id. The current Candidate.
+ * @param score. The current Candidate score.
  */
-export function CandidateScore({ candidateID }: CandidateScoreProps)  {
+export function CandidateScore({ candidateID, score }: CandidateScoreProps)  {
     const candidate = candidates.get(candidateID as CandidateID);
-    const score = ScoringService.getInstance().computeScore(candidateID as CandidateID);
     const scoreSum = score == null ? 1 : score.skulls + score.hearts + score.agreements + score.disagreements + score.neutral;
 
     const imageFileName = useMemo(()=> candidate?.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ /g, "_").toLowerCase(), [candidate?.name]);

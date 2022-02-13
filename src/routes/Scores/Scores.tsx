@@ -17,10 +17,13 @@ export function Scores() {
                 const score = ScoringService.getInstance().computeScore(id as CandidateID);
                 return {
                     candidate: id,
-                    score: score?.score ?? - 1,
+                    score: {
+                        ...score,
+                        score: score?.score ?? - 1
+                    },
                 };
             })
-            .filter(value => value.score !== - 1)
+            .filter(value => value.score.score !== - 1)
             .sort((a, b) => {
                 const seed1 = Math.random() * 10;
                 const seed2 = Math.random() * 10;
@@ -37,7 +40,7 @@ export function Scores() {
                 {
                     scores.length ?
                         scores.map((score) => (
-                            <CandidateScore candidateID={score.candidate} key={score.candidate}/>
+                            <CandidateScore candidateID={score.candidate} score={score.score} key={score.candidate}/>
                         ))
                         : <div className="error">
                             <h1>Oups !</h1>
