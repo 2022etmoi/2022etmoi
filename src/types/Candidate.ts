@@ -1,9 +1,11 @@
 import { Answer, PropositionID } from ".";
+
 /**
  * The full list of shown Candidates.
  */
 export enum CandidateID {
     HIDALGO = "HIDALGO",
+    JADOT = "JADOT",
     LE_PEN = "LE_PEN",
     MELENCHON = "MELENCHON",
     PECRESSE = "PECRESSE",

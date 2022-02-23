@@ -1,5 +1,6 @@
 import { Candidate, CandidateID } from "../types";
 import { Hidalgo } from "./Hidalgo";
+import { Jadot } from "./Jadot";
 import { LePen } from "./Le_Pen";
 import { Melenchon } from "./Melenchon";
 import { Pecresse } from "./Pecresse";
@@ -8,6 +9,7 @@ import { Zemmour } from "./Zemmour";
 
 export const candidates: Map<CandidateID, Candidate> = new Map<CandidateID, Candidate>([
     [CandidateID.HIDALGO, Hidalgo],
+    [CandidateID.JADOT, Jadot],
     [CandidateID.LE_PEN, LePen],
     [CandidateID.MELENCHON, Melenchon],
     [CandidateID.PECRESSE, Pecresse],
