@@ -1,4 +1,5 @@
 import { candidates } from "../data/Candidates";
+import { propositions } from "../data/Propositions";
 import { Answer, CandidateAnswer, CandidateID, PropositionID, Score, UserAnswer } from "../types";
 import { StorageService } from "./StorageService";
 
@@ -60,7 +61,6 @@ export class ScoringService {
         let disagreements = 0;
         let important_agreements = 0;
         let important_disagreements = 0;
-        let neutral = 0;
 
         candidateAnswers.forEach((value, key) => {
             const userAnswer = userAnswers.filter(a => a[0] === key)[0];
@@ -87,8 +87,6 @@ export class ScoringService {
                         || m === UserValues.get(UserAnswer.YES) && c === CandidateValues.get(CandidateAnswer.NO)) {
                         disagreements += 1;
                     }
-                } else if (m === UserValues.get(UserAnswer.NEUTRAL) || c === CandidateValues.get(CandidateAnswer.NEUTRAL)) {
-                    neutral += 1;
                 }
             }
         });
@@ -107,7 +105,7 @@ export class ScoringService {
                 skulls: important_disagreements,
                 agreements: agreements,
                 disagreements: disagreements,
-                neutral: neutral,
+                neutral: propositions.length - (important_agreements + important_disagreements + agreements + disagreements),
             }
         );
     }
