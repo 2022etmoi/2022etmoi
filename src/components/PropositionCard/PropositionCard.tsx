@@ -47,7 +47,10 @@ export function PropositionCard({ propositionID, navigate }: PropositionCardProp
                 </header>
                 <div className="proposition-card__card">
                     <h3 className="proposition-card__card-title">Details sur cette proposition</h3>
-                    <div className="proposition-card__card-details">{proposition.description}</div>
+                    <div
+                        className="proposition-card__card-details">{proposition.description.length > 0 ? proposition.description : (
+                            <span>Il n'y a pas encore de détails pour cette proposition.<br/><a
+                                href="https://github.com/2022etmoi/2022etmoi/issues/new?assignees=&labels=details&template=modifier-les-d-tails-d-une-proposition.md&title=%5Bdetails%5D">Proposer une description.</a></span>)}</div>
                 </div>
             </div>
 
