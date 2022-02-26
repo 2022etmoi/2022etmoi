@@ -6,7 +6,7 @@ export const Jadot = new Candidate(
     "Europe Écologie Les Verts",
     new Map([
         [PropositionID.EOLIENNE, new Answer(CandidateAnswer.NO, "")],
-        [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NEUTRAL, "")],
+        [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "\"Un barème progressif sera appliqué qui permettra de baisser la fiscalité sur les petites successions et de l'augmenter pour les plus élevées.\" p. 27")],
         [PropositionID.SMIC, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.REPUBLIQUE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.EPR, new Answer(CandidateAnswer.NO, "")],
@@ -30,12 +30,12 @@ export const Jadot = new Candidate(
         [PropositionID.DETTE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.TRAITES, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.CROISSANCE, new Answer(CandidateAnswer.YES, "")],
-        [PropositionID.ASSANGE, new Answer(CandidateAnswer.YES, "")],
-        [PropositionID.RIC, new Answer(CandidateAnswer.YES, "")],
+        [PropositionID.RIC, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SPECULATION, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.OTAN, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.REDEVANCE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.ECOLE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.GUERRE, new Answer(CandidateAnswer.YES, "")],
+        [PropositionID.TVA, new Answer(CandidateAnswer.NO, "\"Le propriétaire d'un gros 4x4 qui utilise beaucoup de carburant va beaucoup gagner avec ce type de mesure, alors que la personne qui a un petit véhicule gagnera peu.\" Source: francetvinfo.fr")],
     ]),
 );

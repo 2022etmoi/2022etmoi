@@ -3,7 +3,6 @@
  */
 export enum PropositionID {
     AAH = "AAH",
-    ASSANGE = "ASSANGE",
     BAC = "BAC",
     BREVETS = "BREVETS",
     CANNABIS = "CANNABIS",
@@ -34,6 +33,7 @@ export enum PropositionID {
     SUCCESSIONS = "SUCCESSIONS",
     TEMPS = "TEMPS",
     TRAITES = "TRAITES",
+    TVA = "TVA",
 }
 
 /**

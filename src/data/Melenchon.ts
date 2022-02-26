@@ -30,12 +30,12 @@ export const Melenchon = new Candidate(
         [PropositionID.DETTE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.TRAITES, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.CROISSANCE, new Answer(CandidateAnswer.NEUTRAL, "")],
-        [PropositionID.ASSANGE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.RIC, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.SPECULATION, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.OTAN, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.REDEVANCE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.ECOLE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.GUERRE, new Answer(CandidateAnswer.NEUTRAL, "")],
+        [PropositionID.TVA, new Answer(CandidateAnswer.NO, "\"Le prix de l'énergie ne doit pas être déterminé par le marché. À court terme, il faut bloquer les prix dans le cadre d'une loi d'urgence sociale.\"")],
     ]),
 );

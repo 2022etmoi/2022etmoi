@@ -30,12 +30,12 @@ export const Zemmour = new Candidate(
         [PropositionID.DETTE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.TRAITES, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.CROISSANCE, new Answer(CandidateAnswer.NEUTRAL, "")],
-        [PropositionID.ASSANGE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.RIC, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.SPECULATION, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.OTAN, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.REDEVANCE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.ECOLE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.GUERRE, new Answer(CandidateAnswer.NEUTRAL, "")],
+        [PropositionID.TVA, new Answer(CandidateAnswer.NO, "")],
     ]),
 );
