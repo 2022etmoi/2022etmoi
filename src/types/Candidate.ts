@@ -4,11 +4,16 @@ import { Answer, PropositionID } from ".";
  * The full list of shown Candidates.
  */
 export enum CandidateID {
+    ARTAUD = "ARTAUD",
+    DUPONT_AIGNAN = "DUPONT_AIGNAN",
     HIDALGO = "HIDALGO",
     JADOT = "JADOT",
+    LASSALLE = "LASSALLE",
     LE_PEN = "LE_PEN",
+    MACRON = "MACRON",
     MELENCHON = "MELENCHON",
     PECRESSE = "PECRESSE",
+    POUTOU = "POUTOU",
     ROUSSEL = "ROUSSEL",
     ZEMMOUR = "ZEMMOUR",
 }
