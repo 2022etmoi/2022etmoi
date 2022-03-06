@@ -2,7 +2,7 @@ import { Proposition, PropositionID } from "../types";
 
 export const propositions: Proposition[] = [
     new Proposition(
-        PropositionID.EOLIENNE,
+        PropositionID.STOP_EOLIENNE,
         "Écologie",
         "Interdire tout nouveau projet de construction d'éoliennes sur terre et en mer",
         "",
@@ -10,7 +10,7 @@ export const propositions: Proposition[] = [
     new Proposition(
         PropositionID.SUCCESSIONS,
         "Héritage",
-        "Il faut alléger l'impôt sur les successions",
+        "Il faut faciliter les successions pour les patrimoines supérieurs à 300.000 euros",
         "",
     ),
     new Proposition(
@@ -26,19 +26,19 @@ export const propositions: Proposition[] = [
         "",
     ),
     new Proposition(
-        PropositionID.EPR,
+        PropositionID.NUCLEAIRE,
         "Écologie",
-        "Construire au moins six nouveaux EPR en France",
+        "Construire de nouveaux réacteurs nucléaires en France",
         "",
     ),
     new Proposition(
-        PropositionID.LOGEMENT,
+        PropositionID.LOGEMENT_SOCIAL_REFUSER,
         "Mixité sociale",
         "Autoriser les mairies à refuser la construction de logements sociaux sur leur territoire",
         "",
     ),
     new Proposition(
-        PropositionID.PASS,
+        PropositionID.PASS_ABROGER,
         "Santé",
         "Abroger le pass sanitaire et vaccinal",
         "",
@@ -74,13 +74,13 @@ export const propositions: Proposition[] = [
         "",
     ),
     new Proposition(
-        PropositionID.BREVETS,
+        PropositionID.BREVETS_LIBERER,
         "Santé",
         "Libérer les brevets sur les vaccins",
         "",
     ),
     new Proposition(
-        PropositionID.LIBRE_ECHANGE,
+        PropositionID.LIBRE_ECHANGE_FIN,
         "Mondialisation",
         "Mettre fin à la participation de la France aux négociations des traités de libre échange",
         "",
@@ -92,7 +92,7 @@ export const propositions: Proposition[] = [
         "",
     ),
     new Proposition(
-        PropositionID.SOINS,
+        PropositionID.SOINS_ETRANGERS_STOP,
         "Immigration",
         "Supprimer le financement des soins pour les étrangers en situation irrégulière",
         "",
@@ -104,7 +104,7 @@ export const propositions: Proposition[] = [
         "",
     ),
     new Proposition(
-        PropositionID.CLOUD,
+        PropositionID.CLOUD_SOUVERAIN,
         "Souveraineté",
         "Stopper l'hébergement des données des services publics français sur les serveurs des GAFAM",
         "",
@@ -122,15 +122,9 @@ export const propositions: Proposition[] = [
         "",
     ),
     new Proposition(
-        PropositionID.PENALE,
-        "",
-        "Abaisser la majorité pénale de 18 à 16 ans",
-        "",
-    ),
-    new Proposition(
         PropositionID.CANNABIS,
         "",
-        "Légaliser le cannabis",
+        "Il faut dépénaliser ou légaliser le cannabis",
         "",
     ),
     new Proposition(
@@ -140,21 +134,15 @@ export const propositions: Proposition[] = [
         "",
     ),
     new Proposition(
-        PropositionID.TRAITES,
+        PropositionID.TRAITES_RENEGOCIER,
         "",
         "Il faut renégocier les traités européens pour en finir avec les dogmes budgétaires",
         "",
     ),
     new Proposition(
-        PropositionID.CROISSANCE,
-        "",
-        "On peut concilier croissance et écologie",
-        "",
-    ),
-    new Proposition(
         PropositionID.RIC,
         "",
-        "Il faut améliorer les outils permettant aux citoyens d'intervenir dans la création des lois (référendum d'initiative citoyenne, abaisser les seuils des dispositifs existants, …)",
+        "Il faut instaurer le référendum d'initiative citoyenne, ou abaisser le seuil du référendum d'initiative partagée",
         "",
     ),
     new Proposition(
@@ -172,17 +160,11 @@ export const propositions: Proposition[] = [
     new Proposition(
         PropositionID.REDEVANCE,
         "",
-        "Supprimer la redevance audiovisuelle grâce à la privatisation des principales chaînes de l'audiovisuel public",
+        "Supprimer la redevance audiovisuelle et privatiser des principales chaînes de l'audiovisuel public",
         "",
     ),
     new Proposition(
-        PropositionID.ECOLE,
-        "",
-        "L'école existe pour préparer les étudiants au marché du travail",
-        "",
-    ),
-    new Proposition(
-        PropositionID.GUERRE,
+        PropositionID.GUERRE_MIGRANTS_ACCEPTER,
         "",
         "Autoriser l'entrée en France des migrants fuyant les zones de guerre",
         "",
@@ -191,6 +173,12 @@ export const propositions: Proposition[] = [
         PropositionID.TVA,
         "",
         "Baisser la TVA sur les carburants",
+        "",
+    ),
+    new Proposition(
+        PropositionID.AUTOROUTES,
+        "",
+        "Renationaliser les autoroutes",
         "",
     ),
 ];
