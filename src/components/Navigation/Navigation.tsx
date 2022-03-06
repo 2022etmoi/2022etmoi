@@ -11,10 +11,9 @@ export function Navigation (){
     const links : {to: string, icon: IconProps["file"], label: string}[] = [
         { to: "/", icon: "logo", label: "" },
         { to: "/app", icon: "propositions", label: "Propositions" },
-        { to: "/app/scores", icon: "scores", label: "Scores" },
-        { to: "/app/scores", icon: "candidates", label: "Candidats" },
+        { to: "/app/scores", icon: "candidates", label: "Scores" },
+        { to: "/app/table", icon: "table", label: "Synthèse" },
         { to: "/app/options", icon: "options", label: "Options" },
-        { to: "/app/table", icon: "table", label: "Table" }
     ];
 
     const isActive = useCallback(path => pathname === path, [pathname]);
