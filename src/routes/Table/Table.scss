@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .route-table {
     &__wrapper {
         align-items: center;
@@ -6,7 +8,7 @@
         justify-content: center;
 
         &__candidate {
-            transform: rotate(180deg);
+            transform: translateX(38px) + translateY(8px) + rotate(210deg);
             writing-mode: vertical-lr;
         }
 
@@ -15,15 +17,25 @@
         }
 
         td {
-            padding: 4px 8px;
+            border-bottom: 1px solid $button-primary;
+            border-right: 1px solid $button-primary;
+            padding: 10px 8px;
+        }
+
+        &__section {
+            font-size: 2rem;
+            font-weight: 800;
+            padding: 16px 0 8px;
+        }
+
+        .icon {
+            background: none;
+            height: 24px;
+            width: 24px;
         }
 
         tbody {
             text-align: center;
-
-            &:nth-child(even) {
-                background-color: rgb(0 0 0 / 10%);
-            }
         }
 
         tr:first-child {
@@ -36,10 +48,6 @@
             :first-child {
                 text-align: center;
             }
-        }
-
-        td:nth-child(even) {
-            background-color: rgb(0 0 0 / 10%);
         }
     }
 }
