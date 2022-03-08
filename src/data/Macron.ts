@@ -31,7 +31,7 @@ export const Macron = new Candidate(
         [PropositionID.RIC, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SPECULATION, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.OTAN, new Answer(CandidateAnswer.NO, "")],
-        [PropositionID.REDEVANCE, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.REDEVANCE, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.GUERRE_MIGRANTS_ACCEPTER, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.TVA, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.AUTOROUTES, new Answer(CandidateAnswer.NO, "")],

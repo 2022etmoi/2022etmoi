@@ -160,7 +160,7 @@ export const propositions: Proposition[] = [
     new Proposition(
         PropositionID.REDEVANCE,
         "",
-        "Supprimer la redevance audiovisuelle et privatiser des principales chaînes de l'audiovisuel public",
+        "Il faut supprimer la redevance audiovisuelle",
         "",
     ),
     new Proposition(
