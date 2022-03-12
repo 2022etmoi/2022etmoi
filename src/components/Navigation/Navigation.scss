@@ -28,15 +28,16 @@
         text-decoration: none;
 
         &:first-child {
-            width: 9rem;
+            margin-top: 1rem;
 
             @media screen and (max-width: $breakpoint-lg) {
                 display: none;
             }
 
             .icon {
+                width: 12rem;
+                height: 12rem;
                 background-color: unset;
-                width: inherit;
             }
         }
 
