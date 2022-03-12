@@ -9,7 +9,7 @@
     box-sizing: border-box;
     overflow: hidden;
     padding: 0;
-    width: 35rem;
+    width: 35rem !important;
 
     @media screen and (max-width: $breakpoint-md) {
         flex-basis: 35rem;

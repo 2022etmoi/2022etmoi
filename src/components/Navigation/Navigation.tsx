@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { Icon } from "../";
-import { IconProps } from "../Icon/Icon";
+import { IconProps } from "../Icon";
 
 export function Navigation (){
     const { pathname } = useLocation();
