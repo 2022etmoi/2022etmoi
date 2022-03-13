@@ -8,6 +8,9 @@
         justify-content: center;
 
         &__candidate {
+            font-weight: 800;
+            padding: 1rem;
+            text-align: left;
             transform: translateX(38px) + translateY(8px) + rotate(210deg);
             writing-mode: vertical-lr;
         }
@@ -16,16 +19,21 @@
             border-spacing: 0;
         }
 
-        td {
+        .table-content {
             border-bottom: 1px solid $button-primary;
-            border-right: 1px solid $button-primary;
             padding: 10px 8px;
+
+            &:nth-child(even) {
+                background-color: #00000020;
+            }
         }
 
         &__section {
             font-size: 2rem;
             font-weight: 800;
+            height: 100%;
             padding: 4rem 0 2rem;
+            vertical-align: bottom;
         }
 
         .icon {
@@ -36,19 +44,6 @@
 
         tbody {
             text-align: center;
-        }
-
-        tr:first-child {
-            text-align: left;
-
-            th {
-                padding: 8px;
-            }
-
-            :first-child {
-                text-align: center;
-                vertical-align: bottom;
-            }
         }
 
         tr {

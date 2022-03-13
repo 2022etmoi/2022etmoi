@@ -21,8 +21,8 @@ import {
 export function Table() {
     const candidatesNames = useMemo(() =>
         Object.keys(CandidateID).map(id => (
-            <th className="route-table__wrapper__candidate"
-                key={id}>{candidates.get(id as CandidateID)?.name ?? "‼️"}</th>))
+            <td className="route-table__wrapper__candidate"
+                key={id}>{candidates.get(id as CandidateID)?.name ?? "‼️"}</td>))
     , []);
 
     const answers = StorageService.getInstance().getAnswers();
@@ -30,8 +30,9 @@ export function Table() {
     const candidatesAnswers = useMemo(() =>
         propositions.map(p => [p.id, (
             <tr key={p.id}>
-                <td>{p.content}</td>
-                {Object.keys(CandidateID).map(id => (<td key={id}>{answer(p.id, id as CandidateID)}</td>))}
+                <td className="table-content">{p.content}</td>
+                {Object.keys(CandidateID).map(id => (
+                    <td key={id} className="table-content">{answer(p.id, id as CandidateID)}</td>))}
             </tr>
         )])
     , []);
@@ -51,28 +52,45 @@ export function Table() {
             </header>
             <div className="route-table__wrapper">
                 <table>
-                    <thead>
+                    <tbody>
                         <tr>
-                            <th>
-                                <div
-                                    className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.MUST)} {presentableUserAnswer(UserAnswer.MUST)}</div>
-                            </th>
+                            <td className="route-table__wrapper__section">
+                                {smileyForUserAnswer(UserAnswer.MUST)} {presentableUserAnswer(UserAnswer.MUST)}
+                            </td>
                             {candidatesNames}
                         </tr>
-                    </thead>
-                    <tbody>
                         {filterAnswers(UserAnswer.MUST)}
-                        <div
-                            className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.MUST_NOT)} {presentableUserAnswer(UserAnswer.MUST_NOT)}</div>
+
+                        <tr>
+                            <td className="route-table__wrapper__section">
+                                {smileyForUserAnswer(UserAnswer.MUST_NOT)} {presentableUserAnswer(UserAnswer.MUST_NOT)}
+                            </td>
+                            {candidatesNames}
+                        </tr>
                         {filterAnswers(UserAnswer.MUST_NOT)}
-                        <div
-                            className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.YES)} {presentableUserAnswer(UserAnswer.YES)}</div>
+
+                        <tr>
+                            <td className="route-table__wrapper__section">
+                                {smileyForUserAnswer(UserAnswer.YES)} {presentableUserAnswer(UserAnswer.YES)}
+                            </td>
+                            {candidatesNames}
+                        </tr>
                         {filterAnswers(UserAnswer.YES)}
-                        <div
-                            className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.NO)} {presentableUserAnswer(UserAnswer.NO)}</div>
+
+                        <tr>
+                            <td className="route-table__wrapper__section">
+                                {smileyForUserAnswer(UserAnswer.NO)} {presentableUserAnswer(UserAnswer.NO)}
+                            </td>
+                            {candidatesNames}
+                        </tr>
                         {filterAnswers(UserAnswer.NO)}
-                        <div
-                            className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.NEUTRAL)} {presentableUserAnswer(UserAnswer.NEUTRAL)}</div>
+
+                        <tr>
+                            <td className="route-table__wrapper__section">
+                                {smileyForUserAnswer(UserAnswer.NEUTRAL)} {presentableUserAnswer(UserAnswer.NEUTRAL)}
+                            </td>
+                            {candidatesNames}
+                        </tr>
                         {filterAnswers(UserAnswer.NEUTRAL)}
                     </tbody>
                 </table>
