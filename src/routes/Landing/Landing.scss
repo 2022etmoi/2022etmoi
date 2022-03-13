@@ -1,5 +1,5 @@
 @import '../../styles/colors';
-@import "../../styles/breakpoints";
+@import '../../styles/breakpoints';
 
 .route-landing {
     &__line {
@@ -12,35 +12,35 @@
 
         .icon {
             background: none;
-            width: 20rem;
             height: 20rem;
+            width: 20rem;
         }
 
         section {
-            padding: 2rem 4rem 1rem;
-            width: 100vw;
             box-sizing: border-box;
             overflow: hidden;
+            padding: 2rem 4rem 1rem;
+            width: 100vw;
         }
 
         &__content {
             font-size: 2.2rem;
             font-weight: 500;
+            margin: auto;
             max-width: 64rem;
             text-align: center;
-            margin: auto;
         }
 
         h2 {
-            text-align: center;
             font-size: 3rem;
+            text-align: center;
         }
 
         .section-argument {
             align-items: center;
+            background-color: #fff;
             display: flex;
             flex-direction: column;
-            background-color: #fff;
             margin-top: 3rem;
 
             h2 {
@@ -49,16 +49,16 @@
 
             &__wrapper {
                 display: flex;
-                justify-content: space-evenly;
                 flex-flow: row;
                 flex-wrap: wrap;
+                justify-content: space-evenly;
                 width: 100%;
             }
 
             &__item {
                 flex-basis: 30rem;
-                text-align: center;
                 margin-bottom: 4rem;
+                text-align: center;
 
                 &-image {
                     align-items: center;
@@ -84,8 +84,8 @@
 
         .section-vote {
             p {
-                max-width: 32rem;
                 margin: 2rem auto;
+                max-width: 32rem;
                 text-align: center;
             }
 
@@ -101,17 +101,16 @@
             }
 
             &__buttons {
-                max-width: 42rem;
                 display: flex;
                 flex-flow: row;
                 justify-content: space-evenly;
+                max-width: 42rem;
             }
         }
 
-
         &__cards {
-            margin-bottom: 5rem;
             box-sizing: border-box;
+            margin-bottom: 5rem;
 
             .candidate-score {
                 animation: unset;
@@ -141,11 +140,11 @@
         }
 
         &__quiz {
+            align-items: center;
+            background-color: #fff;
             display: flex;
             flex-flow: column;
             justify-content: center;
-            align-items: center;
-            background-color: #fff;
             margin-top: 2rem;
             text-align: center;
 
