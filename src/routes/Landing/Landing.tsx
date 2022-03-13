@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import { Button, CandidateScore, Icon, PropositionButton } from "../../components";
 import { RandomScoreMock } from "../../tests/mocks";
-import { CandidateID, UserAnswer } from "../../types";
+import { CandidateID, presentableUserAnswer, smileyForUserAnswer, UserAnswer } from "../../types";
 
 /**
  * A route to display the app landing page.
@@ -85,24 +85,28 @@ export function Landing() {
                                 <PropositionButton userAnswer={UserAnswer.MUST}></PropositionButton>
                                 <PropositionButton userAnswer={UserAnswer.MUST_NOT}></PropositionButton>
                             </div>
-                            <p>Pour chaque proposition qui vous semble essentielle, choisissez <b>vraiment pour
-                                😍</b> ou <b>vraiment contre 😡</b> afin qu'elle compte deux fois plus au calcul des
-                                scores.</p>
+                            <p>Pour chaque proposition qui vous semble essentielle, choisissez
+                                <b> {presentableUserAnswer(UserAnswer.MUST)} {smileyForUserAnswer(UserAnswer.MUST)} </b>
+                                ou <b> {presentableUserAnswer(UserAnswer.MUST_NOT)} {smileyForUserAnswer(UserAnswer.MUST_NOT)} </b>
+                                afin qu&apos;elle compte deux fois plus lors du calcul des scores.</p>
                         </div>
                         <div className="section-vote__container__item">
                             <div className="section-vote__buttons">
                                 <PropositionButton userAnswer={UserAnswer.YES}></PropositionButton>
                                 <PropositionButton userAnswer={UserAnswer.NO}></PropositionButton>
                             </div>
-                            <p>Pour les autres propositions, vous pouvez sélectionner <b>pour 👍</b>, <b>contre
-                                👎</b>, ou passer.</p>
+                            <p>Pour les autres propositions, vous pouvez sélectionner
+                                <b> {presentableUserAnswer(UserAnswer.YES)} {smileyForUserAnswer(UserAnswer.YES)}</b>,
+                                <b> {presentableUserAnswer(UserAnswer.NO)} {smileyForUserAnswer(UserAnswer.NO)}</b>,
+                                ou passer.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
             <section className="route-landing__quiz">
                 <h2>Ce quiz ne remplace pas la lecture des programmes des candidats !</h2>
-                <p>Il permet d'avoir une idée des accords et désaccords importants avec les différents
+                <p>Il permet d&apos;avoir une idée des accords et désaccords importants avec les différents
                     programmes.</p>
                 <Link to="/app">
                     <Button>Commencer le quiz <ArrowRightOutlined/></Button>

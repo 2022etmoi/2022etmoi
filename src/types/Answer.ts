@@ -33,6 +33,21 @@ export function presentableUserAnswer(answer: UserAnswer) {
     }
 }
 
+export function smileyForUserAnswer(answer: UserAnswer) {
+    switch (answer) {
+    case UserAnswer.MUST_NOT:
+        return "😡";
+    case UserAnswer.NO:
+        return "👎";
+    case UserAnswer.YES:
+        return "👍";
+    case UserAnswer.MUST:
+        return "❤️";
+    case UserAnswer.NEUTRAL:
+        return "";
+    }
+}
+
 export function presentableCandidateAnswer(answer: CandidateAnswer) {
     switch (answer) {
     case CandidateAnswer.NO:

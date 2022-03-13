@@ -1,8 +1,6 @@
 import "./PropositionButton.scss";
 
-import { useMemo } from "react";
-
-import { presentableUserAnswer, UserAnswer } from "../../types";
+import { presentableUserAnswer, smileyForUserAnswer, UserAnswer } from "../../types";
 import { Button } from "../Button/Button";
 
 interface PropositionButtonProps {
@@ -21,22 +19,9 @@ export function PropositionButton ({
     onClick,
     userAnswer,
 }: PropositionButtonProps) {
-    const emoji = useMemo(()=> {
-        switch (userAnswer) {
-        case UserAnswer.MUST_NOT:
-            return "😡";
-        case UserAnswer.NO:
-            return "👎";
-        case UserAnswer.YES:
-            return "👍";
-        case UserAnswer.MUST:
-            return "🥰";
-        }
-    }, [userAnswer]);
-
     return (
         <div className="proposition-button" onClick={() => onClick?.(userAnswer)} role="button" aria-label={presentableUserAnswer(userAnswer)}>
-            <Button type="secondary" className="proposition-button__button">{emoji}</Button>
+            <Button type="secondary" className="proposition-button__button">{smileyForUserAnswer(userAnswer)}</Button>
             <div className="proposition-button__name">{presentableUserAnswer(userAnswer)}</div>
         </div>
     );

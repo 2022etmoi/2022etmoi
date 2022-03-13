@@ -6,7 +6,14 @@ import { Icon } from "../../components";
 import { candidates } from "../../data/Candidates";
 import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services";
-import { CandidateAnswer, CandidateID, PropositionID, UserAnswer } from "../../types";
+import {
+    CandidateAnswer,
+    CandidateID,
+    presentableUserAnswer,
+    PropositionID,
+    smileyForUserAnswer,
+    UserAnswer
+} from "../../types";
 
 /**
  * A route to display all answers.
@@ -46,20 +53,26 @@ export function Table() {
                 <table>
                     <thead>
                         <tr>
-                            <th>Proposition</th>
+                            <th>
+                                <div
+                                    className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.MUST)} {presentableUserAnswer(UserAnswer.MUST)}</div>
+                            </th>
                             {candidatesNames}
                         </tr>
                     </thead>
                     <tbody>
-                        <div className="route-table__wrapper__section">Vraiment pour</div>
                         {filterAnswers(UserAnswer.MUST)}
-                        <div className="route-table__wrapper__section">Vraiment contre</div>
+                        <div
+                            className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.MUST_NOT)} {presentableUserAnswer(UserAnswer.MUST_NOT)}</div>
                         {filterAnswers(UserAnswer.MUST_NOT)}
-                        <div className="route-table__wrapper__section">Pour</div>
+                        <div
+                            className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.YES)} {presentableUserAnswer(UserAnswer.YES)}</div>
                         {filterAnswers(UserAnswer.YES)}
-                        <div className="route-table__wrapper__section">Contre</div>
+                        <div
+                            className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.NO)} {presentableUserAnswer(UserAnswer.NO)}</div>
                         {filterAnswers(UserAnswer.NO)}
-                        <div className="route-table__wrapper__section">Ne se prononce pas</div>
+                        <div
+                            className="route-table__wrapper__section">{smileyForUserAnswer(UserAnswer.NEUTRAL)} {presentableUserAnswer(UserAnswer.NEUTRAL)}</div>
                         {filterAnswers(UserAnswer.NEUTRAL)}
                     </tbody>
                 </table>
