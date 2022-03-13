@@ -91,8 +91,10 @@ describe("scoring-service", () => {
             Object.keys(CandidateID).forEach(id2 => {
                 if (id !== id2) {
                     const score = ScoringService.getInstance().computeScoreWithAnswers(candidates.get(<CandidateID>id2)!.opinion, answers);
-                    if (score.score > AGREE_LIMIT)
+                    if (score.score > AGREE_LIMIT) {
+                        console.log(`${id} ${id2} -> ${score.score}`);
                         throw new Error(`${id} / ${id2} -> ${score.score} (> ${AGREE_LIMIT})`);
+                    }
                 }
             });
         });
