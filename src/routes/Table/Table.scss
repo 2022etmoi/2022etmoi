@@ -7,6 +7,12 @@
         flex-flow: column;
         justify-content: center;
 
+        .noAnswers {
+            font-size: 2rem;
+            font-weight: 800;
+            padding: 4rem 0;
+        }
+
         &__candidate {
             font-weight: 800;
             padding: 1rem;
@@ -22,6 +28,7 @@
         .table-content {
             border-bottom: 1px solid $button-primary;
             padding: 10px 8px;
+            vertical-align: middle;
 
             &:nth-child(even) {
                 background-color: #00000020;

@@ -40,58 +40,36 @@ export function Table() {
     function filterAnswers(answer: UserAnswer) {
         const ids = answers?.filter(v => v[1] === answer);
         const filteredAnswers = ids?.map(v => candidatesAnswers.filter(c => c[0] === v[0]));
-        if (filteredAnswers === undefined) return null;
-        if (filteredAnswers.length === 0) return null;
+        if (filteredAnswers === undefined) return [];
+        if (filteredAnswers.length === 0) return [];
         return filteredAnswers.filter(a => a.length > 0).map(a => a[0][1]);
+    }
+
+    function tableSegment(answer: UserAnswer) {
+        const ans = filterAnswers(answer);
+        return ans.length > 0 ? (
+            <div>
+                <tr>
+                    <td className="route-table__wrapper__section">
+                        {smileyForUserAnswer(answer)} {presentableUserAnswer(answer)}
+                    </td>
+                    {candidatesNames}
+                </tr>
+                {filterAnswers(answer)}
+            </div>
+        ) : (<div className="noAnswers">Aucune réponse &quot;{presentableUserAnswer(answer)}&quot;.</div>);
     }
 
     return (
         <div className="route-table">
-            <header>
-                <h1>Table</h1>
-            </header>
             <div className="route-table__wrapper">
                 <table>
                     <tbody>
-                        <tr>
-                            <td className="route-table__wrapper__section">
-                                {smileyForUserAnswer(UserAnswer.MUST)} {presentableUserAnswer(UserAnswer.MUST)}
-                            </td>
-                            {candidatesNames}
-                        </tr>
-                        {filterAnswers(UserAnswer.MUST)}
-
-                        <tr>
-                            <td className="route-table__wrapper__section">
-                                {smileyForUserAnswer(UserAnswer.MUST_NOT)} {presentableUserAnswer(UserAnswer.MUST_NOT)}
-                            </td>
-                            {candidatesNames}
-                        </tr>
-                        {filterAnswers(UserAnswer.MUST_NOT)}
-
-                        <tr>
-                            <td className="route-table__wrapper__section">
-                                {smileyForUserAnswer(UserAnswer.YES)} {presentableUserAnswer(UserAnswer.YES)}
-                            </td>
-                            {candidatesNames}
-                        </tr>
-                        {filterAnswers(UserAnswer.YES)}
-
-                        <tr>
-                            <td className="route-table__wrapper__section">
-                                {smileyForUserAnswer(UserAnswer.NO)} {presentableUserAnswer(UserAnswer.NO)}
-                            </td>
-                            {candidatesNames}
-                        </tr>
-                        {filterAnswers(UserAnswer.NO)}
-
-                        <tr>
-                            <td className="route-table__wrapper__section">
-                                {smileyForUserAnswer(UserAnswer.NEUTRAL)} {presentableUserAnswer(UserAnswer.NEUTRAL)}
-                            </td>
-                            {candidatesNames}
-                        </tr>
-                        {filterAnswers(UserAnswer.NEUTRAL)}
+                        {tableSegment(UserAnswer.MUST)}
+                        {tableSegment(UserAnswer.MUST_NOT)}
+                        {tableSegment(UserAnswer.YES)}
+                        {tableSegment(UserAnswer.NO)}
+                        {tableSegment(UserAnswer.NEUTRAL)}
                     </tbody>
                 </table>
             </div>
