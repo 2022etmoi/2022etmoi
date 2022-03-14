@@ -50,11 +50,11 @@ export function CandidateScore({ candidateID, score }: CandidateScoreProps)  {
                                 style={{ width: (score.hearts / scoreSum * 100) + "%" }}></div>
                         </div>
                         <div className="candidate-score__footer">
-                            <div className="candidate-score__chips">
-                                <div className="candidate-score__chips-item">{score.skulls}
-                                    <span>{smileyForAgreements(false)}</span></div>
-                                <div className="candidate-score__chips-item">{score.hearts}
-                                    <span>{smileyForAgreements(true)}</span></div>
+                            <div className="candidate-score__chip">
+                                <span>{smileyForAgreements(true)}</span> {score.hearts}
+                            </div>
+                            <div className="candidate-score__chip">
+                                <span>{smileyForAgreements(false)}</span> {score.skulls}
                             </div>
                             <Button type="transparent">En savoir plus</Button>
                         </div>

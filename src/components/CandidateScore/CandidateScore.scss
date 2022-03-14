@@ -13,7 +13,6 @@
 
     @media screen and (max-width: $breakpoint-md) {
         flex-basis: 35rem;
-        flex-grow: 0.2;
         grid-template-columns: 16rem 1fr repeat(2, 8rem);
         margin: 0 auto;
         width: unset;
@@ -128,31 +127,29 @@
         }
     }
 
-    &__chips {
-        &-item {
-            background-color: rgba($primary, 0.1);
-            border-radius: 2rem;
-            display: inline-block;
-            font-size: 1.8rem;
-            margin-right: 1rem;
-            padding: 0.6rem 1.5rem;
-            text-align: right;
-            vertical-align: middle;
-            width: 4rem;
+    &__chip {
+        align-items: center;
+        background-color: rgba($primary, 0.1);
+        border-radius: 2rem;
+        display: flex;
+        flex-flow: row;
+        font-size: 1.8rem;
+        font-weight: 500;
+        justify-content: space-evenly;
+        padding: 0.6rem 1.5rem;
+        width: 4rem;
 
-            span {
-                font-size: 1.4rem;
-            }
-
-            @media screen and (max-width: $breakpoint-md) {
-                padding: 4px 1rem;
-            }
+        span {
+            font-size: 1.6rem;
+            padding-top: 0.15rem;
+            padding-right: 0.4rem;
         }
     }
 
     &__footer {
         align-items: center;
         display: flex;
+        flex-flow: row;
         justify-content: space-between;
         padding: 1.5rem 2rem;
 
