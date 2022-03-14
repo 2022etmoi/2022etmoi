@@ -1,6 +1,25 @@
 @import '../../styles/colors';
 
 .route-table {
+    &__top {
+        padding: 2rem 4rem 4rem;
+
+        &__caption {
+            &__line {
+                align-items: center;
+                display: flex;
+                flex-flow: row;
+
+                .icon {
+                    background: none;
+                    height: 3rem;
+                    padding-right: 1rem;
+                    width: 2rem;
+                }
+            }
+        }
+    }
+
     &__wrapper {
         align-items: center;
         display: flex;

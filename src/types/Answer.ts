@@ -48,6 +48,10 @@ export function smileyForUserAnswer(answer: UserAnswer) {
     }
 }
 
+export function smileyForAgreements(agree: boolean) {
+    return agree ? "😍" : "❌";
+}
+
 export function presentableCandidateAnswer(answer: CandidateAnswer) {
     switch (answer) {
     case CandidateAnswer.NO:

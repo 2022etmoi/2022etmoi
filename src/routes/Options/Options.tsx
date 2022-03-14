@@ -21,15 +21,14 @@ export function Options() {
 
     return (
         <div className="route-options">
-            <header>
-                <h1>Options</h1>
-            </header>
             <div className="route-options__wrapper">
+                <h1>Options</h1>
                 <ul className="options-list">
                     <li className="options-list__item">
                         <h2>Effacer les données</h2>
                         <p>Effacer mes votes pour recommencer de zéro.</p>
-                        <Button disabled={optionClear} type="danger" size="small" onClick={handleOptionClear}>Effacer <DeleteOutlined/></Button>
+                        <Button disabled={optionClear} type="danger" size="small"
+                            onClick={handleOptionClear}>Effacer <DeleteOutlined/></Button>
                         {optionClear &&
                             <Link to="/app">
                                 <Button size="small">Commencer à voter</Button>

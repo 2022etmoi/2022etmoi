@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import CountUp from "react-countup";
 
 import { candidates } from "../../data/Candidates";
-import { CandidateID, Score } from "../../types";
+import { CandidateID, Score, smileyForAgreements } from "../../types";
 import { Button } from "../Button";
 
 interface CandidateScoreProps {
@@ -51,8 +51,10 @@ export function CandidateScore({ candidateID, score }: CandidateScoreProps)  {
                         </div>
                         <div className="candidate-score__footer">
                             <div className="candidate-score__chips">
-                                <div className="candidate-score__chips-item">{score.skulls} <span>❌</span></div>
-                                <div className="candidate-score__chips-item">{score.hearts} <span>😍</span></div>
+                                <div className="candidate-score__chips-item">{score.skulls}
+                                    <span>{smileyForAgreements(false)}</span></div>
+                                <div className="candidate-score__chips-item">{score.hearts}
+                                    <span>{smileyForAgreements(true)}</span></div>
                             </div>
                             <Button type="transparent">En savoir plus</Button>
                         </div>

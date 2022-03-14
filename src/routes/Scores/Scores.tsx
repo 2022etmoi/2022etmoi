@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { Button, CandidateScore } from "../../components";
 import { ScoringService } from "../../services";
-import { CandidateID } from "../../types";
+import { CandidateID, smileyForAgreements } from "../../types";
 
 /**
  * A route to display scores.
@@ -33,9 +33,18 @@ export function Scores() {
 
     return (
         <div className="route-scores">
-            <header>
+            <div className="route-scores__top">
                 <h1>Scores</h1>
-            </header>
+                <p>Un pourcentage de 50% est neutre : les accords et désaccords se compensent.</p>
+                <div className="route-table__top__caption">
+                    <div>{smileyForAgreements(true)} (accords importants) :
+                        votes vraiment pour ou vraiment contre en accord avec le candidat.
+                    </div>
+                    <div>{smileyForAgreements(false)} (désaccords importants) :
+                        votes vraiment pour ou vraiment contre en désaccord avec le candidat.
+                    </div>
+                </div>
+            </div>
             <div className="route-scores__wrapper">
                 {
                     scores.length ?
@@ -45,7 +54,7 @@ export function Scores() {
                         : <div className="error">
                             <h1>Oups !</h1>
                             <p>Aucun vote enregistré.</p>
-                            <br />
+                            <br/>
                             <br />
                             <Link to="/app/propositions">
                                 <Button>Voir les propositions</Button>

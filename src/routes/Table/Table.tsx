@@ -62,6 +62,21 @@ export function Table() {
 
     return (
         <div className="route-table">
+            <div className="route-table__top">
+                <h1>Synthèse</h1>
+                <p>Visualisez les réponses des candidats aux propositions, classées selon vos réponses.</p>
+                <div className="route-table__top__caption">
+                    <div className="route-table__top__caption__line"><Icon file="yes"/> signifie que le candidat est
+                        pour.
+                    </div>
+                    <div className="route-table__top__caption__line"><Icon file="no"/> signifie que le candidat est
+                        contre.
+                    </div>
+                    <div className="route-table__top__caption__line"><Icon file="neutral"/> signifie que le candidat ne
+                        se prononce pas ou laissera le peuple trancher.
+                    </div>
+                </div>
+            </div>
             <div className="route-table__wrapper">
                 <table>
                     <tbody>

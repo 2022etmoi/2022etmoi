@@ -1,6 +1,11 @@
 @import '../../styles/breakpoints';
 
 .route-scores {
+    &__top {
+        font-size: 1.8rem;
+        padding: 2rem 4rem 4rem;
+    }
+
     &__wrapper {
         column-gap: 2rem;
         display: flex;

@@ -2,7 +2,11 @@
 
 .route-options {
     &__wrapper {
-        max-width: 80rem;
+        padding: 2rem 4rem;
+
+        h1 {
+            padding-bottom: 4rem;
+        }
     }
 
     .option-card {
