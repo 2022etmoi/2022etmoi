@@ -38,10 +38,12 @@ export function Scores() {
                 <p>Un pourcentage de 50% est neutre : les accords et désaccords se compensent.</p>
                 <div className="route-table__top__caption">
                     <div>{smileyForAgreements(true)} (accords importants) :
-                        votes vraiment pour ou vraiment contre en accord avec le candidat.
+                        réponses &ldquo;vraiment pour&rdquo; ou &ldquo;vraiment contre&rdquo; en accord avec le
+                        candidat.
                     </div>
                     <div>{smileyForAgreements(false)} (désaccords importants) :
-                        votes vraiment pour ou vraiment contre en désaccord avec le candidat.
+                        réponses &ldquo;vraiment pour&rdquo; ou &ldquo;vraiment contre&rdquo; en désaccord avec le
+                        candidat.
                     </div>
                 </div>
             </div>
@@ -53,7 +55,7 @@ export function Scores() {
                         ))
                         : <div className="error">
                             <h1>Oups !</h1>
-                            <p>Aucun vote enregistré.</p>
+                            <p>Aucune réponse enregistré.</p>
                             <br/>
                             <br />
                             <Link to="/app/propositions">

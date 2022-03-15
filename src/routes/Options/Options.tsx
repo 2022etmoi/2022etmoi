@@ -26,12 +26,12 @@ export function Options() {
                 <ul className="options-list">
                     <li className="options-list__item">
                         <h2>Effacer les données</h2>
-                        <p>Effacer mes votes pour recommencer de zéro.</p>
+                        <p>Effacer mes réponses pour recommencer de zéro.</p>
                         <Button disabled={optionClear} type="danger" size="small"
                             onClick={handleOptionClear}>Effacer <DeleteOutlined/></Button>
                         {optionClear &&
                             <Link to="/app">
-                                <Button size="small">Commencer à voter</Button>
+                                <Button size="small">Voir les propositions</Button>
                             </Link>
                         }
                     </li>
