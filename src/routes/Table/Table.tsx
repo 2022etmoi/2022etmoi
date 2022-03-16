@@ -20,6 +20,11 @@ interface TableAnswers {
     answers: Map<PropositionID, JSX.Element>,
 }
 
+const NO_DATA: TableAnswers = {
+    name: "Non sélectionné",
+    answers: new Map(),
+};
+
 /**
  * A route to display all answers.
  */
@@ -30,14 +35,8 @@ export function Table() {
                 key={id}>{candidates.get(id as CandidateID)?.name ?? "–"}</td>))
     , []);
 
-    const [c1Data, setC1Data]: [TableAnswers, ((value: (((prevState: TableAnswers) => TableAnswers) | TableAnswers)) => void)] = useState({
-        name: "",
-        answers: new Map()
-    });
-    const [c2Data, setC2Data]: [TableAnswers, ((value: (((prevState: TableAnswers) => TableAnswers) | TableAnswers)) => void)] = useState({
-        name: "",
-        answers: new Map()
-    });
+    const [c1Data, setC1Data] = useState(NO_DATA);
+    const [c2Data, setC2Data] = useState(NO_DATA);
 
     const answers = StorageService.getInstance().getAnswers();
 
@@ -80,7 +79,10 @@ export function Table() {
 
     function selectCandidate(event: React.ChangeEvent<HTMLSelectElement>, c1: boolean) {
         const selectedCandidate = Array.from(candidates.values()).filter(c => c.name === event.target.value);
-        if (selectedCandidate.length == 0) return;
+        if (selectedCandidate.length == 0) {
+            c1 ? setC1Data(NO_DATA) : setC2Data(NO_DATA);
+            return;
+        }
         const candidate = selectedCandidate[0];
         const answerMap = new Map<PropositionID, ReactElement>();
         candidate.opinion.forEach((ans, id) => answerMap.set(id, answer(id, candidate.id)));

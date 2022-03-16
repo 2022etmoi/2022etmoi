@@ -55,10 +55,10 @@
 
         &__candidate {
             font-weight: 800;
+            height: 20rem;
             padding: 1rem;
             text-align: left;
             transform: translate(5rem, 1rem) + rotate(210deg);
-            height: 20rem;
             writing-mode: vertical-lr;
         }
 
@@ -110,6 +110,7 @@
 
         .proposition {
             width: 30rem;
+
             @media screen and (max-width: $breakpoint-sm) {
                 width: 18rem;
             }
