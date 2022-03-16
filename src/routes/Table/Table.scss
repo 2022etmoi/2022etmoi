@@ -1,8 +1,9 @@
+@import '../../styles/breakpoints';
 @import '../../styles/colors';
 
 .route-table {
     &__top {
-        padding: 2rem 4rem 4rem;
+        padding: 2rem 4rem;
 
         &__caption {
             &__line {
@@ -16,6 +17,25 @@
                     padding-right: 1rem;
                     width: 2rem;
                 }
+            }
+        }
+
+        &__combos {
+            align-items: center;
+            display: none;
+            flex-flow: column;
+            padding-top: 6rem;
+
+            select {
+                border-radius: 4px;
+                font-size: 1.5rem;
+                font-weight: 800;
+                margin: 1rem;
+                padding: 0.75rem 2rem;
+            }
+
+            @media screen and (max-width: $breakpoint-md) {
+                display: flex;
             }
         }
     }
@@ -54,6 +74,20 @@
             }
         }
 
+        .small {
+            display: none;
+
+            @media screen and (max-width: $breakpoint-md) {
+                display: table-cell;
+            }
+        }
+
+        .large {
+            @media screen and (max-width: $breakpoint-md) {
+                display: none;
+            }
+        }
+
         &__section {
             font-size: 2rem;
             font-weight: 800;
@@ -72,9 +106,15 @@
             text-align: center;
         }
 
-        tr {
-            :first-child {
-                max-width: 38rem;
+        .proposition {
+            width: 30rem;
+
+            @media screen and (max-width: $breakpoint-md) {
+                width: 30rem;
+            }
+
+            @media screen and (max-width: $breakpoint-sm) {
+                width: 22rem;
             }
         }
     }

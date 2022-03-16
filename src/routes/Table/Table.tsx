@@ -1,6 +1,6 @@
 import "./Table.scss";
 
-import { useMemo } from "react";
+import React, { ReactElement, useMemo, useState } from "react";
 
 import { Icon } from "../../components";
 import { candidates } from "../../data/Candidates";
@@ -15,27 +15,43 @@ import {
     UserAnswer
 } from "../../types";
 
+interface TableAnswers {
+    name: string,
+    answers: Map<PropositionID, JSX.Element>,
+}
+
 /**
  * A route to display all answers.
  */
 export function Table() {
     const candidatesNames = useMemo(() =>
         Object.keys(CandidateID).map(id => (
-            <td className="route-table__wrapper__candidate"
-                key={id}>{candidates.get(id as CandidateID)?.name ?? "‼️"}</td>))
+            <td className="route-table__wrapper__candidate large"
+                key={id}>{candidates.get(id as CandidateID)?.name ?? "–"}</td>))
     , []);
+
+    const [c1Data, setC1Data]: [TableAnswers, ((value: (((prevState: TableAnswers) => TableAnswers) | TableAnswers)) => void)] = useState({
+        name: "",
+        answers: new Map()
+    });
+    const [c2Data, setC2Data]: [TableAnswers, ((value: (((prevState: TableAnswers) => TableAnswers) | TableAnswers)) => void)] = useState({
+        name: "",
+        answers: new Map()
+    });
 
     const answers = StorageService.getInstance().getAnswers();
 
     const candidatesAnswers = useMemo(() =>
         propositions.map(p => [p.id, (
             <tr key={p.id}>
-                <td className="table-content">{p.content}</td>
+                <td className="table-content proposition">{p.content}</td>
                 {Object.keys(CandidateID).map(id => (
-                    <td key={id} className="table-content">{answer(p.id, id as CandidateID)}</td>))}
+                    <td key={id} className="table-content answer large">{answer(p.id, id as CandidateID)}</td>))}
+                <td key="c1" className="table-content answer small">{c1Data.answers.get(p.id)}</td>
+                <td key="c2" className="table-content answer small">{c2Data.answers.get(p.id)}</td>
             </tr>
         )])
-    , []);
+    , [c1Data, c2Data]);
 
     function filterAnswers(answer: UserAnswer) {
         const ids = answers?.filter(v => v[1] === answer);
@@ -48,16 +64,31 @@ export function Table() {
     function tableSegment(answer: UserAnswer) {
         const ans = filterAnswers(answer);
         return ans.length > 0 ? (
-            <div>
+            <>
                 <tr>
                     <td className="route-table__wrapper__section">
                         {smileyForUserAnswer(answer)} {presentableUserAnswer(answer)}
                     </td>
                     {candidatesNames}
+                    <td className="route-table__wrapper__candidate small" key="c1_name" id="c1_name">{c1Data.name}</td>
+                    <td className="route-table__wrapper__candidate small" key="c2_name" id="c2_name">{c2Data.name}</td>
                 </tr>
                 {filterAnswers(answer)}
-            </div>
+            </>
         ) : (<div className="noAnswers">Aucune réponse &quot;{presentableUserAnswer(answer)}&quot;.</div>);
+    }
+
+    function selectCandidate(event: React.ChangeEvent<HTMLSelectElement>, c1: boolean) {
+        const selectedCandidate = Array.from(candidates.values()).filter(c => c.name === event.target.value);
+        if (selectedCandidate.length == 0) return;
+        const candidate = selectedCandidate[0];
+        const answerMap = new Map<PropositionID, ReactElement>();
+        candidate.opinion.forEach((ans, id) => answerMap.set(id, answer(id, candidate.id)));
+        const newData: TableAnswers = {
+            name: candidate.name,
+            answers: answerMap,
+        };
+        c1 ? setC1Data(newData) : setC2Data(newData);
     }
 
     return (
@@ -65,6 +96,7 @@ export function Table() {
             <div className="route-table__top">
                 <h1>Synthèse</h1>
                 <p>Visualisez les réponses des candidats aux propositions, classées selon vos réponses.</p>
+
                 <div className="route-table__top__caption">
                     <div className="route-table__top__caption__line"><Icon file="yes"/> signifie que le candidat est
                         pour.
@@ -76,6 +108,21 @@ export function Table() {
                         se prononce pas ou laissera le peuple trancher.
                     </div>
                 </div>
+
+                <div className="route-table__top__combos small">
+                    Candidats à afficher :
+                    <select name="Candidat #1" id="c1" onChange={x => selectCandidate(x, true)}>
+                        <option value="none">Sélectionner un candidat :</option>
+                        {Object.keys(CandidateID).map(id => (
+                            <option key={id}>{candidates.get(id as CandidateID)!.name}</option>))}
+                    </select>
+                    <select name="Candidat #2" id="c2" onChange={x => selectCandidate(x, false)}>
+                        <option value="none">Sélectionner un candidat :</option>
+                        {Object.keys(CandidateID).map(id => (
+                            <option key={id}>{candidates.get(id as CandidateID)!.name}</option>))}
+                    </select>
+                </div>
+
             </div>
             <div className="route-table__wrapper">
                 <table>
