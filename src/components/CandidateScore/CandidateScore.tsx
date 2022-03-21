@@ -2,6 +2,7 @@ import "./CandidateScore.scss";
 
 import { useMemo } from "react";
 import CountUp from "react-countup";
+import { Link } from "react-router-dom";
 
 import { candidates } from "../../data/Candidates";
 import { CandidateID, Score, smileyForAgreements } from "../../types";
@@ -56,7 +57,9 @@ export function CandidateScore({ candidateID, score }: CandidateScoreProps)  {
                             <div className="candidate-score__chip">
                                 <span>{smileyForAgreements(false)}</span> {score.skulls}
                             </div>
-                            <Button type="transparent">En savoir plus</Button>
+                            <Link to="/app/table">
+                                <Button type="transparent">En savoir plus</Button>
+                            </Link>
                         </div>
                     </>
                 )}
