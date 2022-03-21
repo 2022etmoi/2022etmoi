@@ -181,4 +181,34 @@ export const propositions: Proposition[] = [
         "Renationaliser les autoroutes",
         "",
     ),
+    new Proposition(
+        PropositionID.VEGETALISER,
+        "",
+        "Il faut démocratiser l'alimentation végétale",
+        "",
+    ),
+    new Proposition(
+        PropositionID.RSA_CONDITIONNE,
+        "",
+        "Exiger des heures de travail en contrepartie du versement du RSA",
+        "",
+    ),
+    new Proposition(
+        PropositionID.EXPULSER_CHOMAGE,
+        "",
+        "Expulser les étrangers au chômage au terme d'un délai de six mois de recherche d'emploi infructueuse",
+        "",
+    ),
+    new Proposition(
+        PropositionID.EXPROPRIER_CAPITALISTES,
+        "",
+        "Il faut exproprier la classe capitaliste",
+        "",
+    ),
+    new Proposition(
+        PropositionID.RETRAITE_REPORTER,
+        "",
+        "Il faut reporter l'âge de départ à la retraite pour travailler plus longtemps",
+        "",
+    ),
 ];

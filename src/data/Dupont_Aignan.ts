@@ -35,5 +35,10 @@ export const DupontAignan = new Candidate(
         [PropositionID.GUERRE_MIGRANTS_ACCEPTER, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.TVA, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.AUTOROUTES, new Answer(CandidateAnswer.YES, "")],
+        [PropositionID.VEGETALISER, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.RSA_CONDITIONNE, new Answer(CandidateAnswer.YES, "")],
+        [PropositionID.EXPULSER_CHOMAGE, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.EXPROPRIER_CAPITALISTES, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.RETRAITE_REPORTER, new Answer(CandidateAnswer.NO, "")],
     ]),
 );

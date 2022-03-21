@@ -35,5 +35,10 @@ export const Hidalgo = new Candidate(
         [PropositionID.GUERRE_MIGRANTS_ACCEPTER, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.TVA, new Answer(CandidateAnswer.YES, "\"La TVA sur la facture de gaz naturel et d'électricité sera baissée pour les particuliers, et, transitoirement, comme mesure de pouvoir d'achat, la baisse sera également appliquée pour les carburants en cas de flambée du prix à la pompe.\" p. 14")],
         [PropositionID.AUTOROUTES, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.VEGETALISER, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.RSA_CONDITIONNE, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.EXPULSER_CHOMAGE, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.EXPROPRIER_CAPITALISTES, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.RETRAITE_REPORTER, new Answer(CandidateAnswer.NO, "")],
     ]),
 );
