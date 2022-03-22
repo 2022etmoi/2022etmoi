@@ -20,6 +20,7 @@
             @include animate-slide-on-axis(y, layout-slide-up, false, 1rem);
 
             overflow-y: auto;
+            overflow-x: hidden;
             padding: 2rem;
 
             > div > header {
