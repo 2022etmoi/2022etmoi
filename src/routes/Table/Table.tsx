@@ -53,7 +53,18 @@ export function Table() {
     , [c1Data, c2Data]);
 
     function filterAnswers(answer: UserAnswer) {
-        const ids = answers?.filter(v => v[1] === answer);
+        const ids: [PropositionID, UserAnswer][] = [];
+        answers?.filter(v => v[1] === answer)?.forEach(a => ids.push(a));
+        if (answer == UserAnswer.NEUTRAL) {
+            if (answers == undefined) {
+                Object.keys(PropositionID)
+                    .forEach(id => ids.push([id as PropositionID, UserAnswer.NEUTRAL]));
+            } else {
+                Object.keys(PropositionID)
+                    .filter(k => ! answers?.map(a => a[0]).includes(k as PropositionID))
+                    .forEach(id => ids.push([id as PropositionID, UserAnswer.NEUTRAL]));
+            }
+        }
         const filteredAnswers = ids?.map(v => candidatesAnswers.filter(c => c[0] === v[0]));
         if (filteredAnswers === undefined) return [];
         if (filteredAnswers.length === 0) return [];
