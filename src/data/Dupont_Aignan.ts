@@ -11,7 +11,6 @@ export const DupontAignan = new Candidate(
         [PropositionID.REPUBLIQUE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.NUCLEAIRE, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.LOGEMENT_SOCIAL_REFUSER, new Answer(CandidateAnswer.NO, "")],
-        [PropositionID.PASS_ABROGER, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.EGALITE_HF, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.ISF, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.DESTITUER, new Answer(CandidateAnswer.YES, "")],

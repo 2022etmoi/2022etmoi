@@ -11,7 +11,6 @@ export const Poutou = new Candidate(
         [PropositionID.REPUBLIQUE, new Answer(CandidateAnswer.YES, "\"On ne peut en finir avec le capitalisme dans le cadre d'institutions conçues pour le préserver. Il faut les renverser et en fonder de nouvelles, au service et sous le contrôle des travailleurs·euses et de la population.\" p. 20")],
         [PropositionID.NUCLEAIRE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.LOGEMENT_SOCIAL_REFUSER, new Answer(CandidateAnswer.NO, "")],
-        [PropositionID.PASS_ABROGER, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.EGALITE_HF, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.ISF, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.DESTITUER, new Answer(CandidateAnswer.YES, "")],

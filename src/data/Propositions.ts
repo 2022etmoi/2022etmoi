@@ -38,12 +38,6 @@ export const propositions: Proposition[] = [
         "",
     ),
     new Proposition(
-        PropositionID.PASS_ABROGER,
-        "Santé",
-        "Abroger le pass sanitaire et vaccinal",
-        "",
-    ),
-    new Proposition(
         PropositionID.EGALITE_HF,
         "Égalité",
         "Faire respecter l'égalité salariale entre les hommes et les femmes",

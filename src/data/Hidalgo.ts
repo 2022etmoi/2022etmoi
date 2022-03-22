@@ -11,7 +11,6 @@ export const Hidalgo = new Candidate(
         [PropositionID.REPUBLIQUE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.NUCLEAIRE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.LOGEMENT_SOCIAL_REFUSER, new Answer(CandidateAnswer.NO, "")],
-        [PropositionID.PASS_ABROGER, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.EGALITE_HF, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.ISF, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.DESTITUER, new Answer(CandidateAnswer.NO, "")],

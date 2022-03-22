@@ -11,7 +11,6 @@ export const Artaud = new Candidate(
         [PropositionID.REPUBLIQUE, new Answer(CandidateAnswer.YES, "\"Il n'est pas possible de transformer la société sans briser l'appareil d'État de la bourgeoisie, c'est-à-dire sa police, son armée, sa justice.\"")],
         [PropositionID.NUCLEAIRE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.LOGEMENT_SOCIAL_REFUSER, new Answer(CandidateAnswer.NO, "")],
-        [PropositionID.PASS_ABROGER, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.EGALITE_HF, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.ISF, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.DESTITUER, new Answer(CandidateAnswer.YES, "")],

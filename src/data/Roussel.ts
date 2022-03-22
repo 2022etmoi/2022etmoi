@@ -11,7 +11,6 @@ export const Roussel = new Candidate(
         [PropositionID.REPUBLIQUE, new Answer(CandidateAnswer.YES, "\"Mettre un point final au présidentialisme\", page 107")],
         [PropositionID.NUCLEAIRE, new Answer(CandidateAnswer.YES, "Proposition 53, page 55")],
         [PropositionID.LOGEMENT_SOCIAL_REFUSER, new Answer(CandidateAnswer.NO, "")],
-        [PropositionID.PASS_ABROGER, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.EGALITE_HF, new Answer(CandidateAnswer.YES, "Proposition 173, page 125")],
         [PropositionID.ISF, new Answer(CandidateAnswer.YES, "Proposition 127, page 100")],
         [PropositionID.DESTITUER, new Answer(CandidateAnswer.NO, "")],
