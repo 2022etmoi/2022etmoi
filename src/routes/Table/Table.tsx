@@ -85,7 +85,7 @@ export function Table() {
                 </tr>
                 {filterAnswers(answer)}
             </>
-        ) : (<div className="noAnswers">Aucune réponse &quot;{presentableUserAnswer(answer)}&quot;.</div>);
+        ) : (<div/>);
     }
 
     function selectCandidate(event: React.ChangeEvent<HTMLSelectElement>, c1: boolean) {
