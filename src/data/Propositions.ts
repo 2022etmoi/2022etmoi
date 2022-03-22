@@ -211,4 +211,10 @@ export const propositions: Proposition[] = [
         "Il faut reporter l'âge de départ à la retraite pour travailler plus longtemps",
         "",
     ),
+    new Proposition(
+        PropositionID.VOILE_REGLEMENTER,
+        "",
+        "Il faut réglementer ou interdire le port du voile dans l'espace public",
+        "",
+    ),
 ];

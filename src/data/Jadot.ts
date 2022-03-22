@@ -40,5 +40,6 @@ export const Jadot = new Candidate(
         [PropositionID.EXPULSER_CHOMAGE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.EXPROPRIER_CAPITALISTES, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.RETRAITE_REPORTER, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.VOILE_REGLEMENTER, new Answer(CandidateAnswer.NO, "")],
     ]),
 );

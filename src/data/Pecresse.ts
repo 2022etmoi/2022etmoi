@@ -40,5 +40,6 @@ export const Pecresse = new Candidate(
         [PropositionID.EXPULSER_CHOMAGE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.EXPROPRIER_CAPITALISTES, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.RETRAITE_REPORTER, new Answer(CandidateAnswer.YES, "")],
+        [PropositionID.VOILE_REGLEMENTER, new Answer(CandidateAnswer.YES, "")],
     ]),
 );

@@ -40,5 +40,6 @@ export const Artaud = new Candidate(
         [PropositionID.EXPULSER_CHOMAGE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.EXPROPRIER_CAPITALISTES, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.RETRAITE_REPORTER, new Answer(CandidateAnswer.NO, "")],
+        [PropositionID.VOILE_REGLEMENTER, new Answer(CandidateAnswer.YES, "")],
     ]),
 );
