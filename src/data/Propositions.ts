@@ -17,7 +17,7 @@ export const propositions: Proposition[] = [
         PropositionID.SMIC,
         "Économie",
         "Revaloriser le SMIC",
-        "",
+        "Le SMIC (Salaire Minimum Interprofessionnel de Croissance) correspond au salaire minimum légal en France. Son montant est actuellement de 10,57 euros brut de l'heure. Chaque année, le SMIC est revalorisé au 1er janvier selon l'inflation mesurée pour les 20 % des ménages aux revenus les plus faibles. Le gouvernement peut décider d'un \"coup de pouce\" additionnel.",
     ),
     new Proposition(
         PropositionID.REPUBLIQUE,
@@ -47,7 +47,7 @@ export const propositions: Proposition[] = [
         PropositionID.ISF,
         "Économie",
         "Il faut rétablir l'ISF",
-        "",
+        "L'Impot Sur la Fortune (ISF), supprimé par Emmanuel Macron en 2018, concernait les patrimoines supérieurs à 800.000 euros. L'impôt comportait plusieurs tranches allant de 0,55% à 1,8%. Aujourd'hui seul le patrimoine immobilier est pris en compte.",
     ),
     new Proposition(
         PropositionID.DESTITUER,
@@ -71,7 +71,7 @@ export const propositions: Proposition[] = [
         PropositionID.BREVETS_LIBERER,
         "Santé",
         "Libérer les brevets sur les vaccins",
-        "",
+        "Les brevets protègent la propriété intellectuelle. Dans le cas d'un vaccin, seul le propriétaire du brevet est autorisé à le mettre en production.",
     ),
     new Proposition(
         PropositionID.LIBRE_ECHANGE_FIN,
@@ -83,13 +83,13 @@ export const propositions: Proposition[] = [
         PropositionID.AAH,
         "Handicap",
         "Déconjugaliser l'allocation adulte handicapé",
-        "",
+        "L'allocation adulte handicapé (AAH) est versée aux personnes handicapées qui ne peuvent pas travailler. La déconjugalisation est le fait de rendre l'allocation indépendante des revenus du conjoint, ce qui n'est pas le cas actuellement.",
     ),
     new Proposition(
         PropositionID.SOINS_ETRANGERS_STOP,
         "Immigration",
         "Supprimer le financement des soins pour les étrangers en situation irrégulière",
-        "",
+        "Une personne étrangère en situation irrégulière ne dispose pas d'un titre de séjour. Elle est considérée comme vivant illégalement sur le territoire français. Elle a néanmoins des droits, comme l'AME (l'Aide Médicale d'Etat), qui lui permet d'avoir accès à des soins médicaux.",
     ),
     new Proposition(
         PropositionID.TEMPS,
@@ -101,13 +101,13 @@ export const propositions: Proposition[] = [
         PropositionID.CLOUD_SOUVERAIN,
         "Souveraineté",
         "Stopper l'hébergement des données des services publics français sur les serveurs des GAFAM",
-        "",
+        "GAFAM est l'acronyme désignant les géants américains Google, Apple, Facebook, Amazon et Microsoft.",
     ),
     new Proposition(
         PropositionID.DESOBEIR,
         "Souveraineté",
         "En cas de désaccord, il ne faut pas hésiter à désobéir à Bruxelles",
-        "",
+        "Bruxelles désigne ici la commission européenne. C'est l'organe exécutif qui fait respecter le droit européen. Elle peut sanctionner les États membres en cas de non-respect des traités européens.",
     ),
     new Proposition(
         PropositionID.SOL,
@@ -185,7 +185,7 @@ export const propositions: Proposition[] = [
         PropositionID.RSA_CONDITIONNE,
         "",
         "Exiger des heures de travail en contrepartie du versement du RSA",
-        "",
+        "Le RSA (Revenu de Solidarité Active) existe depuis 2009, et est versé sous certaines conditions aux personnes sans ressources ou à faibles ressources. Le montant du RSA varie également en fonction de la composition du foyer. Actuellement, on ne demande pas aux personnes au RSA de travail en contrepartie de son versement.",
     ),
     new Proposition(
         PropositionID.EXPULSER_CHOMAGE,
