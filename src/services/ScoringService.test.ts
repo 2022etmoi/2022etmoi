@@ -68,7 +68,7 @@ describe("scoring-service", () => {
     });
 
     it("the set of questions should differentiate candidates", function () {
-        const AGREE_LIMIT = 90;
+        const AGREE_LIMIT = 91;
         Object.keys(CandidateID).forEach(id => {
             const answers: [PropositionID, UserAnswer][] = [];
             const candidate = candidates.get(<CandidateID>id);
@@ -91,8 +91,8 @@ describe("scoring-service", () => {
             Object.keys(CandidateID).forEach(id2 => {
                 if (id !== id2) {
                     const score = ScoringService.getInstance().computeScoreWithAnswers(candidates.get(<CandidateID>id2)!.opinion, answers);
+                    console.log(`${id} ${id2} -> ${score.score}`);
                     if (score.score > AGREE_LIMIT) {
-                        console.log(`${id} ${id2} -> ${score.score}`);
                         throw new Error(`${id} / ${id2} -> ${score.score} (> ${AGREE_LIMIT})`);
                     }
                 }
