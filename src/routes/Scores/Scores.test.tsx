@@ -1,4 +1,5 @@
 import { mount } from "enzyme";
+import { MemoryRouter } from "react-router-dom";
 
 import { StorageService } from "../../services";
 import { PropositionMock } from "../../tests/mocks";
@@ -12,7 +13,11 @@ describe("scores", ()=> {
 
     });
     it("should render without crash", ()=> {
-        const wrapper = mount(<Scores />);
+        const wrapper = mount(
+            <MemoryRouter initialEntries={["/"]}>
+                <Scores/>
+            </MemoryRouter>
+        );
         expect(wrapper.find(Scores).exists()).toBeTruthy();
     });
 });
