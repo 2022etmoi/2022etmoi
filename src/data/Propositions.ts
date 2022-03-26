@@ -35,13 +35,13 @@ export const propositions: Proposition[] = [
         PropositionID.LOGEMENT_SOCIAL_REFUSER,
         "Mixité sociale",
         "Autoriser les mairies à refuser la construction de logements sociaux sur leur territoire",
-        "",
+        "Depuis 2000, la loi SRU (Solidarité et Renouvellement Urbain) impose aux communes de plus de 3500 habitants et de plus de 1500 habitants en Ile-de-France, d'avoir sur leur territoire, d'ici 2025, 20 à 25% de logements sociaux. Actuellement, si les communes ne respectent pas ce taux ou refusent la construction de logements sociaux, elles doivent payer une amende.",
     ),
     new Proposition(
         PropositionID.EGALITE_HF,
         "Égalité",
         "Faire respecter l'égalité salariale entre les hommes et les femmes",
-        "",
+        "Selon l'INSEE, en 2019 (derniers chiffres disponibles), le revenu salarial des femmes reste en moyenne inférieur de 22% à celui des hommes, car elles travaillent plus souvent à temps partiel et accèdent plus difficilement aux postes les plus rémunérateurs. Selon l'Observatoire des Inégalités, à temps de travail et poste équivalents, l’écart de salaire est de 5,3 %.",
     ),
     new Proposition(
         PropositionID.ISF,
@@ -113,7 +113,7 @@ export const propositions: Proposition[] = [
         PropositionID.SOL,
         "",
         "En finir avec le droit du sol automatique",
-        "",
+        "Le droit du sol attribue à une personne la nationalité du territoire sur lequel elle est née. En France, deux droits s'appliquent: le droit du sang (toute personne née d'un parent français, qu'elle naisse sur le territoire français ou non), et le double droit du sol (une personne née en France d'un parent étranger qui y est également né devient automatiquement française). Le droit du sol peut également s'obtenir sous certaines conditions par lien de fratrie, ou selon la durée de résidence sur le territoire français.",
     ),
     new Proposition(
         PropositionID.CANNABIS,
@@ -143,7 +143,7 @@ export const propositions: Proposition[] = [
         PropositionID.SPECULATION,
         "",
         "Il faut lutter contre la spéculation financière",
-        "",
+        "La spéculation financière consiste à acheter un titre financier pour en tirer un bénéfice en le revendant plus cher par la suite.",
     ),
     new Proposition(
         PropositionID.OTAN,
@@ -155,13 +155,13 @@ export const propositions: Proposition[] = [
         PropositionID.REDEVANCE,
         "",
         "Il faut supprimer la redevance audiovisuelle",
-        "",
+        "La redevance audiovisuelle est une taxe prélevée auprès des auditeurs et téléspectateurs. Elle permet de financer les antennes publiques de radiodiffusion et de télévision, en opposition aux chaînes privées.",
     ),
     new Proposition(
         PropositionID.GUERRE_MIGRANTS_ACCEPTER,
         "",
         "Autoriser l'entrée en France des migrants fuyant les zones de guerre",
-        "",
+        "Actuellement, l'autorisation de rester sur le territoire français est soumis à certaines conditions. La personne fuyant une zone de guerre doit faire une demande d'asile. Si sa demande est acceptée, elle peut ensuite faire une demande de titre de séjour. Si elle est refusée, la personne reçoit une OQTF (Obligation de Quitter le Territoire Français).",
     ),
     new Proposition(
         PropositionID.TVA,
@@ -191,7 +191,7 @@ export const propositions: Proposition[] = [
         PropositionID.EXPULSER_CHOMAGE,
         "",
         "Expulser les étrangers au chômage au terme d'un délai de six mois de recherche d'emploi infructueuse",
-        "",
+        "Actuellement, les seuls étrangers autorisés à travailler en France sont les non-européens détenant un titre de séjour français (ou certains récépissés) avec autorisation de travail, ou les européens possédant une pièce d'identité. A l'heure actuelle, il n'y a pas d'obligation de travail pour obtenir ou renouveler un titre de séjour.",
     ),
     new Proposition(
         PropositionID.EXPROPRIER_CAPITALISTES,
