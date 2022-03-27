@@ -1,7 +1,10 @@
 ![CI Front](https://github.com/2022-app/2022/actions/workflows/node.js.yml/badge.svg)
-# 2022
 
-2022 est un test de positionnement pour l'élection présidentielle de 2022.
+<img style="display: block; margin-left: auto; margin-right: auto; width: 30%;" src="src/components/Icon/icons/logo.svg"></img>
+
+# 2022 et moi
+
+_2022 et moi_ est un test de positionnement pour l'élection présidentielle de 2022.
 
 ## Développement
 
@@ -34,8 +37,3 @@ ou *neutre* (`CandidateAnswer.NEUTRAL`).
   des <img src="https://render.githubusercontent.com/render/math?math=p_i">, normalisée face à la somme des valeurs
   absolues des points <img src="https://render.githubusercontent.com/render/math?math=p_i">, et exprimée sous forme de
   pourcentage.
-- On a <img src="https://render.githubusercontent.com/render/math?math=\delta_i = 0"> si le candidat ou l'utilisateur ne
-  répond pas à la proposition <img src="https://render.githubusercontent.com/render/math?math=i">
-  , <img src="https://render.githubusercontent.com/render/math?math=1"> sinon. La représentativité des réponses face au
-  candidat est la somme des <img src="https://render.githubusercontent.com/render/math?math=\delta_i">, exprimée sous
-  forme de pourcentage.
