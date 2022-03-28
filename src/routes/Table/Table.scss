@@ -49,15 +49,15 @@
 
         &__candidate {
             font-weight: 800;
+            height: 18rem;
+            max-width: 3rem;
+            overflow: visible;
             padding: 1rem;
             text-align: left;
+            text-overflow: clip;
             transform: translate(1.5rem, 8rem) rotate(-45deg);
             transform-origin: left center;
-            overflow: visible;
             white-space: nowrap;
-            max-width: 3rem;
-            text-overflow: clip;
-            height: 18rem;
         }
 
         table {
@@ -99,8 +99,8 @@
         .icon {
             background: none;
             height: 24px;
-            width: 24px;
             margin: auto;
+            width: 24px;
         }
 
         tbody {
