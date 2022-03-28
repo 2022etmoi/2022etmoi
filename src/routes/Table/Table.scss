@@ -72,8 +72,12 @@
             vertical-align: middle;
 
             &:nth-child(even) {
-                background-color: #00000020;
+                background-color: #00000010;
             }
+        }
+
+        .highlight {
+            background-color: $table-selected !important;
         }
 
         .small {

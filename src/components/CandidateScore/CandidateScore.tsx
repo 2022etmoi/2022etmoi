@@ -57,7 +57,7 @@ export function CandidateScore({ candidateID, score }: CandidateScoreProps)  {
                             <div className="candidate-score__chip">
                                 <span>{smileyForAgreements(false)}</span> {score.skulls}
                             </div>
-                            <Link to="/app/table">
+                            <Link to="/app/table" state={{ highlight: candidate.id }}>
                                 <Button type="transparent">En savoir plus</Button>
                             </Link>
                         </div>

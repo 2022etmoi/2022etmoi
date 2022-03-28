@@ -1,6 +1,7 @@
 import "./Table.scss";
 
-import React, { ReactElement, useMemo, useState } from "react";
+import { ReactElement, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import { Icon } from "../../components";
 import { candidates } from "../../data/Candidates";
@@ -17,13 +18,19 @@ import {
 
 interface TableAnswers {
     name: string,
+    id: string,
     answers: Map<PropositionID, JSX.Element>,
 }
 
 const NO_DATA: TableAnswers = {
     name: "Non sélectionné",
+    id: "–",
     answers: new Map(),
 };
+
+interface Highlight {
+    highlight: CandidateID;
+}
 
 /**
  * A route to display all answers.
@@ -35,6 +42,7 @@ export function Table() {
                 key={id}>{candidates.get(id as CandidateID)?.name ?? "–"}</td>))
     , []);
 
+    const [highlight, setHighlight] = useState("");
     const [c1Data, setC1Data] = useState(NO_DATA);
     const [c2Data, setC2Data] = useState(NO_DATA);
 
@@ -45,12 +53,15 @@ export function Table() {
             <tr key={p.id}>
                 <td className="table-content proposition">{p.content}</td>
                 {Object.keys(CandidateID).map(id => (
-                    <td key={id} className="table-content answer large">{answer(p.id, id as CandidateID)}</td>))}
-                <td key="c1" className="table-content answer small">{c1Data.answers.get(p.id)}</td>
-                <td key="c2" className="table-content answer small">{c2Data.answers.get(p.id)}</td>
+                    <td key={id}
+                        className={"table-content answer large" + (id == highlight ? " highlight" : "")}>{answer(p.id, id as CandidateID)}</td>))}
+                <td key="c1"
+                    className={"table-content answer small" + (c1Data.id == highlight ? " highlight" : "")}>{c1Data.answers.get(p.id)}</td>
+                <td key="c2"
+                    className={"table-content answer small" + (c2Data.id == highlight ? " highlight" : "")}>{c2Data.answers.get(p.id)}</td>
             </tr>
         )])
-    , [c1Data, c2Data]);
+    , [c1Data, c2Data, highlight]);
 
     function filterAnswers(answer: UserAnswer) {
         const ids: [PropositionID, UserAnswer][] = [];
@@ -88,20 +99,41 @@ export function Table() {
         ) : (<div/>);
     }
 
-    function selectCandidate(event: React.ChangeEvent<HTMLSelectElement>, c1: boolean) {
-        const selectedCandidate = Array.from(candidates.values()).filter(c => c.name === event.target.value);
+    function selectCandidate(candidateName: string, c1: boolean) {
+        const selectedCandidate = Array.from(candidates.values()).filter(c => c.name === candidateName);
         if (selectedCandidate.length == 0) {
             c1 ? setC1Data(NO_DATA) : setC2Data(NO_DATA);
             return;
         }
-        const candidate = selectedCandidate[0];
         const answerMap = new Map<PropositionID, ReactElement>();
-        candidate.opinion.forEach((ans, id) => answerMap.set(id, answer(id, candidate.id)));
+        selectedCandidate[0].opinion.forEach((ans, id) => answerMap.set(id, answer(id, selectedCandidate[0].id)));
         const newData: TableAnswers = {
-            name: candidate.name,
+            name: selectedCandidate[0].name,
+            id: selectedCandidate[0].id,
             answers: answerMap,
         };
         c1 ? setC1Data(newData) : setC2Data(newData);
+    }
+
+    const location = useLocation();
+    const data = location.state as Highlight;
+
+    useMemo(() => {
+        if (data != null) {
+            setHighlight(data.highlight);
+            const name = getHighlightedValue();
+            if (name != null) {
+                selectCandidate(name, true);
+            }
+        }
+    }, [data, highlight]);
+
+    function getHighlightedValue() {
+        if (highlight == "") return null;
+        const name = Array.from(candidates.values()).filter(c => c.id === highlight);
+        if (name.length > 0) {
+            return name[0].name;
+        }
     }
 
     return (
@@ -122,12 +154,13 @@ export function Table() {
 
                 <div className="route-table__top__combos small">
                     Candidats à afficher :
-                    <select name="Candidat #1" id="c1" onChange={x => selectCandidate(x, true)}>
+                    <select name="Candidat #1" id="c1" value={getHighlightedValue() ?? ""}
+                        onChange={x => selectCandidate(x.target.value, true)}>
                         <option value="none">Sélectionner un candidat :</option>
                         {Object.keys(CandidateID).map(id => (
                             <option key={id}>{candidates.get(id as CandidateID)!.name}</option>))}
                     </select>
-                    <select name="Candidat #2" id="c2" onChange={x => selectCandidate(x, false)}>
+                    <select name="Candidat #2" id="c2" onChange={x => selectCandidate(x.target.value, false)}>
                         <option value="none">Sélectionner un candidat :</option>
                         {Object.keys(CandidateID).map(id => (
                             <option key={id}>{candidates.get(id as CandidateID)!.name}</option>))}
