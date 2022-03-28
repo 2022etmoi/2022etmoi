@@ -142,13 +142,13 @@ export function Table() {
                 <h1>Synthèse</h1>
                 <p>Visualisez les réponses des candidats aux propositions, classées selon vos réponses.</p>
 
-                <p className="route-table__top__caption__line"><Icon file="yes"/> signifie que le candidat est
+                <p className="route-table__top__caption__line"><Icon file="yes"/> → le candidat est
                     <b>&nbsp;pour</b>.
                 </p>
-                <p className="route-table__top__caption__line"><Icon file="no"/> signifie que le candidat est
+                <p className="route-table__top__caption__line"><Icon file="no"/> → le candidat est
                     <b>&nbsp;contre</b>.
                 </p>
-                <p className="route-table__top__caption__line"><Icon file="neutral"/> signifie que le candidat
+                <p className="route-table__top__caption__line"><Icon file="neutral"/> → le candidat
                     <b>&nbsp;ne se prononce pas&nbsp;</b>ou laissera le peuple trancher.
                 </p>
 

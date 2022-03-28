@@ -36,10 +36,10 @@ export function Scores() {
             <div className="route-scores__top">
                 <h1>Scores</h1>
                 <p>Visualisez les scores pour chaque candidat, 50% étant le score neutre.</p>
-                <p><span className="route-scores__top__smiley">{smileyForAgreements(true)}</span> signifie un <b>accord
+                <p><span className="route-scores__top__smiley">{smileyForAgreements(true)}</span> → <b>accord
                     important</b> (réponse {presentableUserAnswer(UserAnswer.MUST).toLowerCase()} ou {presentableUserAnswer(UserAnswer.MUST_NOT).toLowerCase()} en
                     accord).</p>
-                <p><span className="route-scores__top__smiley">{smileyForAgreements(false)}</span> signifie un <b>désaccord
+                <p><span className="route-scores__top__smiley">{smileyForAgreements(false)}</span> → <b>désaccord
                     important</b> (réponse {presentableUserAnswer(UserAnswer.MUST).toLowerCase()} ou {presentableUserAnswer(UserAnswer.MUST_NOT).toLowerCase()} en
                     désaccord).</p>
             </div>
