@@ -7,15 +7,17 @@
 
         &__caption {
             &__line {
-                align-items: center;
-                display: flex;
-                flex-flow: row;
-
                 .icon {
                     background: none;
-                    height: 3rem;
+                    display: inline-block;
+                    height: 2.5rem;
                     padding-right: 1rem;
-                    width: 2rem;
+                    vertical-align: middle;
+                    width: 2.5rem;
+                }
+
+                &__bold {
+                    font-weight: bold;
                 }
             }
         }

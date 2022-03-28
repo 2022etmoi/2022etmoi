@@ -110,17 +110,15 @@ export function Table() {
                 <h1>Synthèse</h1>
                 <p>Visualisez les réponses des candidats aux propositions, classées selon vos réponses.</p>
 
-                <div className="route-table__top__caption">
-                    <div className="route-table__top__caption__line"><Icon file="yes"/> signifie que le candidat est
-                        pour.
-                    </div>
-                    <div className="route-table__top__caption__line"><Icon file="no"/> signifie que le candidat est
-                        contre.
-                    </div>
-                    <div className="route-table__top__caption__line"><Icon file="neutral"/> signifie que le candidat ne
-                        se prononce pas ou laissera le peuple trancher.
-                    </div>
-                </div>
+                <p className="route-table__top__caption__line"><Icon file="yes"/> signifie que le candidat est
+                    <b>&nbsp;pour</b>.
+                </p>
+                <p className="route-table__top__caption__line"><Icon file="no"/> signifie que le candidat est
+                    <b>&nbsp;contre</b>.
+                </p>
+                <p className="route-table__top__caption__line"><Icon file="neutral"/> signifie que le candidat
+                    <b>&nbsp;ne se prononce pas&nbsp;</b>ou laissera le peuple trancher.
+                </p>
 
                 <div className="route-table__top__combos small">
                     Candidats à afficher :

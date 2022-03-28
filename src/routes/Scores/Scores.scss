@@ -2,8 +2,13 @@
 
 .route-scores {
     &__top {
-        font-size: 1.8rem;
         padding: 2rem 4rem 4rem;
+
+        &__smiley {
+            font-size: 2rem;
+            padding-right: 1rem;
+            vertical-align: middle;
+        }
     }
 
     &__wrapper {

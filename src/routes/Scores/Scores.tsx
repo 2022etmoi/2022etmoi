@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { Button, CandidateScore } from "../../components";
 import { ScoringService } from "../../services";
-import { CandidateID, smileyForAgreements } from "../../types";
+import { CandidateID, presentableUserAnswer, smileyForAgreements, UserAnswer } from "../../types";
 
 /**
  * A route to display scores.
@@ -35,17 +35,13 @@ export function Scores() {
         <div className="route-scores">
             <div className="route-scores__top">
                 <h1>Scores</h1>
-                <p>Un pourcentage de 50% est neutre : les accords et désaccords se compensent.</p>
-                <div className="route-table__top__caption">
-                    <div>{smileyForAgreements(true)} (accords importants) :
-                        réponses &ldquo;vraiment pour&rdquo; ou &ldquo;vraiment contre&rdquo; en accord avec le
-                        candidat.
-                    </div>
-                    <div>{smileyForAgreements(false)} (désaccords importants) :
-                        réponses &ldquo;vraiment pour&rdquo; ou &ldquo;vraiment contre&rdquo; en désaccord avec le
-                        candidat.
-                    </div>
-                </div>
+                <p>Visualisez les scores pour chaque candidat, 50% étant le score neutre.</p>
+                <p><span className="route-scores__top__smiley">{smileyForAgreements(true)}</span> signifie un <b>accord
+                    important</b> (réponse {presentableUserAnswer(UserAnswer.MUST).toLowerCase()} ou {presentableUserAnswer(UserAnswer.MUST_NOT).toLowerCase()} en
+                    accord).</p>
+                <p><span className="route-scores__top__smiley">{smileyForAgreements(false)}</span> signifie un <b>désaccord
+                    important</b> (réponse {presentableUserAnswer(UserAnswer.MUST).toLowerCase()} ou {presentableUserAnswer(UserAnswer.MUST_NOT).toLowerCase()} en
+                    désaccord).</p>
             </div>
             <div className="route-scores__wrapper">
                 {
