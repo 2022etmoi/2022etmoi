@@ -16,17 +16,17 @@
         }
 
         .route {
-          @include scrollbar();
-          @include animate-slide-on-axis(y, layout-slide-up, false, 1rem);
+            @include scrollbar();
+            @include animate-slide-on-axis(y, layout-slide-up, false, 1rem);
 
-          overflow-x: hidden;
-          overflow-y: auto;
-          padding: 2rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 2rem;
 
-          > div > header {
-            position: sticky;
-            top: 0;
-          }
+            > div > header {
+                position: sticky;
+                top: 0;
+            }
         }
 
         @media screen and (max-width: $breakpoint-lg) {
