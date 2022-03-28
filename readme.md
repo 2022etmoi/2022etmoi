@@ -2,19 +2,18 @@
 
 <img style="display: block; margin-left: auto; margin-right: auto; width: 30%;" src="src/components/Icon/icons/logo.svg"></img>
 
-# 2022 et moi
-
-_2022 et moi_ est un test de positionnement pour l'élection présidentielle de 2022.
+_2022 et moi_ permet de se comparer aux différents candidats à l'élection présidentielle sur une série de propositions.
+Le projet est facilement réutilisable en modifiant `src/data` et `src/types/Proposition.ts`.
 
 ## Développement
 
-Installation des dépendances.
+Installation des dépendances :
 
 ```
 npm ci
 ```
 
-Ouvrez l'application.
+Lancer le site :
 
 ```
 npm start
@@ -28,6 +27,17 @@ Les candidats se prononcent sur chaque proposition : *pour* (`CandidateAnswer.YE
 ou *neutre* (`CandidateAnswer.NEUTRAL`).
 
 ## Score
+
+### Principe
+
+50% correspond au score neutre (en moyenne autant en accord qu'en désaccord).
+0% correspond à un désaccord parfait et 100% à un accord parfait.
+
+Il faut relativiser la signification du score car celui-ci dépend forcément du choix des propositions !
+
+### Calcul
+
+Fonctions de calcul du score : [ScoringService.ts](src/services/ScoringService.ts)
 
 - Pour une réponse <img src="https://render.githubusercontent.com/render/math?math=r_i"> à une proposition (de très
   défavorable à très favorable, -2 à 2),
