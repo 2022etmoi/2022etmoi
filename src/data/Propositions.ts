@@ -202,8 +202,8 @@ export const propositions: Proposition[] = [
     new Proposition(
         PropositionID.RETRAITE_REPORTER,
         "",
-        "Il faut reporter l'âge de départ à la retraite pour travailler plus longtemps",
-        "",
+        "Il faut reporter l'âge de départ à la retraite, et donc travailler plus longtemps",
+        "Actuellement, il est possible de demander à partir à la retraite à partir de 62 ans (ou avant sous certaines conditions).",
     ),
     new Proposition(
         PropositionID.VOILE_REGLEMENTER,
