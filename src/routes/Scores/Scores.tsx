@@ -45,7 +45,7 @@ export function Scores() {
             }
         }
 
-        text += "\n-> 2022etmoi.fr #presidentielles2022 #2022etmoi";
+        text += "\n➡ 2022etmoi.fr #presidentielles2022 #2022etmoi";
         window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(text));
     }
 
