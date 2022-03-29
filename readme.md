@@ -7,6 +7,8 @@ Le projet est facilement réutilisable en modifiant `src/data` et `src/types/Pro
 
 ## Développement
 
+### Espace de travail
+
 Installation des dépendances :
 
 ```
@@ -18,6 +20,10 @@ Lancer le site :
 ```
 npm start
 ```
+
+### Contribuer
+
+[Contributing.md](CONTRIBUTING.md)
 
 ## Propositions et réponses
 
