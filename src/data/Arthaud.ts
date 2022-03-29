@@ -4,6 +4,7 @@ export const Arthaud = new Candidate(
     CandidateID.ARTHAUD,
     "Nathalie Arthaud",
     "Lutte Ouvrière",
+    "@n_arthaud",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

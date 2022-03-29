@@ -4,6 +4,7 @@ export const Macron = new Candidate(
     CandidateID.MACRON,
     "Emmanuel Macron",
     "La République En Marche",
+    "@EmmanuelMacron",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NEUTRAL, "")],

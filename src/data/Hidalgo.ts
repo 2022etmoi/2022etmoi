@@ -4,6 +4,7 @@ export const Hidalgo = new Candidate(
     CandidateID.HIDALGO,
     "Anne Hidalgo",
     "Parti Socialiste",
+    "@Anne_Hidalgo",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

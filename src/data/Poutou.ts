@@ -4,6 +4,7 @@ export const Poutou = new Candidate(
     CandidateID.POUTOU,
     "Philippe Poutou",
     "Nouveau Parti Anticapitaliste",
+    "@PhilippePoutou",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

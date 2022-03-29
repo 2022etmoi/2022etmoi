@@ -4,6 +4,7 @@ export const Pecresse = new Candidate(
     CandidateID.PECRESSE,
     "Valérie Pécresse",
     "Les Républicains",
+    "@vpecresse",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.YES, "")],

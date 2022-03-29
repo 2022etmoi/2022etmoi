@@ -4,6 +4,7 @@ export const Roussel = new Candidate(
     CandidateID.ROUSSEL,
     "Fabien Roussel",
     "PCF",
+    "@Fabien_Roussel",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

@@ -4,6 +4,7 @@ export const Jadot = new Candidate(
     CandidateID.JADOT,
     "Yannick Jadot",
     "Europe Écologie Les Verts",
+    "@yjadot",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "\"Un barème progressif sera appliqué qui permettra de baisser la fiscalité sur les petites successions et de l'augmenter pour les plus élevées.\" p. 27")],

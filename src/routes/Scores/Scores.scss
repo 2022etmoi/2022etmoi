@@ -4,6 +4,16 @@
     &__top {
         padding: 2rem 4rem 4rem;
 
+        h1 {
+            align-items: baseline;
+            display: flex;
+            justify-content: space-between;
+
+            .button {
+                overflow: visible;
+            }
+        }
+
         &__smiley {
             font-size: 2rem;
             padding-right: 1rem;

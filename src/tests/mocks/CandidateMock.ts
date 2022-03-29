@@ -10,5 +10,6 @@ export const CandidateMock: Candidate = new Candidate(
     CandidateID.ZEMMOUR,
     "foo",
     "bar",
+    "@yopoxdev",
     mockAnswers,
 );

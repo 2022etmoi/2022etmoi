@@ -4,6 +4,7 @@ export const DupontAignan = new Candidate(
     CandidateID.DUPONT_AIGNAN,
     "Nicolas Dupont-Aignan",
     "Debout la France",
+    "dupontaignan",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.YES, "")],

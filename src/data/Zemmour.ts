@@ -4,6 +4,7 @@ export const Zemmour = new Candidate(
     CandidateID.ZEMMOUR,
     "Éric Zemmour",
     "Reconquête !",
+    "@ZemmourEric",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.YES, "")],
