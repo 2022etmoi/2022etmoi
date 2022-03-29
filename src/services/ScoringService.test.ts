@@ -68,10 +68,12 @@ describe("scoring-service", () => {
     });
 
     it("the set of questions should differentiate candidates", function () {
-        const AGREE_LIMIT = 91;
-        Object.keys(CandidateID).forEach(id => {
+        const ids = Object.keys(CandidateID);
+        const AGREE_LIMIT = 97;
+
+        for (let i = 0; i < ids.length - 1; i ++) {
             const answers: [PropositionID, UserAnswer][] = [];
-            const candidate = candidates.get(<CandidateID>id);
+            const candidate = candidates.get(<CandidateID>ids[i]);
             expect(candidate).toBeDefined();
             if (candidate === undefined) return;
 
@@ -88,15 +90,11 @@ describe("scoring-service", () => {
                 }
             });
 
-            Object.keys(CandidateID).forEach(id2 => {
-                if (id !== id2) {
-                    const score = ScoringService.getInstance().computeScoreWithAnswers(candidates.get(<CandidateID>id2)!.opinion, answers);
-                    console.log(`${id} ${id2} -> ${score.score}`);
-                    if (score.score > AGREE_LIMIT) {
-                        throw new Error(`${id} / ${id2} -> ${score.score} (> ${AGREE_LIMIT})`);
-                    }
-                }
-            });
-        });
+            for (let j = i + 1; j < ids.length; j ++) {
+                const score = ScoringService.getInstance().computeScoreWithAnswers(candidates.get(<CandidateID>ids[j])!.opinion, answers);
+                console.log(`${ids[i]} ${ids[j]} -> ${score.score}`);
+                expect(score.score > AGREE_LIMIT).toBeFalsy();
+            }
+        }
     });
 });
