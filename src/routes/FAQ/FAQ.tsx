@@ -69,6 +69,16 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
+                        <summary>Comment les propositions ont-elles été choisies&nbsp;?</summary>
+                        <p>
+                            Nous avons sélectionné des propositions importantes dans le débat public,
+                            des propositions structurantes pour quelques candidats afin de les différencier,
+                            et des propositions qui font apparaître un clivage parmi les candidats (gauche/droite,
+                            souverainisme, nucléaire…).
+                        </p>
+                    </details>
+
+                    <details className="questions-list__item">
                         <summary>Je trouve qu&apos;une proposition est mal formulée</summary>
                         <p>
                             Vous pouvez consulter le <a
