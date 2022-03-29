@@ -26,3 +26,18 @@ export const candidates: Map<CandidateID, Candidate> = new Map<CandidateID, Cand
     [CandidateID.ROUSSEL, Roussel],
     [CandidateID.ZEMMOUR, Zemmour],
 ]);
+
+export const wikiOrder = [
+    CandidateID.ARTHAUD,
+    CandidateID.POUTOU,
+    CandidateID.ROUSSEL,
+    CandidateID.MELENCHON,
+    CandidateID.JADOT,
+    CandidateID.HIDALGO,
+    CandidateID.MACRON,
+    CandidateID.PECRESSE,
+    CandidateID.LASSALLE,
+    CandidateID.DUPONT_AIGNAN,
+    CandidateID.LE_PEN,
+    CandidateID.ZEMMOUR,
+];

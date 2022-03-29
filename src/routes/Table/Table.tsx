@@ -1,10 +1,10 @@
 import "./Table.scss";
 
-import { ReactElement, useCallback,useMemo, useState } from "react";
+import { ReactElement, useCallback, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Icon } from "../../components";
-import { candidates } from "../../data/Candidates";
+import { candidates, wikiOrder } from "../../data/Candidates";
 import { propositions } from "../../data/Propositions";
 import { StorageService } from "../../services";
 import {
@@ -37,7 +37,7 @@ interface Highlight {
  */
 export function Table() {
     const candidatesNames = useMemo(() =>
-        Object.keys(CandidateID).map(id => (
+        wikiOrder.map(id => (
             <td className="route-table__wrapper__candidate large"
                 key={id}>{candidates.get(id as CandidateID)?.name ?? "–"}</td>))
     , []);
@@ -69,7 +69,7 @@ export function Table() {
         propositions.map(p => [p.id, (
             <tr key={p.id}>
                 <td className="table-content proposition">{p.content}</td>
-                {Object.keys(CandidateID).map(id => (
+                {wikiOrder.map(id => (
                     <td key={id}
                         className={"table-content answer large" + (id == highlight ? " highlight" : "")}>{answer(p.id, id as CandidateID)}</td>))}
                 <td key="c1"
@@ -174,12 +174,12 @@ export function Table() {
                     <select name="Candidat #1" id="c1" value={getHighlightedValue() ?? ""}
                         onChange={x => selectCandidate(x.target.value, true)}>
                         <option value="none">Sélectionner un candidat :</option>
-                        {Object.keys(CandidateID).map(id => (
+                        {wikiOrder.map(id => (
                             <option key={id}>{candidates.get(id as CandidateID)!.name}</option>))}
                     </select>
                     <select name="Candidat #2" id="c2" onChange={x => selectCandidate(x.target.value, false)}>
                         <option value="none">Sélectionner un candidat :</option>
-                        {Object.keys(CandidateID).map(id => (
+                        {wikiOrder.map(id => (
                             <option key={id}>{candidates.get(id as CandidateID)!.name}</option>))}
                     </select>
                 </div>
