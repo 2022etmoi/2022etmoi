@@ -1,7 +1,7 @@
 import "./Landing.scss";
 
 import { ArrowRightOutlined } from "@ant-design/icons";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button, CandidateScore, Icon, PropositionButton } from "../../components";
@@ -23,9 +23,39 @@ export function Landing() {
         return cards;
     }, []);
 
+    useEffect(()=> {
+        fetch("https://api.github.com/repos/2022etmoi/2022etmoi/contributors?anon=1")
+            .then(res => res.json())
+            .then(c => setContributors(c))
+            .catch(err =>  console.error("Failed to fetch contributors", err));
+    }, []);
+
+    const [contributors, setContributors] = useState([
+        {
+            "login": "louisgrasset",
+            "avatar_url": "https://avatars.githubusercontent.com/u/9489181?v=4",
+            "html_url": "https://github.com/louisgrasset",
+        },
+        {
+            "login": "yopox",
+            "avatar_url": "https://avatars.githubusercontent.com/u/8440079?v=4",
+            "html_url": "https://github.com/yopox"
+        },
+        {
+            "login": "HadrienRenaud",
+            "avatar_url": "https://avatars.githubusercontent.com/u/19175393?v=4",
+            "html_url": "https://github.com/HadrienRenaud"
+        },
+        {
+            "login": "Adorikill",
+            "avatar_url": "https://avatars.githubusercontent.com/u/30560477?v=4",
+            "html_url": "https://github.com/Adorikill",
+        }
+    ]);
+
     return (
         <div className="route-landing">
-            <section>
+            <section className="section-hero">
                 <Icon file="logo"/>
                 <p className="route-landing__line">Testez votre proximité avec les principaux candidats à la
                     présidentielle sur une trentaine de propositions.</p>
@@ -114,6 +144,23 @@ export function Landing() {
                     <Button>Commencer le quiz <ArrowRightOutlined/></Button>
                 </Link>
             </section>
+            <section className="route-landing__attribution">
+                <h2>Développé avec amour 🥰</h2>
+                <ul className="github-contributors">
+                    {
+                        contributors.map((contributor, constribrutorIndex) => (
+                            <li className="github-contributors__item" key={constribrutorIndex}>
+                                <a href={contributor.html_url} title={contributor.login} target="_blank" rel="noreferrer">
+                                    <img src={contributor.avatar_url} alt={contributor.login} />
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </section>
+            <footer>
+                <a href="https://github.com/2022etmoi/2022etmoi">OpenSource</a> - {new Date().getFullYear()}
+            </footer>
         </div>
     );
 }
