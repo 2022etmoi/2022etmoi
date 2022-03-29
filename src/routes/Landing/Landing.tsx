@@ -108,7 +108,7 @@ export function Landing() {
             </section>
             <section className="section-vote">
                 <div>
-                    <h2>Comment répondre ?</h2>
+                    <h2>Comment répondre&nbsp;?</h2>
                     <div className="section-vote__container">
                         <div className="section-vote__container__item">
                             <div className="section-vote__buttons">

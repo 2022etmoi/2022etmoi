@@ -13,6 +13,7 @@ export function Navigation (){
         { to: "/app", icon: "propositions", label: "Propositions" },
         { to: "/app/scores", icon: "candidates", label: "Scores" },
         { to: "/app/table", icon: "table", label: "Synthèse" },
+        { to: "/app/faq", icon: "options", label: "FAQ" },
         { to: "/app/options", icon: "options", label: "Options" },
     ];
 

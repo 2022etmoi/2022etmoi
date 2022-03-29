@@ -1,36 +1,31 @@
 @import '../../styles/mixins';
+@import '../../styles/breakpoints';
 
-.route-options {
-    &__wrapper {
-        padding: 2rem 4rem;
+.route-faq {
+    padding: 2rem 4rem;
 
-        h1 {
-            padding-bottom: 4rem;
-        }
+    h1 {
+        padding-bottom: 4rem;
     }
 
-    .options-list {
+    .questions-list {
         padding: unset;
         width: 100%;
 
         &__item {
-            @include card();
             @include animate-slide-on-axis(y, layout-slide-up, true, 1rem);
 
             list-style: none;
             padding: 2rem 3rem;
 
-            h2 {
+            summary {
                 font-size: 2rem;
+                font-weight: 800;
                 margin: 0;
             }
 
             p {
-                margin-top: 0.5rem;
-
-                + .button {
-                    margin-left: 0;
-                }
+                padding: 0 2rem;
             }
         }
     }
