@@ -32,7 +32,7 @@ export function Scores() {
             }), []
     );
 
-    function twitter() {
+    async function twitter() {
         let text = "";
 
         for (let i = 0; i < scores.length; i ++) {
@@ -46,7 +46,16 @@ export function Scores() {
         }
 
         text += "\n➡ 2022etmoi.fr #presidentielles2022 #2022etmoi";
-        window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(text));
+        const data = { text: text };
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            if (navigator.canShare(data)) {
+                await navigator.share(data);
+            } else {
+                window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(text));
+            }
+        } else {
+            window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(text));
+        }
     }
 
     return (
