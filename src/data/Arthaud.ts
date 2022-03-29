@@ -1,8 +1,8 @@
 import { Answer, Candidate, CandidateAnswer, CandidateID, PropositionID } from "../types";
 
-export const Artaud = new Candidate(
-    CandidateID.ARTAUD,
-    "Nathalie Artaud",
+export const Arthaud = new Candidate(
+    CandidateID.ARTHAUD,
+    "Nathalie Arthaud",
     "Lutte Ouvrière",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
