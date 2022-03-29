@@ -67,9 +67,8 @@ describe("scoring-service", () => {
         expect(score.score).toStrictEqual(50);
     });
 
-    it("the set of questions should differentiate candidates", function () {
+    it("how the set of questions differentiate candidates", function () {
         const ids = Object.keys(CandidateID);
-        const AGREE_LIMIT = 97;
 
         for (let i = 0; i < ids.length - 1; i ++) {
             const answers: [PropositionID, UserAnswer][] = [];
@@ -93,7 +92,6 @@ describe("scoring-service", () => {
             for (let j = i + 1; j < ids.length; j ++) {
                 const score = ScoringService.getInstance().computeScoreWithAnswers(candidates.get(<CandidateID>ids[j])!.opinion, answers);
                 console.log(`${ids[i]} ${ids[j]} -> ${score.score}`);
-                expect(score.score > AGREE_LIMIT).toBeFalsy();
             }
         }
     });
