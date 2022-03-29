@@ -1,6 +1,6 @@
 import "./Table.scss";
 
-import { ReactElement, useMemo, useState } from "react";
+import { ReactElement, useCallback,useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { Icon } from "../../components";
@@ -48,6 +48,23 @@ export function Table() {
 
     const answers = StorageService.getInstance().getAnswers();
 
+    const answer = useCallback((proposition: PropositionID, id: CandidateID) => {
+        const candidate = candidates.get(id);
+        if (candidate === undefined) return (<Icon file="neutral"/>);
+
+        const answer = candidate.opinion.get(proposition);
+        if (answer === undefined) return (<Icon file="neutral"/>);
+
+        switch (answer.value) {
+        case CandidateAnswer.NO:
+            return (<Icon file="no"/>);
+        case CandidateAnswer.YES:
+            return (<Icon file="yes"/>);
+        case CandidateAnswer.NEUTRAL:
+            return (<Icon file="neutral"/>);
+        }
+    }, []);
+
     const candidatesAnswers = useMemo(() =>
         propositions.map(p => [p.id, (
             <tr key={p.id}>
@@ -61,9 +78,9 @@ export function Table() {
                     className={"table-content answer small" + (c2Data.id == highlight ? " highlight" : "")}>{c2Data.answers.get(p.id)}</td>
             </tr>
         )])
-    , [c1Data, c2Data, highlight]);
+    , [answer, c1Data.answers, c1Data.id, c2Data.answers, c2Data.id, highlight]);
 
-    function filterAnswers(answer: UserAnswer) {
+    const filterAnswers = useCallback((answer: UserAnswer) => {
         const ids: [PropositionID, UserAnswer][] = [];
         answers?.filter(v => v[1] === answer)?.forEach(a => ids.push(a));
         if (answer == UserAnswer.NEUTRAL) {
@@ -80,9 +97,9 @@ export function Table() {
         if (filteredAnswers === undefined) return [];
         if (filteredAnswers.length === 0) return [];
         return filteredAnswers.filter(a => a.length > 0).map(a => a[0][1]);
-    }
+    }, [answers, candidatesAnswers]);
 
-    function tableSegment(answer: UserAnswer) {
+    const tableSegment = useCallback((answer: UserAnswer) => {
         const ans = filterAnswers(answer);
         return ans.length > 0 ? (
             <>
@@ -97,9 +114,9 @@ export function Table() {
                 {filterAnswers(answer)}
             </>
         ) : (<div/>);
-    }
+    }, [c1Data.name, c2Data.name, candidatesNames, filterAnswers]);
 
-    function selectCandidate(candidateName: string, c1: boolean) {
+    const selectCandidate = useCallback((candidateName: string, c1: boolean) => {
         const selectedCandidate = Array.from(candidates.values()).filter(c => c.name === candidateName);
         if (selectedCandidate.length == 0) {
             c1 ? setC1Data(NO_DATA) : setC2Data(NO_DATA);
@@ -113,10 +130,18 @@ export function Table() {
             answers: answerMap,
         };
         c1 ? setC1Data(newData) : setC2Data(newData);
-    }
+    }, [answer]);
 
     const location = useLocation();
     const data = location.state as Highlight;
+
+    const getHighlightedValue = useCallback(()=> {
+        if (highlight == "") return null;
+        const name = Array.from(candidates.values()).filter(c => c.id === highlight);
+        if (name.length > 0) {
+            return name[0].name;
+        }
+    },[highlight]);
 
     useMemo(() => {
         if (data != null) {
@@ -126,15 +151,7 @@ export function Table() {
                 selectCandidate(name, true);
             }
         }
-    }, [data, highlight]);
-
-    function getHighlightedValue() {
-        if (highlight == "") return null;
-        const name = Array.from(candidates.values()).filter(c => c.id === highlight);
-        if (name.length > 0) {
-            return name[0].name;
-        }
-    }
+    }, [data, getHighlightedValue, selectCandidate]);
 
     return (
         <div className="route-table">
@@ -181,21 +198,4 @@ export function Table() {
             </div>
         </div>
     );
-}
-
-function answer(proposition: PropositionID, id: CandidateID) {
-    const candidate = candidates.get(id);
-    if (candidate === undefined) return (<Icon file="neutral"/>);
-
-    const answer = candidate.opinion.get(proposition);
-    if (answer === undefined) return (<Icon file="neutral"/>);
-
-    switch (answer.value) {
-    case CandidateAnswer.NO:
-        return (<Icon file="no"/>);
-    case CandidateAnswer.YES:
-        return (<Icon file="yes"/>);
-    case CandidateAnswer.NEUTRAL:
-        return (<Icon file="neutral"/>);
-    }
 }

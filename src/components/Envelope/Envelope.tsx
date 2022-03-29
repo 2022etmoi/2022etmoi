@@ -23,7 +23,7 @@ export function Envelope () {
         setUserAnswers(cards);
     }, [randomUserAnswer]);
 
-    useEffect(() => generateAnswers(), []);
+    useEffect(() => generateAnswers(), [generateAnswers]);
 
     useEffect(()=> {
         const interval = setInterval(generateAnswers, (12 * 0.2 + 0.8)* 1000);
