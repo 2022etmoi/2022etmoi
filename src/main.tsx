@@ -1,12 +1,15 @@
 import "./styles/index.scss";
 
 import React from "react";
-import ReactDOM from "react-dom";
+import * as ReactDOMClient from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { FAQ, Landing, Layout, NotFound, Options, Propositions, Scores, Table } from "./routes";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = ReactDOMClient.createRoot(container);
+
+root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
@@ -21,6 +24,5 @@ ReactDOM.render(
                 <Route path="/*" element={<NotFound/>}/>
             </Routes>
         </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById("root")
+    </React.StrictMode>
 );
