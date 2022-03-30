@@ -89,7 +89,7 @@
         @include card();
 
         max-height: 8rem;
-        overflow: scroll;
+        overflow-y: auto;
 
         &-title {
             color: $secondary-muted;
