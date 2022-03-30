@@ -47,12 +47,13 @@ export function FAQ() {
                         <summary>Le pourcentage indiqué est-il fiable&nbsp;?</summary>
                         <p>
                             Non.
-                            Pour connaître la priximité réelle avec tous les programmes, il faudrait poser des questions
+                            Pour connaître la proximité réelle avec tous les programmes, il faudrait poser des questions
                             sur
                             tous les sujets et connaître l&apos;opinion de tous les candidats sur tous les sujets.
                             C&apos;est impossible.<br/><br/>
                             Il ne faut pas prendre les scores trop au sérieux, il est peut-être plus intéressant de
-                            regarder les accords et désaccords importants, ou bien de comparer les candidats.
+                            regarder les accords et désaccords importants, ou bien de comparer les candidats.<br/><br/>
+                            Ce test ne remplace pas la lecture des programmes.
                         </p>
                     </details>
 
