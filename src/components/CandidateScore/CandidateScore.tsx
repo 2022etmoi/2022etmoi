@@ -31,10 +31,11 @@ export function CandidateScore({ candidateID, score }: CandidateScoreProps)  {
                     <>
                         <div className="candidate-score__image">
                             <img src={`/images/candidates/${imageFileName}.webp`}/>
-                            <a href={candidate.program} target="_blank" title={"Programme de " + candidate.name}
-                                className="candidate-score__program"
+                            <a className="candidate-score__program"
+                                href={candidate.program} target="_blank" title={"Programme de " + candidate.name}
                                 rel="noreferrer">
-                                <Icon file="program"></Icon>
+                                <Icon ariaLabel="Icone de programme politique" file="program"></Icon>
+                                <span>{"Programme de " + candidate.name}</span>
                             </a>
                         </div>
                         <div className="candidate-score__details">

@@ -14,11 +14,13 @@ import { ReactComponent as IconTable } from "./icons/table.svg";
 import { ReactComponent as IconYes } from "./icons/yes.svg";
 
 export interface IconProps {
+    /** ARIA Label */
+    ariaLabel?: string;
     /** The icon name to use from /src/components/Icon/icons/*.svg */
     file: "logo" | "candidates" | "options" | "propositions" | "questions" | "table" | "yes" | "no" | "neutral" | "program";
 }
 
-export function Icon({ file }: IconProps) {
+export function Icon({ ariaLabel, file }: IconProps) {
     const icon = useMemo(() => {
         switch (file) {
         case "logo":
@@ -47,7 +49,7 @@ export function Icon({ file }: IconProps) {
     }, [file]);
 
     return (
-        <div className="icon">
+        <div className="icon" aria-label={ariaLabel}>
             { icon }
         </div>
     );

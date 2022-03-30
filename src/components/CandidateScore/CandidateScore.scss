@@ -1,5 +1,6 @@
 @import '../../styles/breakpoints';
 @import '../../styles/mixins';
+@import '../../styles/colors';
 
 .candidate-score {
     @include card();
@@ -25,26 +26,57 @@
     }
 
     &__program {
+        border-radius: 2rem;
+        color: $primary;
+        display: flex;
+        flex-wrap: nowrap;
+        height: 4rem;
         left: 1.1rem;
+        overflow: hidden;
         position: absolute;
+        text-decoration: none;
         top: 1.1rem;
+        transition: all 0.2s ease-out;
+        width: 4rem;
 
         .icon {
             background: none;
             box-sizing: border-box;
-            height: 4rem;
-            width: 4rem;
+            height: 3rem;
+            margin: 0.5rem;
+            width: 3rem;
+
+            &::after {
+                display: none;
+            }
 
             svg {
                 fill: #fff;
                 height: 3.5rem;
-                opacity: 0.8;
                 padding: 0;
                 width: 4rem;
                 z-index: 999;
+            }
+        }
 
-                &:hover {
-                    opacity: 1;
+        span {
+            display: block;
+            left: 0;
+            line-height: 3.8rem;
+            margin-left: 0.5rem;
+            text-align: right;
+            text-overflow: ellipsis;
+            top: 0.75rem;
+            white-space: nowrap;
+        }
+
+        &:hover {
+            background-color: white;
+            width: calc(100% - 2.5rem);
+
+            .icon {
+                svg {
+                    fill: $primary;
                 }
             }
         }
