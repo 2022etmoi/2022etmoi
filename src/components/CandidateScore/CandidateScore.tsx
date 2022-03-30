@@ -31,7 +31,8 @@ export function CandidateScore({ candidateID, score }: CandidateScoreProps)  {
                     <>
                         <div className="candidate-score__image">
                             <img src={`/images/candidates/${imageFileName}.webp`}/>
-                            <a href={candidate.program} target="_blank" className="candidate-score__program"
+                            <a href={candidate.program} target="_blank" title={"Programme de " + candidate.name}
+                                className="candidate-score__program"
                                 rel="noreferrer">
                                 <Icon file="program"></Icon>
                             </a>
