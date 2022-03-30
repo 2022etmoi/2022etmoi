@@ -65,7 +65,7 @@ export const propositions: Proposition[] = [
         PropositionID.BAC,
         "Éducation",
         "Refaire du baccalauréat un examen national, anonyme et final",
-        "",
+        "La réforme du baccalauréat portée par Jean-Michel Blanquer a introduit une dose de contrôle continu de 40%. Ce contrôle continu est composé à 10% des bulletins scolaires de première et de terminale (non national, non anonyme, non final), et à 30% d'épreuves communes passées au printemps (non final).",
     ),
     new Proposition(
         PropositionID.BREVETS_LIBERER,
