@@ -119,7 +119,7 @@ export const propositions: Proposition[] = [
         PropositionID.CANNABIS,
         "",
         "Il faut dépénaliser ou légaliser le cannabis",
-        "",
+        "La détention et la consommation de cannabis sont actuellement punies par la loi. Depuis 2019, une contravention de 200 euros a été mise en place pour les personnes détenant de petites quantités de cannabis. Si le tribunal est saisi, les peines peuvent alors aller jusqu'à un an de prison et 3750 euros d'amende. En cas de trafic, les peines peuvent aller jusqu'à 30 ans de réclusion criminelle et 7 500 000 euros d'amende.",
     ),
     new Proposition(
         PropositionID.DETTE,
