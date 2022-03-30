@@ -83,9 +83,12 @@
     }
 
     @media screen and (max-width: $breakpoint-lg) {
+        bottom: 0;
         display: block;
-        position: relative;
+        left: 0;
+        position: fixed;
         width: 100%;
+        z-index: 100;
 
         &__wrapper {
             display: flex;

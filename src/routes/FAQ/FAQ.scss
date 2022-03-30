@@ -2,7 +2,15 @@
 @import '../../styles/breakpoints';
 
 .route-faq {
-    padding: 2rem 4rem;
+    &__top,
+    &__wrapper {
+        padding: 2rem 4rem;
+
+        @media screen and (max-width: $breakpoint-md) {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
 
     h1 {
         padding-bottom: 4rem;

@@ -4,6 +4,11 @@
     &__top {
         padding: 2rem 4rem 4rem;
 
+        @media screen and (max-width: $breakpoint-md) {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
         h1 {
             align-items: baseline;
             display: flex;

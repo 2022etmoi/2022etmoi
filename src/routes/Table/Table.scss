@@ -5,6 +5,11 @@
     &__top {
         padding: 2rem 4rem;
 
+        @media screen and (max-width: $breakpoint-md) {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
         &__caption {
             &__line {
                 .icon {
