@@ -1,28 +1,16 @@
 import "./Landing.scss";
 
 import { ArrowRightOutlined } from "@ant-design/icons";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Button, CandidateScore, Icon, PropositionButton } from "../../components";
-import { RandomScoreMock } from "../../tests/mocks";
-import { CandidateID, presentableUserAnswer, UserAnswer } from "../../types";
+import { Button, Icon, PropositionButton, ShuffleCandidateCards } from "../../components";
+import { presentableUserAnswer, UserAnswer } from "../../types";
 
 /**
  * A route to display the app landing page.
  */
 export function Landing() {
-    const randomCandidateCards = useMemo(() => {
-        const list = Array.from(Object.keys(CandidateID)) as CandidateID[];
-        const cards = [];
-        for (let count = 0; count < 3; count ++) {
-            const index = Math.floor(Math.random() * list.length);
-            const [candidateID] = list.slice(index, index + 1);
-            cards.push(<CandidateScore key={count} candidateID={candidateID} score={RandomScoreMock()}/>);
-        }
-        return cards;
-    }, []);
-
     useEffect(()=> {
         fetch("https://api.github.com/repos/2022etmoi/2022etmoi/contributors?anon=1")
             .then(res => res.json())
@@ -56,13 +44,18 @@ export function Landing() {
     return (
         <div className="route-landing">
             <section className="section-hero">
-                <Icon file="logo"/>
-                <p className="route-landing__line">Testez votre proximité avec les principaux candidats à la
+                <div className="section-hero__left">
+                    <Icon file="logo"/>
+                    <p className="route-landing__line">Testez votre proximité avec les principaux candidats à la
                     présidentielle sur une trentaine de propositions.</p>
-                <div className="route-landing__start">
-                    <Link to="/app">
-                        <Button>Commencer le quiz <ArrowRightOutlined/></Button>
-                    </Link>
+                    <div className="route-landing__start">
+                        <Link to="/app">
+                            <Button>Commencer le quiz <ArrowRightOutlined/></Button>
+                        </Link>
+                    </div>
+                </div>
+                <div className="section-hero__right">
+                    <ShuffleCandidateCards interval={1500}/>
                 </div>
             </section>
             <section className="section-argument" id="operation">
