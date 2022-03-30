@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { FAQ, Landing, Layout, NotFound, Options, Propositions, Scores, Table } from "./routes";
 
 const container = document.getElementById("root");
-const root = ReactDOMClient.createRoot(container);
+const root = ReactDOMClient.createRoot(container as HTMLElement);
 
 root.render(
     <React.StrictMode>
