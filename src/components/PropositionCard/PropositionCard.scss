@@ -30,11 +30,6 @@
         }
     }
 
-    @media screen and (max-width: $breakpoint-sm) {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
     @media screen and (max-width: $breakpoint-lg) {
         &__top {
             height: 30rem;
