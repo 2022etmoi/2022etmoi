@@ -14,7 +14,7 @@ import { ReactComponent as IconYes } from "./icons/yes.svg";
 
 export interface IconProps {
     /** The icon name to use from /src/components/Icon/icons/*.svg */
-    file: "logo" | "candidates" | "options" | "propositions" | "questions" | "scores" | "table" | "yes" | "no" | "neutral";
+    file: "logo" | "candidates" | "options" | "propositions" | "questions" | "table" | "yes" | "no" | "neutral";
 }
 
 export function Icon({ file }: IconProps) {

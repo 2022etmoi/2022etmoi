@@ -6,7 +6,7 @@ describe("icon", () => {
 
     it("should render without crash", ()=> {
         const wrapper = mount(
-            <Icon file="scores"/>
+            <Icon file="logo"/>
         );
 
         expect(wrapper.find(Icon).exists()).toBeTruthy();
