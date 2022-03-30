@@ -43,4 +43,5 @@ export const LePen = new Candidate(
         [PropositionID.RETRAITE_REPORTER, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.VOILE_REGLEMENTER, new Answer(CandidateAnswer.YES, "")],
     ]),
+    "VALENTINE CHAPUIS / AFP"
 );

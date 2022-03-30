@@ -13,4 +13,5 @@ export const CandidateMock: Candidate = new Candidate(
     "@yopoxdev",
     "https://www.2022etmoi.fr",
     mockAnswers,
+    "credit"
 );

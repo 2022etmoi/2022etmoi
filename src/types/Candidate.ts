@@ -28,13 +28,15 @@ export class Candidate {
     twitter: string;
     program: string;
     opinion: Map<PropositionID, Answer>;
+    photoCredit: string;
 
-    constructor(id: CandidateID, name: string, movement: string, twitter: string, program: string, opinion: Map<PropositionID, Answer>) {
+    constructor(id: CandidateID, name: string, movement: string, twitter: string, program: string, opinion: Map<PropositionID, Answer>,  photoCredit: string) {
         this.id = id;
         this.movement = movement;
         this.name = name;
         this.twitter = twitter;
         this.program = program;
         this.opinion = opinion;
+        this.photoCredit = photoCredit;
     }
 }

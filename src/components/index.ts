@@ -4,6 +4,7 @@ export * from "./Counter";
 export * from "./Envelope";
 export * from "./Icon";
 export * from "./Navigation";
+export * from "./PhotoCredits";
 export * from "./PropositionButton";
 export * from "./PropositionCard";
 export * from "./ShuffleCandidateCards";

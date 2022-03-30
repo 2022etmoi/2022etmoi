@@ -4,7 +4,7 @@ import { DeleteOutlined } from "@ant-design/icons";
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Button } from "../../components";
+import { Button, PhotoCredits } from "../../components";
 import { StorageService } from "../../services/";
 
 /**
@@ -34,6 +34,11 @@ export function Options() {
                                 <Button size="small">Voir les propositions</Button>
                             </Link>
                         }
+                    </li>
+                    <li className="options-list__item">
+                        <h2>Licenses photos</h2>
+                        <p>Voici les références pour les images des canditats.</p>
+                        <PhotoCredits />
                     </li>
                 </ul>
             </div>

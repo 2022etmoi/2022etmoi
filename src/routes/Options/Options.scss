@@ -18,6 +18,7 @@
             @include animate-slide-on-axis(y, layout-slide-up, true, 1rem);
 
             list-style: none;
+            margin-bottom: 2rem;
             padding: 2rem 3rem;
 
             h2 {

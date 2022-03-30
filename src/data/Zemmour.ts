@@ -43,4 +43,5 @@ export const Zemmour = new Candidate(
         [PropositionID.RETRAITE_REPORTER, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.VOILE_REGLEMENTER, new Answer(CandidateAnswer.YES, "")],
     ]),
+    "JOEL SAGET / AFP"
 );
