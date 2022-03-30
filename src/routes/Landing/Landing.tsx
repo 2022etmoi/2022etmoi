@@ -150,8 +150,9 @@ export function Landing() {
                     {
                         contributors.map((contributor, constribrutorIndex) => (
                             <li className="github-contributors__item" key={constribrutorIndex}>
-                                <a href={contributor.html_url} title={contributor.login} target="_blank" rel="noreferrer">
-                                    <img src={contributor.avatar_url} alt={contributor.login} />
+                                <a href={contributor.html_url} title={contributor.login} target="_blank"
+                                    rel="noreferrer">
+                                    <img src={contributor.avatar_url} alt={contributor.login}/>
                                 </a>
                             </li>
                         ))
@@ -159,7 +160,7 @@ export function Landing() {
                 </ul>
             </section>
             <footer>
-                <a href="https://github.com/2022etmoi/2022etmoi">OpenSource</a> - {new Date().getFullYear()}
+                <a href="https://github.com/2022etmoi/2022etmoi">Projet open source</a> - 2022
             </footer>
         </div>
     );
