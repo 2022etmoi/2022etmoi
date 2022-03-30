@@ -6,7 +6,7 @@ import { CandidateID } from "../../types";
 export function PhotoCredits () {
     const creditForCandidate = useCallback((candidateID: CandidateID)=> {
         const candidate = candidates.get(candidateID);
-        return <li key={candidate?.id}>{candidate?.name}: {candidate?.photoCredit}</li>;
+        return <li key={candidate?.id}><b>{candidate?.name}</b>: {candidate?.photoCredit}</li>;
     }, []);
 
     return (
