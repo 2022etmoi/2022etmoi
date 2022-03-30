@@ -4,7 +4,7 @@ export const DupontAignan = new Candidate(
     CandidateID.DUPONT_AIGNAN,
     "Nicolas Dupont-Aignan",
     "Debout la France",
-    "dupontaignan",
+    "@dupontaignan",
     "https://2022nda.fr/wp-content/uploads/2022/01/100-Decisions-pour-la-France_VFIN.pdf",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.YES, "")],
