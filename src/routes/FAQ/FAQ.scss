@@ -16,15 +16,23 @@
             @include animate-slide-on-axis(y, layout-slide-up, true, 1rem);
 
             list-style: none;
-            padding: 2rem 3rem;
+            margin-bottom: 1rem;
 
             summary {
+                cursor: pointer;
                 font-size: 2rem;
                 font-weight: 800;
                 margin: 0;
+                padding: 1rem 0;
+                user-select: none;
+
+                span {
+                    padding-left: 1.5rem;
+                }
             }
 
             p {
+                margin-top: 0.5rem;
                 padding: 0 2rem;
             }
         }

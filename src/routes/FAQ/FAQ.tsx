@@ -14,9 +14,9 @@ export function FAQ() {
                 <h1>FAQ</h1>
             </div>
             <div className="route-faq__wrapper">
-                <ul className="questions-list">
+                <div className="questions-list">
                     <details className="questions-list__item">
-                        <summary>Des données sont-elles collectées et/ou revendues&nbsp;?</summary>
+                        <summary><span>Des données sont-elles collectées et/ou revendues&nbsp;?</span></summary>
                         <p>
                             Non. Aucune information n&apos;est collectée.<br/>
                             Les réponses aux questions sont sauvegardées en local sur votre navigateur et peuvent être
@@ -25,7 +25,7 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>Comment est calculé le score&nbsp;?</summary>
+                        <summary><span>Comment est calculé le score&nbsp;?</span></summary>
 
                         <p>
                             Le candidat peut être pour une proposition, contre, ou neutre.
@@ -44,7 +44,7 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>Le pourcentage indiqué est-il fiable&nbsp;?</summary>
+                        <summary><span>Le pourcentage indiqué est-il fiable&nbsp;?</span></summary>
                         <p>
                             Non.
                             Pour connaître la proximité réelle avec tous les programmes, il faudrait poser des questions
@@ -58,9 +58,9 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>À quoi correspondent
+                        <summary><span>À quoi correspondent
                             les {smileyForAgreements(true)} et {smileyForAgreements(false)} dans les résultats&nbsp;?
-                        </summary>
+                        </span></summary>
                         <p>
                             Il s&apos;agit des accords et désaccords importants.
                             Seules les réponses vraiment pour et vraiment contre sont
@@ -70,7 +70,7 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>Comment les propositions ont-elles été choisies&nbsp;?</summary>
+                        <summary><span>Comment les propositions ont-elles été choisies&nbsp;?</span></summary>
                         <p>
                             Nous avons sélectionné des propositions importantes dans le débat public,
                             des propositions structurantes pour quelques candidats afin de les différencier,
@@ -80,7 +80,7 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>Je trouve qu&apos;une proposition est mal formulée</summary>
+                        <summary><span>Je trouve qu&apos;une proposition est mal formulée</span></summary>
                         <p>
                             Vous pouvez consulter le <a
                                 href="https://github.com/2022etmoi/2022etmoi/blob/prod/CONTRIBUTING.md">guide des
@@ -90,7 +90,7 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>Je pense qu&apos;il manque une proposition&nbsp;!</summary>
+                        <summary><span>Je pense qu&apos;il manque une proposition&nbsp;!</span></summary>
                         <p>
                             Vous pouvez consulter le <a
                                 href="https://github.com/2022etmoi/2022etmoi/blob/prod/CONTRIBUTING.md">guide des
@@ -104,7 +104,7 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>La réponse indiquée pour une candidate ou un candidat est fausse&nbsp;!</summary>
+                        <summary><span>La réponse indiquée pour une candidate ou un candidat est fausse&nbsp;!</span></summary>
                         <p>
                             Une fois muni de la source justifiant l&apos;erreur, vous pouvez consulter
                             le <a href="https://github.com/2022etmoi/2022etmoi/blob/prod/CONTRIBUTING.md">guide des
@@ -115,8 +115,8 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>Pourquoi n&apos;ai-je pas 0% avec la candidate, le candidat que je déteste&nbsp;?
-                        </summary>
+                        <summary><span>Pourquoi n&apos;ai-je pas 0% avec la candidate, le candidat que je déteste&nbsp;?
+                        </span></summary>
                         <p>
                             Il faut interpréter le pourcentage dans le cadre des propositions sélectionées.
                             S&apos;il y avait beaucoup plus de propositions, le pourcentage serait plus précis.
@@ -125,7 +125,7 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>Qui sommes-nous&nbsp;?</summary>
+                        <summary><span>Qui sommes-nous&nbsp;?</span></summary>
                         <p>
                             La liste des contributeurs est <a
                                 href="https://github.com/2022etmoi/2022etmoi/graphs/contributors">disponible sur GitHub</a>,
@@ -134,14 +134,14 @@ export function FAQ() {
                     </details>
 
                     <details className="questions-list__item">
-                        <summary>Comment nous contacter&nbsp;?</summary>
+                        <summary><span>Comment nous contacter&nbsp;?</span></summary>
                         <p>
                             - Sur Twitter : <a href="https://www.twitter.com/louisgrasset">@louisgrasset</a> et <a
                                 href="https://www.twitter.com/yopoxdev">@yopoxdev</a> <br/><br/>
                             - Par mail : <a href="mailto:yopox@mailo.fr">yopox@mailo.fr</a>
                         </p>
                     </details>
-                </ul>
+                </div>
             </div>
         </div>
     );
