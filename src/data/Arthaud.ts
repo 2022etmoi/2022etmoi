@@ -5,6 +5,7 @@ export const Arthaud = new Candidate(
     "Nathalie Arthaud",
     "Lutte Ouvrière",
     "@n_arthaud",
+    "https://www.nathalie-arthaud.info/mon-programme-de-luttes-194041.html",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

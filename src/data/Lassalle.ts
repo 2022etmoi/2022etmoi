@@ -5,6 +5,7 @@ export const Lassalle = new Candidate(
     "Jean Lassalle",
     "Résistons",
     "@jeanlassalle",
+    "https://jl2022.fr/wp-content/uploads/2022/03/Programme-A4-V5-25_02_22.pdf",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

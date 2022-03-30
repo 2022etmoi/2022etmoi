@@ -5,6 +5,7 @@ export const Jadot = new Candidate(
     "Yannick Jadot",
     "Europe Écologie Les Verts",
     "@yjadot",
+    "https://assets.nationbuilder.com/themes/6181b6eb4445ea720389b314/attachments/original/1643803625/programme_presidentiel_yannick_jadot.pdf?1643803625",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "\"Un barème progressif sera appliqué qui permettra de baisser la fiscalité sur les petites successions et de l'augmenter pour les plus élevées.\" p. 27")],

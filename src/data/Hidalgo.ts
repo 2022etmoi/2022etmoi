@@ -5,6 +5,7 @@ export const Hidalgo = new Candidate(
     "Anne Hidalgo",
     "Parti Socialiste",
     "@Anne_Hidalgo",
+    "https://assets.nationbuilder.com/2022avechidalgo/pages/208/attachments/original/1645795527/Anne_Hidalgo_Programme_officiel_en_A4_l%C3%A9ger.pdf?1645795527",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

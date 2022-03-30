@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { candidates } from "../../data/Candidates";
 import { CandidateID, Score, smileyForAgreements } from "../../types";
 import { Button } from "../Button";
+import { Icon } from "../Icon";
 
 interface CandidateScoreProps {
     candidateID: string,
@@ -30,6 +31,10 @@ export function CandidateScore({ candidateID, score }: CandidateScoreProps)  {
                     <>
                         <div className="candidate-score__image">
                             <img src={`/images/candidates/${imageFileName}.webp`}/>
+                            <a href={candidate.program} target="_blank" className="candidate-score__program"
+                                rel="noreferrer">
+                                <Icon file="program"></Icon>
+                            </a>
                         </div>
                         <div className="candidate-score__details">
                             <div className="candidate-score__details-name">{candidate.name}</div>

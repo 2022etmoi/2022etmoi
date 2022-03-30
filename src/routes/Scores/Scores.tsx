@@ -62,7 +62,8 @@ export function Scores() {
         <div className="route-scores">
             <div className="route-scores__top">
                 <h1>Scores <Button type="secondary" onClick={() => twitter()}>Partager</Button></h1>
-                <p>Visualisez les scores pour chaque candidat, 50% étant le score neutre.</p>
+                <p>Visualisez les scores pour chaque candidat. Consultez un programme avec l&apos;icône en forme de
+                    livre.</p>
                 <p><span className="route-scores__top__smiley">{smileyForAgreements(true)}</span> → <b>accord
                     important</b> (réponse {presentableUserAnswer(UserAnswer.MUST).toLowerCase()} ou {presentableUserAnswer(UserAnswer.MUST_NOT).toLowerCase()} en
                     accord).</p>

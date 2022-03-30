@@ -5,6 +5,7 @@ export const Pecresse = new Candidate(
     "Valérie Pécresse",
     "Les Républicains",
     "@vpecresse",
+    "https://valeriepecresse.fr/wp-content/uploads/2022/03/16P-VP2022-ok.pdf",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NEUTRAL, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.YES, "")],

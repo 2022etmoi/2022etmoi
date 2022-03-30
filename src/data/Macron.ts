@@ -5,6 +5,7 @@ export const Macron = new Candidate(
     "Emmanuel Macron",
     "La République En Marche",
     "@EmmanuelMacron",
+    "https://avecvous.fr/wp-content/uploads/2022/03/Emmanuel-Macron-Avec-Vous-24-pages.pdf",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NEUTRAL, "")],

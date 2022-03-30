@@ -5,6 +5,7 @@ export const Roussel = new Candidate(
     "Fabien Roussel",
     "PCF",
     "@Fabien_Roussel",
+    "https://d3n8a8pro7vhmx.cloudfront.net/fabienroussel2022/pages/217/attachments/original/1643038967/exe_la_france_des_jours_heureux_LIVRE_stc.pdf?1643038967",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

@@ -5,6 +5,7 @@ export const Zemmour = new Candidate(
     "Éric Zemmour",
     "Reconquête !",
     "@ZemmourEric",
+    "https://programme.zemmour2022.fr",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.YES, "")],

@@ -5,6 +5,7 @@ export const Poutou = new Candidate(
     "Philippe Poutou",
     "Nouveau Parti Anticapitaliste",
     "@PhilippePoutou",
+    "https://poutou2022.org/node/348",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],

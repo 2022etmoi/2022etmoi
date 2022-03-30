@@ -5,6 +5,7 @@ export const Melenchon = new Candidate(
     "Jean-Luc Mélenchon",
     "L'Union Populaire",
     "@JLMelenchon",
+    "https://laec.fr/sommaire",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.NO, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.NO, "")],
