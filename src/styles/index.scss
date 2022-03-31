@@ -37,4 +37,8 @@ body {
         color: $secondary;
         text-decoration: underline;
     }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
 }
