@@ -105,7 +105,7 @@ export function Table() {
             <>
                 <tr>
                     <td className="route-table__wrapper__section">
-                        {smileyForUserAnswer(answer)} {presentableUserAnswer(answer)}
+                        <span>{smileyForUserAnswer(answer)}</span>{presentableUserAnswer(answer)}
                     </td>
                     {candidatesNames}
                     <td className="route-table__wrapper__candidate small" key="c1_name" id="c1_name">{c1Data.name}</td>

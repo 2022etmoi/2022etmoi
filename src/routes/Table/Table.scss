@@ -105,7 +105,12 @@
             font-weight: 800;
             height: 100%;
             padding: 4rem 0 2rem;
-            vertical-align: bottom;
+            padding-left: 0.5rem;
+            text-align: left;
+
+            span {
+                padding-right: 1rem;
+            }
         }
 
         .icon {
@@ -113,10 +118,6 @@
             height: 24px;
             margin: auto;
             width: 24px;
-        }
-
-        tbody {
-            text-align: center;
         }
 
         .proposition {
