@@ -5,7 +5,7 @@ export const LePen = new Candidate(
     "Marine Le Pen",
     "Rassemblement National",
     "@MLP_officiel",
-    "https://mlafrance.fr/pdfs/22-mesures-pour-2022.pdf",
+    "https://mlafrance.fr/pdfs/manifeste-m-la-france-programme-presidentiel.pdf",
     new Map([
         [PropositionID.STOP_EOLIENNE, new Answer(CandidateAnswer.YES, "")],
         [PropositionID.SUCCESSIONS, new Answer(CandidateAnswer.YES, "")],
