@@ -96,6 +96,10 @@
         @media screen and (min-width: $breakpoint-lg) {
             max-height: 12rem;
         }
+
+        @media screen and (max-width: $breakpoint-xs) {
+            padding: 2rem 1.8rem;
+        }
     }
 
     &__buttons {
@@ -129,7 +133,7 @@
         display: flex;
         flex-flow: row;
         justify-content: center;
-        margin: 1.5rem 0;
+        margin: 1rem 0;
 
         @media screen and (min-width: $breakpoint-lg) {
             margin: 3rem 0;
@@ -144,5 +148,10 @@
         justify-content: center;
         margin: 0 auto;
         max-width: 52rem;
+
+        .button {
+            padding-bottom: 0.75rem;
+            padding-top: 0.75rem;
+        }
     }
 }
