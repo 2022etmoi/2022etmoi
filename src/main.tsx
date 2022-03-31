@@ -8,7 +8,9 @@ import { FAQ, Landing, Layout, NotFound, Options, Propositions, Scores, Table } 
 
 const container = document.getElementById("root");
 const root = ReactDOMClient.createRoot(container as HTMLElement);
-
+if (window.matchMedia("(display-mode: standalone)").matches) {
+    container?.classList.add("pwa");
+}
 root.render(
     <React.StrictMode>
         <BrowserRouter>

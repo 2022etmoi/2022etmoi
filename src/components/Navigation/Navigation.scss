@@ -125,3 +125,11 @@
         }
     }
 }
+
+.pwa .nav {
+    &__link {
+        @media screen and (max-width: $breakpoint-md) {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
