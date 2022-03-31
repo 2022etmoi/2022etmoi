@@ -16,10 +16,7 @@ interface ShuffleCandidateCardsProps {
 export function ShuffleCandidateCards({ interval }: ShuffleCandidateCardsProps) {
     const baseList = useMemo(()=> Array.from(Object.keys(CandidateID)) as CandidateID[], []);
     const remainingCandidates = useRef(baseList);
-
     const [candidateID, setCandidateID] = useState("");
-
-    useEffect(()=> console.log(remainingCandidates.current), []);
 
     const render = useCallback(()=> {
         // Pick candidate inside remaining candidates or reset list to its default state
